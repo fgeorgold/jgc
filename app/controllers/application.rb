@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     flash[:message]='Please login to continue'
     session[:return_to]=request.request_uri
     redirect_to :controller => "user", :action => "login"
-    
+    flash[:message] ='This is a test'
     return false 
   end
   
