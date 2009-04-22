@@ -1,0 +1,329 @@
+/*
+
+--  GLOBAL STYLES -- */
+
+body {
+
+  font-family: Verdana, tahoma, sans-serif;
+
+  font-size: 80%;
+
+  color: #333;
+
+  margin: 0;
+
+  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+
+  }
+
+
+
+  a:link, a:visited { color: #990000; text-decoration: none;}
+
+  a:hover, a:active { color: #000; text-decoration: underline;}
+
+
+
+h1, h2, h3 h4{  font-family: Times New Roman, serif;}
+
+h2 { margin-top: 10px;}
+
+h3 { font-size: 18px; font-weight: normal;}
+
+h4 {
+	width: 25%; 
+	margin: 0 auto 0 auto;
+	text-align: right;}
+	
+	
+	.formfield{
+	 
+	font-family: Times New Roman, serif;
+	font-weight: bold;
+	font-size: 14px;
+	
+	
+}
+
+
+.clear-both { clear: both;}
+
+
+
+
+
+/*
+
+--  STRUCTURE -- */
+
+#utilities {
+
+  text-align: right;
+
+  height: 27px;
+
+  background: #000 url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+
+  }
+
+#sub-wrapper #utilities {
+
+  text-align: right;
+
+  height: 27px;
+
+  background: #000 url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+
+  }
+
+  #logo {
+
+    position: relative;
+
+	float: left;
+
+	width: 345px;
+
+	height: 27px;
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_logo.jpg") no-repeat;
+
+	border-left: 0px solid #000;
+
+	}
+
+  #utilities a {
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/header_arrow.gif") no-repeat left -5px;
+
+	padding-left: 20px;
+
+	margin-right: 10px;
+
+	font-size: 11px;
+
+	}
+
+  #utilities a:link, #utilities a:visited { color: #fff; text-decoration: none;}
+
+  #utilities a:hover, #utilities a:active { color: #fff; text-decoration: underline;}
+
+
+
+#wrapper {
+
+  width: 957px;
+
+  margin: 0 auto;
+
+  }
+
+	#wrapper #padded-cell { 
+
+		width: 901px;
+
+		display: table;
+
+		background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/nav_bgrd.jpg") repeat-y left;
+
+		margin: 0 auto;
+
+		}
+
+#sub-wrapper {
+
+  width: 957px;
+
+  display: table;
+
+  margin: 0 auto;
+
+  }
+
+  #sub-wrapper #padded-cell { 
+
+    width: 929px;
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/nav_bgrd.jpg") repeat-y left;
+
+	margin: 0 auto;
+
+    }
+
+
+
+  #navigation { 
+
+    width: 196px;
+
+	float: left;
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/home_banner-2.jpg") no-repeat top left;
+
+	}
+
+	#p7TMnav { padding-top: 125px !important;}
+
+	#sub-wrapper #navigation { background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_ban-2.jpg") no-repeat top left;}
+
+	#sub-wrapper #p7TMnav { padding-top: 127px !important;}
+
+  form.render
+  {
+  	float: none;
+	width: 40%;
+	margin: 0 auto 0 auto;
+	text-align: right;
+  }
+
+  #content { 
+
+    float: none;
+
+	width: 75%;
+
+	margin: 0 auto 0 auto;
+
+    }
+
+	#sub-wrapper #content { width: 450px; }
+
+	.copy { padding: 20px 20px 0 20px;
+			text-align: left; }
+	
+	table
+	{
+ 		border-collapse:collapse;
+		
+		
+	}
+	
+	#loginbox
+	{
+		
+		width: 50%;
+		border: 1px solid #CCC;
+		margin: 0 auto 0 auto;
+		
+	}
+	
+	.sub
+	{
+		
+	}
+	.centered
+	{
+ 	text-align: center;
+	}
+	
+	.right
+	{
+		text-align: right;
+	}
+	td
+	{
+	border-top: white solid 1px;	
+ 	border-left: white solid 1px;
+	border-right: white solid 1px;
+	border-bottom: white solid 1px; 
+ 	padding-left: 20px;
+ 	padding-right: 20px;
+	}
+
+#TwoCol #content { width: 700px !important; border: 0;}
+
+
+
+  #sidebar { 
+
+    float: right;   /* changed from left to right EJG */
+
+    color: #79502B;
+
+/*	padding-left: 20px; */
+
+	font-size: 85%;
+
+	}
+
+	#sidebar a { font-weight: bold;}
+
+	.more { background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/arrow.jpg") no-repeat right; padding-right: 10px;}
+
+
+
+
+
+
+
+/*
+
+--  GRAPHICS -- */
+
+#banner { 
+
+  width: 901px;
+
+  display: block;
+
+  height: 155px;
+
+  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/home_banner-1a.jpg") no-repeat center top;
+
+  }
+
+  #banner h2 { display: none;}
+
+#sub-wrapper #banner { 
+
+  width: 927px;
+
+  display: block;
+
+  height: 103px;
+
+  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_ban-1a.jpg") no-repeat center top;
+
+  }
+
+  #footer { 
+
+    clear: both;
+
+	width: 957px;
+
+	height: 48px;
+
+	display: block;
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/footer.jpg") no-repeat top left;
+
+	margin: 0 auto 0 auto;
+
+	font-size: 70%;
+
+	padding-top: 10px;
+
+	text-align: center;
+
+	}
+
+  #sub-footer { 
+
+	width: 957px;
+
+	height: 48px;
+
+	display: block;
+
+	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/footer.jpg") no-repeat -14px 0px;
+
+	margin: 0 auto 0 auto;
+
+	font-size: 70%;
+
+	padding-top: 10px;
+
+	text-align: center;
+
+	}

@@ -1,0 +1,30 @@
+body { 
+ background: white;
+ font-size: medium;
+ }
+
+
+#utilities, #sub-wrapper #utilities, #logo, #navigation, #sidebar  { display: none;} 
+#banner, #sub-wrapper #banner, #wrapper, #sub-wrapper, #footer, #sub-footer { background: none;}
+
+#banner h2 { display: block; font-size: 16pt; height: 1px;}
+#content { float: none; width: 70% !important; border: 0; background: #fff; padding: 0; margin: 0;}
+.copy { padding: 0;}
+
+
+a:link, a:visited {
+	color: #520;
+	background: transparent;
+	font-weight: bold;
+	text-decoration: underline;
+	}
+
+#content a:link:after, #content a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+   }
+
+#content a[href^="/"]:after {
+  content: " (http://controller.stanford.edu" attr(href) ") ";
+   }
+
