@@ -1,12 +1,3 @@
-  <head>
-    <title>John Gardner Center</title>
-	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
-
-  </head>
-
 <img src="images/JGC.gif" alt="John Gardner Center Logo" />
 
  <div id ="content">
@@ -94,28 +85,35 @@
 				<p>
 				Select a category to see the activities that belong to it.
 				</p>
-				<%= form_tag :action=> "showActivitiesByCategory" %>
-				<%= select_tag(:category,"<option>-Select a category</option>" + options_for_select(@categories)) %>
-				<%= submit_tag "Show" %>
+				<div id="categories">
+				<a href="user/BrowseByCategories"> Browse By Category </a>
+
+				</div>
+
 				<br />
 				<br />
 				Select a program to see the activities that have been used on it.
-				<%= form_tag :action=> "showActivitiesByPrograms" %>
-				<%= select_tag(:category,"<option>-Select a program</option>" + options_for_select(@programs)) %>
-				<%= submit_tag "Show" %>
+				<div id="programs">
+				<br />
+				<a href="user/BrowseByPrograms"> Browse By Programs </a>
+
+				</div>
 				<br />
 				<br />
 				Select an age-group to see the activites for that particular age-group.
-				<%= form_tag :action=> "showActivitiesByAgeGroup" %>
-				<%= select_tag(:category,"<option>-Select an age group</option>" + options_for_select(@agegroups)) %>
-				<%= submit_tag "Show" %>
+				<div id="age_group">
+				<br />
+				<a href="user/BrowseByAgeGroups"> Browse By Age Groups </a>
+
+				</div>
 				<br />
 				<br />
 				</div>
-				
+				<p> Help us increase our database of activities by creating a new activity</p>
+				<%= link_to 'New activity', new_activity_path %>
 			</div>
 		</div>
 		
 
 
-<%= link_to 'New activity', new_activity_path %>
+

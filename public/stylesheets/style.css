@@ -12,7 +12,7 @@ body {
 
   margin: 0;
 
-  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+  background: url("/public/images/bg.gif") repeat-x;
 
   }
 
@@ -62,7 +62,7 @@ h4 {
 
   height: 27px;
 
-  background: #000 url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+  background: #000 url("/images/bg.gif") repeat-x;
 
   }
 
@@ -72,7 +72,7 @@ h4 {
 
   height: 27px;
 
-  background: #000 url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/bg.gif") repeat-x;
+  background: #000 url("/images/bg.gif") repeat-x;
 
   }
 
@@ -86,7 +86,7 @@ h4 {
 
 	height: 27px;
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_logo.jpg") no-repeat;
+	background: url("/images/sub_logo.jpg") no-repeat;
 
 	border-left: 0px solid #000;
 
@@ -94,7 +94,7 @@ h4 {
 
   #utilities a {
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/header_arrow.gif") no-repeat left -5px;
+	background: url("/images/header_arrow.gif") no-repeat left -5px;
 
 	padding-left: 20px;
 
@@ -124,7 +124,7 @@ h4 {
 
 		display: table;
 
-		background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/nav_bgrd.jpg") repeat-y left;
+		background: url("/images/nav_bgrd.jpg") repeat-y left;
 
 		margin: 0 auto;
 
@@ -144,7 +144,7 @@ h4 {
 
     width: 929px;
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/nav_bgrd.jpg") repeat-y left;
+	background: url("/images/nav_bgrd.jpg") repeat-y left;
 
 	margin: 0 auto;
 
@@ -158,13 +158,13 @@ h4 {
 
 	float: left;
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/home_banner-2.jpg") no-repeat top left;
+	background: url("/images/home_banner-2.jpg") no-repeat top left;
 
 	}
 
 	#p7TMnav { padding-top: 125px !important;}
 
-	#sub-wrapper #navigation { background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_ban-2.jpg") no-repeat top left;}
+	#sub-wrapper #navigation { background: url("/images/sub_ban-2.jpg") no-repeat top left;}
 
 	#sub-wrapper #p7TMnav { padding-top: 127px !important;}
 
@@ -248,7 +248,7 @@ h4 {
 
 	#sidebar a { font-weight: bold;}
 
-	.more { background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/arrow.jpg") no-repeat right; padding-right: 10px;}
+	.more { background: url("/images/arrow.jpg") no-repeat right; padding-right: 10px;}
 
 
 
@@ -268,7 +268,7 @@ h4 {
 
   height: 155px;
 
-  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/home_banner-1a.jpg") no-repeat center top;
+  background: url("/images/home_banner-1a.jpg") no-repeat center top;
 
   }
 
@@ -282,7 +282,7 @@ h4 {
 
   height: 103px;
 
-  background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/sub_ban-1a.jpg") no-repeat center top;
+  background: url("/images/sub_ban-1a.jpg") no-repeat center top;
 
   }
 
@@ -296,7 +296,7 @@ h4 {
 
 	display: block;
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/footer.jpg") no-repeat top left;
+	background: url("/images/footer.jpg") no-repeat top left;
 
 	margin: 0 auto 0 auto;
 
@@ -316,7 +316,7 @@ h4 {
 
 	display: block;
 
-	background: url("C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/public/images/footer.jpg") no-repeat -14px 0px;
+	background: url("/images/footer.jpg") no-repeat -14px 0px;
 
 	margin: 0 auto 0 auto;
 

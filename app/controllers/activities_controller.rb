@@ -13,9 +13,16 @@ class ActivitiesController < ApplicationController
     @programs = Set.new
     @agegroups = Set.new
     for my_activity in @activities do
-        @categories.add(my_activity.category)
-        @programs.add(my_activity.programs)
-        @agegroups.add(my_activity.age_group)
+        @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
+        for currentProgram in @program_id
+          if currentProgram.program_name.empty?
+          else
+            @programs.add(currentProgram.program_name)  
+          end
+          
+      end
+      
+       
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -26,8 +33,20 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.xml
   def show
-    @activity = Activity.find(params[:id])
+    @id = params[:id]
+    
+    @activity = Activity.find(@id)
+    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+    @programNames = []
+    @categoryNames = []
+    for currentProgram in @program_id
+         @programNames.push currentProgram.program_name
+    end
 
+    for currentCategory in @category_id
+         @categoryNames.push currentCategory.category_name
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @activity }
@@ -36,15 +55,31 @@ class ActivitiesController < ApplicationController
   
   def showActivity
     idOrg = params[:activity][:id]
-    @activity = Organization.find(idOrg)
-
+    @activity = Activity.find(idOrg)
   end
 
+
+
+    
+  def showActivitiesByPrograms
+    @program = params[:program]
+    @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
+   
+    @activities = []
+    for program in @program_id
+      activity = Activity.find(program.activity_id)
+      @activities.push activity 
+    end
+  end
+  
   # GET /activities/new
   # GET /activities/new.xml
   def new
+    
     @activity = Activity.new
-
+    1.times { @activity.programs.build }
+    1.times { @activity.categories.build }
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @activity }

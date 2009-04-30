@@ -7,6 +7,44 @@ class UserController < ApplicationController
     @posts = Organization.find_by_contents(@query) 
   end
   
+  def BrowseByPrograms 
+    @activities = Activity.find(:all)
+     @programs = Set.new
+     for my_activity in @activities do
+        @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
+        for currentProgram in @program_id
+          if currentProgram.program_name.empty?
+          else
+            @programs.add(currentProgram.program_name)  
+          end
+          
+      end
+   end
+ 
+end
+
+ def showActivitiesByPrograms
+    @program = params[:program]
+    @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
+   
+    @activities = []
+    for program in @program_id
+      activity = Activity.find(program.activity_id)
+      @activities.push activity 
+    end
+  end
+  
+  def showActivitiesByCategory
+    @category = params[:category]
+    @type = params[:type]
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
+   
+    @activities = []
+    for category in @category_id
+      activity = Activity.find(category.activity_id)
+      @activities.push activity 
+    end
+  end
   
   def searchActivityResults
     @activityQuery = params[:user][:text]

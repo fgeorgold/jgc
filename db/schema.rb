@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421234634) do
+ActiveRecord::Schema.define(:version => 20090428085038) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(:version => 20090421234634) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "visible",      :default => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string "activity_id"
+    t.string "category_name"
   end
 
   create_table "organizations", :force => true do |t|
@@ -41,8 +47,13 @@ ActiveRecord::Schema.define(:version => 20090421234634) do
   end
 
   create_table "partners", :force => true do |t|
-    t.string "parent_org_id"
+    t.string "organization_id"
     t.string "partner_org_id"
+  end
+
+  create_table "programs", :force => true do |t|
+    t.string "activity_id"
+    t.string "program_name"
   end
 
   create_table "users", :force => true do |t|

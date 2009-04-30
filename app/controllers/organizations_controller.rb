@@ -35,8 +35,17 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.xml
   def show
-
-    @organization = Organization.find(params[:id])
+    @id = params[:id]
+    @organization = Organization.find(@id)
+    
+    @partner_id = Partner.find_by_sql ["SELECT * FROM partners where organization_id = ?",@id];
+    @partnerNames = []
+    for currentPartner in @partner_id
+         partnerID =  currentPartner.partner_org_id 
+         @partnerOrganization = Organization.find(partnerID)
+         @partnerNames.push @partnerOrganization.name
+    end
+     
     respond_to do |format|
        
          format.html # show.html.erb
@@ -48,6 +57,7 @@ class OrganizationsController < ApplicationController
   def showOrg
     idOrg = params[:organization][:id]
     @organization = Organization.find(idOrg)
+    
 
   end
   
@@ -80,9 +90,17 @@ end
   # GET /organizations/new
   # GET /organizations/new.xml
   def new
-    @types_all = [["Car", "car"], ["SUV", "suv"], ["Truck", "truck"]]
-    @organization = Organization.new
+    allorganizations = Organization.find(:all)
+    @organizations = Hash.new
 
+    for organization in allorganizations do
+        if(organization.visible== true)
+          @organizations.merge!({organization.name => organization.id})
+        end
+    end
+
+    @organization = Organization.new
+    1.times { @organization.partners.build }
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @organization }
@@ -91,7 +109,26 @@ end
 
   # GET /organizations/1/edit
   def edit
+    @id = params[:id]
     @organization = Organization.find(params[:id])
+    allorganizations = Organization.find(:all)
+    @organizations = Hash.new
+    
+    
+    @partner_id = Partner.find_by_sql ["SELECT * FROM partners where organization_id = ?",@id];
+    @partnerNames = []
+    for currentPartner in @partner_id
+         partnerID =  currentPartner.partner_org_id 
+         @partnerOrganization = Organization.find(partnerID)
+         @partnerNames.push @partnerOrganization.name
+    end
+    
+    for organization in allorganizations do
+        if(organization.visible== true)
+          @organizations.merge!({organization.name => organization.id})
+        end
+    end
+    
     if(@organization.name != session[:user].affiliateOrg && session[:user].admin == false)
       redirect_to_stored
     end 
@@ -121,16 +158,16 @@ end
   def update
     @organization = Organization.find(params[:id])
 
-    respond_to do |format|
+    
       if @organization.update_attributes(params[:organization])
         flash[:notice] = 'Organization was successfully updated.'
-        format.html { redirect_to(@organization) }
-        format.xml  { head :ok }
+        redirect_to(@organization)
+        
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }
+        render :action => "edit" 
+        render :xml => @organization.errors, :status => :unprocessable_entity
       end
-    end
+   
   end
 
   # DELETE /organizations/1
@@ -145,27 +182,9 @@ end
     end
   end
   
-    # these are just some constants.  Most likely you'll want to find things 
-  # in your database to return.
-  TYPES = {"car" => [["Honda Accord", "1"], ["Scion Tc", "2"], 
-                     ["Ford Focus", "3"], ["BMW M6", "4"]],
-           "suv" => [["Jeep Wrangler", "5"], ["Ford Explorer", "6"], 
-                     ["Toyota Highlander", "7"]],
-           "truck" => [["Ford F150", "8"], ["Dodge Ram", "9"]] }
-  
+ 
 
-  def update_list
-    @vehicles_all = []
-    if params[:types]
-      params[:types].each do |t|
-        @vehicles_all = @vehicles_all.concat(TYPES[t])
-      end
-    end
-    # this part is really important, if you don't tell it not to render the 
-    # layout, the area where your selection box is will have the whole 
-    # controller's layout around it.
-    render :layout => false
-  end
+
   
   def test
 
