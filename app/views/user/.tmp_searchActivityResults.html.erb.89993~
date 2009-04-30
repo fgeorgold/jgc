@@ -3,13 +3,10 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-  	<%= javascript_include_tag :defaults %>
-	<%= stylesheet_link_tag '/stylesheets/popup.css' %>
-	<%= javascript_include_tag '/javascripts/popup.js' %>
     <title>John Gardner Center</title>
 	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
   </head>
@@ -83,7 +80,7 @@
 					</div></td>
 				<td class="centered">					
 					<div>
-					<a class="p7currentmark"  href="search">Search </a>
+					<a href="search">Search </a>
 					</div></td>
 			</tr>
 		</table>
@@ -97,7 +94,7 @@
 				<hr style="color:#CCC"/>
 		  	
 		  
-		  		<%= form_tag :action=> "searchResults" %>
+		  		<%= form_tag :action=> "searchActivityResults" %>
 				<div align="centered">
 				<label for="input_text"></label><br/>
 				
@@ -110,34 +107,15 @@
 				</form>
 			
 			<hr style="color:#CCC"/>
-			Total number of results: <%= @posts.total_hits %></p>
-			<%for post in @posts %>
-			<% if(post.visible)%>
-			<%= post.highlight(@query,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
-
-		<%= render :partial => 'organization_popup', :locals => {:organization => post} %>
-			About us :<%=post.description%><br/>
-			Go To    :<%=post.website%><br/>
-			Contact  :<%=post.email%> <br/><br/>
-			<% end %>
+			Total number of results: <%= @activityPosts.total_hits %></p>
+			<%for activity in @activityPosts %>
+			
+			<%= activity.highlight(@activityQuery,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
+			<%= link_to activity.name, activity %><br/>
+			<%=activity.description%> <br/><br/>
+			
 			<% end%>
 			</div>
-			<hr style="color:#CCC"/>
-			Have something more in mind, try our <a href="advancedSearch"> Advanced Search </a>
+			
 		</div>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
