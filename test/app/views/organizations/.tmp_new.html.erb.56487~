@@ -1,0 +1,157 @@
+  <head>
+    <title>Creating a new organization</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/p7tmcoollines.css" />
+	<%= javascript_include_tag :defaults %>
+	<script type="text/javascript"
+	src="show_list.js"></script>
+
+  </head>
+  
+  <img src="/images/JGC.gif" alt="John Gardner Center Logo" />
+
+<div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					<td class="right">
+						<%  hDisplay = false
+							if(session[:user] && session[:user].admin && session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeAdminUser >Home </a>"
+							end
+							if(session[:user] && session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && session[:user].affiliateOrg)
+								
+								concat "<a href = ../../user/welcomeOrgUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							
+						%>
+						
+						
+					</td>
+					<td class="right">
+					<%
+				  		if (session[:user])
+							cDisplay = "logout"
+				  		else
+				    		cDisplay = "login"
+				  		end
+					%>
+					<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+	
+	<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a class="p7currentmark" href="organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="user/search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+		<%= link_to_remote("Test out RJS!",:url =>{ :action => :test }) %>
+				
+				
+		<div id="loginbox">
+			<div class="copy">
+				<p> Please enter information for the new organization below </p>
+				<hr style="color:#CCC"/>
+		  	</div>
+		  
+		  	<div id ="content">
+				<% form_for(@organization) do |f| %>
+			    <%= f.error_messages %>
+
+  				<p>
+				    <%= f.label :name %><br />
+    				<%= f.text_field :name %>
+  				</p>
+  				<p>
+    				<%= f.label :website %><br />
+    				<%= f.text_field :website %>
+  				</p>
+  				<p>
+    				<%= f.label :description %><br />
+				    <%= f.text_area :description %>
+  				</p>
+  				<p>
+			    	<%= f.label :resources %><br />
+    				<%= f.text_area :resources %>
+  				</p>
+  				<p>
+    				<%= f.label :contact %><br />
+    				<%= f.text_field :contact %>
+  				</p>
+  				<p>
+    				<%= f.label :email %><br />
+    				<%= f.text_field :email %>
+  				</p>
+			    	
+				
+  				<p>
+  				
+
+  				<%= link_to_remote( "Add Partner Organization",
+                   :update => "partner_div",
+                   :url => { :action => :add_partner } ) %>
+ 				<br />
+
+				<label for="partners_id">Partners:</label>	
+				<%= f.text_field :partners %>
+				</p>
+				<div id="partner_div">
+					<p>
+						Test
+					</p>
+ 				</div>
+
+				   
+				<br />
+				</p>
+  				<p>
+    				<%= f.submit "Create" %>
+  				</p>
+				
+				<%end %>
+			</div>
+			<%= link_to 'Back', :back %>		  
+		</div>

@@ -24,6 +24,8 @@ a:link, a:visited {
    font-size: 90%;
    }
 
+
+
 #content a[href^="/"]:after {
   content: " (http://controller.stanford.edu" attr(href) ") ";
    }

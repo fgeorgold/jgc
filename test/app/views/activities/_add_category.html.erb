@@ -1,0 +1,10 @@
+<div class ="category">
+<% for category in @activity.categories %>
+	<% fields_for "activity[category_attributes][]", category do |category_form| %>
+	<%= select_tag 'activity[category_attributes][][category_name]', options_for_select([ "Icebreakers", "Brain Teasers", "General","Homeworks","Computer Related" ], "Icebreakers") %>
+	<%= link_to_function "Remove", "$(this).up('.category').remove()"%>
+	<br/>
+	<br/>
+	<% end %>
+ <% end %>
+</div>

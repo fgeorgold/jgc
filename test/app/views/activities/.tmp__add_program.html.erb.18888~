@@ -1,0 +1,11 @@
+<div class="program">
+<% for program in @activity.programs %>
+	<%fields_for "activity[program_attributes][]", program do |program_form|%>
+	
+	<%= program_form.text_field :program_name %>	
+	<%= link_to_function "Remove", "$(this).up('.program').remove()"%>
+	<br/>
+	<br/>
+	<% end %>
+<% end %>
+</div>

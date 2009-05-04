@@ -1,3 +1,6 @@
+
+require 'fastercsv'
+
 class UserController < ApplicationController
 
   before_filter :login_required, :only=>['welcome','change_password']
@@ -124,6 +127,20 @@ end
       end
     end
   end
+  
+  
+  def activitiesAdmin
+     if request.post?
+      if session[:user] = User.authenticate(params[:user][:login], params[:user][:password])
+        if session[:user].activitesadmin
+          flash[:message]  = "Login successful"
+          redirect_to :action => 'welcomeActivitiesAdmin'
+        else
+          flash[:warning] = "Login unsuccessful"
+        end
+      end
+    end
+  end
 
   def logout
     session[:user] = nil
@@ -160,6 +177,16 @@ end
   
   end
 
+  def welcomeActivitiesAdmin
+   @userC =  session[:user]
+   allActivities = Activity.find(:all)
+   @activities = []
+   for activity in allActivities do
+       if(activity.visible == false)
+          @activities.push activity
+       end
+    end
+  end
 
   def welcomeAdminUser
     @userC = session[:user]
@@ -171,7 +198,7 @@ end
         end
     end
       
-    end
+  end
   
 
   def welcomeUser
@@ -193,19 +220,37 @@ end
   end
   
   def approveOrg
-  idOrg = params[:id]
-  @organization = Organization.find(idOrg)
-  @organization.update_attribute(:visible,true)
-  redirect_to_stored
+    idOrg = params[:id]
+    @organization = Organization.find(idOrg)
+    @organization.update_attribute(:visible,true)
+    redirect_to_stored
   end
   
-  def hidden
+  def approveActivity
+    activityID = params[:id]
+    @activity = Activity.find(activityID)
+    @activity.update_attribute(:visible,true)
+    redirect_to_stored
+  end
+
   
+def export_to_csv
+  @organizations = Organization.find(:all)
+  csv_string = FasterCSV.generate do |csv|
+    # header row
+    csv << ["Name", "WebSite", "Description"]
+
+    # data rows
+    @organizations.each do |organization|
+      csv << [organization.name, organization.website, organization.description]
+    end
+  end
+
+  # send it to the browsah
+  send_data csv_string,
+            :type => 'text/csv; charset=iso-8859-1; header=present',
+            :disposition => "attachment; filename=organizations.csv"
 end
-
-  def test
-
-  end
 
 
 end

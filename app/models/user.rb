@@ -1,6 +1,8 @@
 
 require 'digest/sha1'
 
+require 'fastercsv'
+
 class User < ActiveRecord::Base
   
  

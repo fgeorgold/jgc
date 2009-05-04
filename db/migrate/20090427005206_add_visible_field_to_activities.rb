@@ -4,5 +4,6 @@ class AddVisibleFieldToActivities < ActiveRecord::Migration
   end
 
   def self.down
+    
   end
 end
