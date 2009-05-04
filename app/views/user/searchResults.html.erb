@@ -116,12 +116,11 @@
 			<%for post in @posts %>
 			<% if(post.visible)%>
 			<%= post.highlight(@query,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<%= link_to post.name, post %><br/>
-			<br/>
-			<%=post.website%>
-			<br/>
-			<%=post.email%>
-			<%=post.description%> <br/><br/>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
+		      About us :<%=post.description%><br/>
+		      Go To    :<%=post.website%><br/>
+			  Contact  :<%=post.email%> <br/><br/>
 			<% end %>
 			<% end%>
 			</div>

@@ -114,8 +114,13 @@
 			<%for activity in @activityPosts %>
 			
 			<%= activity.highlight(@activityQuery,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<%= link_to activity.name, activity %><br/>
-			<%=activity.description%> <br/><br/>
+	        <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+
+      		<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+
+	    	  About : <%=activity.description%><br/>
+
+    	  	  Category : <%=activity.category%><br/><br/>
 			
 			<% end%>
 			</div>
