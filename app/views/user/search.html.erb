@@ -6,10 +6,11 @@
     <title>John Gardner Center</title>
 	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
   </head>
+  <a target="_blank" id="feedback-tab" href="userComment"></a>
     <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
   <div id ="content">
 		<div align="right">
@@ -93,7 +94,7 @@
 				<p> Please enter the text you want to search </p>
 				<hr style="color:#CCC"/>
 		  	
-		  		<%= form_tag ({:action=> "searchResults"}, :method => "get")%>
+		  		<%= form_tag({:action=> "searchResults"}, :method => "get")%>
 		  		
 				<div align="centered">
 				<label for="input_text"></label><br/>

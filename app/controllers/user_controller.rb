@@ -39,12 +39,18 @@ end
   
   def showActivitiesByCategory
     @category = params[:category]
+    @statistic = Statistics.new()
     @type = params[:type]
     @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
-   
+    @cost_count = [] # Array to keep track of the cost of the activities
+    @age_group_count = [] #Array to keep track of the age group of the activities
+    @duration_count = []
     @activities = []
     for category in @category_id
       activity = Activity.find(category.activity_id)
+      @statistic.costs[activity.cost] =+1
+      @statistic.age_group[activity.age_group] =+1
+      @statistic.duration[activity.duration] =+1
       @activities.push activity 
     end
   end
@@ -250,6 +256,18 @@ def export_to_csv
   send_data csv_string,
             :type => 'text/csv; charset=iso-8859-1; header=present',
             :disposition => "attachment; filename=organizations.csv"
+end
+
+def userComment
+  @comment = Comment.new(params[:user])
+  if @comment.save
+    redirect_to "../index.html"
+  else
+    flash[:notice] = 'Unable to process comment'
+    
+  end
+  
+  
 end
 
 
