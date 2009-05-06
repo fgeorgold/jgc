@@ -146,6 +146,8 @@ end
         flash[:notice] = 'Organization was successfully created.'
         format.html { redirect_to(@organization) }
         format.xml  { render :xml => @organization, :status => :created, :location => @organization }
+        @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
+        Notifications.deliver_send_notice(@u[0].email,@organization.name,@userC.login)
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }

@@ -1605,6 +1605,185 @@ LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/
 query: contact:american description:american resources:american name:american updated_at:american asp:american partners:american created_at:american email:american visible:american website:american
 stored_fields: 
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
+<<<<<<< HEAD:log/ferret_index.log
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: description:american name:american contact:american partners:american email:american resources:american asp:american updated_at:american visible:american created_at:american website:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:american description:american website:american name:american email:american resources:american asp:american contact:american updated_at:american visible:american created_at:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:american description:american website:american name:american email:american resources:american asp:american contact:american updated_at:american visible:american created_at:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:american description:american website:american name:american email:american resources:american asp:american contact:american updated_at:american visible:american created_at:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:hello description:hello website:hello name:hello email:hello resources:hello asp:hello contact:hello updated_at:hello visible:hello created_at:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:stanford description:stanford website:stanford name:stanford email:stanford resources:stanford asp:stanford contact:stanford updated_at:stanford visible:stanford created_at:stanford
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:hello description:hello website:hello name:hello email:hello resources:hello asp:hello contact:hello updated_at:hello visible:hello created_at:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:hello description:hello website:hello name:hello email:hello resources:hello asp:hello contact:hello updated_at:hello visible:hello created_at:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:yell programs:yell age_group:yell duration:yell description:yell name:yell category:yell resources:yell comments:yell updated_at:yell visible:yell cost:yell created_at:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:yell description:yell website:yell name:yell email:yell resources:yell asp:yell contact:yell updated_at:yell visible:yell created_at:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: partners:yell description:yell website:yell name:yell email:yell resources:yell asp:yell contact:yell updated_at:yell visible:yell created_at:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:hello programs:hello age_group:hello duration:hello description:hello name:hello category:hello resources:hello comments:hello updated_at:hello visible:hello cost:hello created_at:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:hello programs:hello age_group:hello duration:hello description:hello name:hello category:hello resources:hello comments:hello updated_at:hello visible:hello cost:hello created_at:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:american partners:american updated_at:american description:american created_at:american website:american name:american visible:american email:american asp:american contact:american
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:hello updated_at:hello description:hello contact:hello created_at:hello name:hello visible:hello partners:hello asp:hello email:hello website:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:yell resources:yell cost:yell updated_at:yell programs:yell description:yell age_group:yell created_at:yell duration:yell name:yell visible:yell category:yell comments:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:yell resources:yell cost:yell updated_at:yell programs:yell description:yell age_group:yell created_at:yell duration:yell name:yell visible:yell category:yell comments:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:hello resources:hello cost:hello updated_at:hello programs:hello description:hello age_group:hello created_at:hello duration:hello name:hello visible:hello category:hello comments:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:heloo updated_at:heloo description:heloo contact:heloo created_at:heloo name:heloo visible:heloo partners:heloo asp:heloo email:heloo website:heloo
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:hello updated_at:hello description:hello contact:hello created_at:hello name:hello visible:hello partners:hello asp:hello email:hello website:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+=======
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
@@ -1622,6 +1801,7 @@ LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+<<<<<<< HEAD:log/ferret_index.log
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
@@ -1875,3 +2055,6 @@ LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+=======
+>>>>>>> 6e7064adc5af0b0cf74cb9323a1f6309e625c6a7:log/ferret_index.log
+>>>>>>> fc09d0755ac69b70e13cd7ba8cc6bf66cce7c7c8:log/ferret_index.log

@@ -116,7 +116,8 @@ end
         if(@userC && !@userC.admin && !@userC.affiliateOrg)
           redirect_to :action=> 'welcomeUser'
         end
-                   
+         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
+        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)          
       else
         flash[:warning] = "Signup unsuccessful"
       end
