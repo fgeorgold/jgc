@@ -1,0 +1,39 @@
+<p>
+  <%= @organization.id %>
+  <b>Name:</b>
+  <%=h @organization.name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @organization.website %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @organization.description %>
+</p>
+
+<p>
+  <b>Resources:</b>
+  <%=h @organization.resources %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @organization.contact %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @organization.email %>
+</p>
+
+<p>
+  <b>Partners:</b>
+  <%=h @organization.partners %>
+</p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

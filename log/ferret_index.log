@@ -1605,6 +1605,7 @@ LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/
 query: contact:american description:american resources:american name:american updated_at:american asp:american partners:american created_at:american email:american visible:american website:american
 stored_fields: 
 LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
+<<<<<<< HEAD:log/ferret_index.log
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
@@ -1782,3 +1783,22 @@ LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/devel
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+=======
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+query: cost:general description:general age_group:general instructions:general programs:general resources:general duration:general name:general updated_at:general created_at:general visible:general comments:general category:general
+stored_fields: 
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/organization
+query: partners:american asp:american description:american resources:american website:american name:american updated_at:american contact:american created_at:american email:american visible:american
+stored_fields: 
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+LocalIndex: ensure_index_exists at C:/Documents and Settings/Nipun/My Documents/Aptana Studio/Demo/index/development/activity
+>>>>>>> 6e7064adc5af0b0cf74cb9323a1f6309e625c6a7:log/ferret_index.log

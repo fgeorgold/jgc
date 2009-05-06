@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Welcome - JGC</title>
+		 
+		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    	<link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+    </head>
+	<img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+
+	
+	<p>
+		
+	</p>
+
+	<body>
+		<div id ="content">
+			<div align="right">
+				<%
+				  if (session[:user])
+					cDisplay = "logout"
+				  else
+				    cDisplay = "login"
+				  end
+				%>
+				
+				<a class="p7currentmark" href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				
+			</div>
+		</div>
+			<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a href="../organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="people.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="search.html">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+
+		<p>
+     
+	 <div id="content">
+	 <hr style="color:#CCC"/>
+	 <% tempUser = @userC %>
+	 Welcome! <%= tempUser.login %>
+	 <br/>
+	 You are a part of the network of the  organization : <%= tempUser.affiliateOrg%>
+	 
+	 <br/>
+
+	 <br/>
+	 <br/>
+	 Click on the organization to edits it contents
+	</p>
+	
+	</div>
+	</body>
+</html>
