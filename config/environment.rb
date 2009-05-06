@@ -12,6 +12,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 require 'acts_as_ferret'
 
+require 'fastercsv'
+
 
 
 Rails::Initializer.run do |config|

@@ -96,7 +96,7 @@
 			<hr style="color:#CCC"/>
 				<div id = "content">
 
-			<%= form_tag ({ :action=> "showActivitiesByCategory" }, :class => "browse_by_categories", :id => "browse_by_categories" ) %>
+			<%= form_tag({ :action=> "showActivitiesByCategory" }, :class => "browse_by_categories", :id => "browse_by_categories", :method => "get" ) %>
 			<%= select_tag(:category,"<option>-Select a category</option>" + options_for_select([ "Icebreakers", "Brain Teasers", "General","Homeworks","Computer Related" ])) %>
 			<%= hidden_field_tag 'type', 'category'%>
 			<%= submit_tag "Show" %>

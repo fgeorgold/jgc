@@ -1,0 +1,94 @@
+  <head>
+    <title>John Gardner Center</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+  </head>
+
+  <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+  
+  <div id ="content">
+			<div align="right">
+				<%
+				  if (session[:user])
+					cDisplay = "logout"
+				  else
+				    cDisplay = "login"
+				  end
+				%>
+				
+				<a class="p7currentmark" href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				
+			</div>
+		</div>
+			<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a href="../organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="people.html">People </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="search.html">Search </a>
+					</div></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+		<br>
+		<div id="loginbox">
+			<div class="copy">
+			<p>Signup for JGC</p>
+			
+			<hr style="color:#CCC"/>
+			</div>
+			<div id ="content">
+				<%= form_tag :action=> "signup" %>
+				<%= error_messages_for 'user' %><br/>
+				<label for="user_login">Username</label><br/>
+				<%= text_field "user", "login", :size => 20 %><br/>
+				
+				<label for="user_password">Password</label><br/>
+				<%= password_field "user", "password", :size => 20 %><br/>
+
+				<label for="user_password_confirmation">Password Confirmation</label><br/>
+				<%= password_field "user", "password_confirmation", :size => 20 %><br/>
+
+				<label for="user_email">Email</label><br/>
+				<%= text_field "user", "email",  :size => 20 %><br/>
+
+
+
+				<%= submit_tag "Signup" %>
+
+				</form>
+			</div>
+			<br>
+			<br>
+
+				
+			</div>
+		

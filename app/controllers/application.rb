@@ -42,6 +42,9 @@ class ApplicationController < ActionController::Base
       session[:return_to]=nil
       redirect_to(return_to)
     else
+      if(session[:user] && session[:user].activitesadmin)
+        redirect_to :controller=>'user', :action=> 'welcomeActivitiesAdmin'
+      end
       if(session[:user] && session[:user].admin && session[:user].affiliateOrg)
          redirect_to :controller=>'user', :action=> 'welcomeAdminUser'
       end
@@ -51,7 +54,7 @@ class ApplicationController < ActionController::Base
       if(session[:user] && !session[:user].admin && session[:user].affiliateOrg)
          redirect_to :controller=>'user', :action=> 'welcomeOrgUser'
       end
-      if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg)
+      if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg && !session[:user].activitesadmin)
          redirect_to :controller=>'user', :action=> 'welcomeUser'
       end
       

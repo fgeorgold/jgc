@@ -3,13 +3,18 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+
+  	<%= javascript_include_tag :defaults %>
+	<%= stylesheet_link_tag '../stylesheets/popup.css' %>
+	<%= javascript_include_tag '/javascripts/popup.js' %>
     <title>John Gardner Center</title>
 	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
   </head>
+  <a target="_blank" id="feedback-tab" href="userComment"></a>
     <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
   <div id ="content">
 		<div align="right">
@@ -107,14 +112,21 @@
 				</form>
 			
 			<hr style="color:#CCC"/>
-			Total number of results: <%= @activityPosts.total_hits %></p>
-			<%for activity in @activityPosts %>
-			
-			<%= activity.highlight(@activityQuery,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<%= link_to activity.name, activity %><br/>
-			<%=activity.description%> <br/><br/>
-			
-			<% end%>
+			<table>
+			<tr>
+
+				<td class="left">
+				Total number of results: <%= @activityPosts.total_hits %></p>
+				<%for activity in @activityPosts %>
+					<%= activity.highlight(@activityQuery,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
+	        		<p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+					<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+				  	About : <%=activity.description%><br/>
+				  	Category : <%=activity.category%><br/><br/>
+				<% end%>
+				</td>
+			</tr>
+			</table>
 			</div>
 			
 		</div>	

@@ -1,0 +1,14 @@
+
+<% for @partnerName in @partnerNames %>
+	<div class ="partner">
+	<% form_for (@partnerName) do |partner_form| %>
+	
+	<%= h @partnerName %>
+    <%= link_to_function "Remove", "mark_for_destroy(this)" %>
+	<%= partner_form.hidden_field :should_destroy, :index => nil, :class => 'should_destroy' %>
+	
+	<% end %>
+	</div>
+ <% end %>
+
+

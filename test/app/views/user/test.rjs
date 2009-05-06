@@ -1,0 +1,3 @@
+ page.alert('This message is from Rails!')
+
+page[:user_login].value = "this is a test"

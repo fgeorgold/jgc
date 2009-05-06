@@ -6,17 +6,12 @@
 		 
 		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
     	<link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    	<link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    	<link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
     	<link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
     </head>
 	<img src="../images/JGC.gif" alt="John Gardner Center Logo" />
-
-	
-	<p>
-		
-	</p>
-
+	<a target="_blank" id="feedback-tab" href="userComment"></a>
 	<body>
 		<div id ="content">
 			<div align="right">
@@ -67,7 +62,7 @@
 					</div></td>
 				<td class="centered">					
 					<div>
-					<a href="../people.html">Program Director </a>
+					<a href="../programdirectors.html">Program Director </a>
 					</div></td>
 				<td class="centered">					
 					<div>
@@ -90,10 +85,15 @@
 	 <br/>
 	 You are currently registered as an admin.
 	 <br />
+	 To export information about the organizations to the csv file click the button below	 
+	<% form_tag({ :action =>  :export_to_csv })do -%>
+       <%= submit_tag "Export To CSV" -%>
+    <% end -%>
 	 <br />
 	 The organizations listed below haven't been approved. Please click on the organization 
 	 to view its content. If you are satisfied with the content, click on approve to make
 	 the content available publicly.	
+
 	 <br/>
 	 <br/>
 	 There are <%= @organizations.size%> organizations waiting your approval

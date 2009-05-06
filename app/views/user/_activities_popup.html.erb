@@ -1,0 +1,34 @@
+<div id="activities_popup_<%= activities.id %>" class="popup popup_draghandle" style="display:none">
+  <p>
+    <b>Name:</b>
+    <%=h activities.name %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%=h activities.description %>
+  </p>
+   <p>
+    <b>Resources:</b>
+    <%=h activities.resources %>
+  </p>
+  <p>
+    <b>Cost:</b>
+    <%=h activities.cost %>
+  </p>
+  <p>
+    <b>Duration:</b>
+    <%=h activities.duration %>
+  </p>
+  
+ 
+  <p>
+    <b>Age Group:</b>
+    <%=h activities.age_group %>
+  </p>
+  <p>
+    <b>Category:</b>
+    <%=h activities.category %>
+  </p>
+</div>
+<%= javascript_tag "new Popup('activities_popup_#{activities.id}','activities_link_#{activities.id}')" %>
+

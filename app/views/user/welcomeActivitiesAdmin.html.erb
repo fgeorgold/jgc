@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Welcome - JGC</title>
+		 
+		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    	<link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+    </head>
+	<a target="_blank" id="feedback-tab" href="userComment"></a>
+	<img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+
+	<body>
+			<div id ="content">
+			<div align="right">
+			<table border="1">
+			
+			<tr>
+				<td class="right">
+					<a class="p7currentmark" href="welcomeAdminUser" >Home </a>
+				</td>
+				<td class="right">
+				<%
+				  if (session[:user])
+					cDisplay = "logout"
+				  else
+				    cDisplay = "login"
+				  end
+				%>
+				
+				<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+			</div>
+		</div>
+			<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a href="../organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="../programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+
+		<p>
+     
+	 <div id="content">
+	 <hr style="color:#CCC"/>
+	 <% tempUser = @userC %>
+	 Welcome! <%= tempUser.login %>
+	 
+	 <br/>
+	 <br/>
+	 You are currently registered as an activities admin.
+	 <br />
+	 <br />
+	 The activities listed below haven't been approved. Please click on the activity 
+	 to view its content. If you are satisfied with the content, click on approve to make
+	 the activity available publicly.	
+	 <br/>
+	 <br/>
+	 There are <%= @activities.size%> activities waiting your approval
+	 <table border="1">
+	 <% for activity in @activities %>
+	 <tr>
+	 	<td><b><%= link_to activity.name, activity %></b> <%= button_to 'Approve' , :action => :approveActivity, :id => activity.id %></td>
+	 </tr>
+	 <% end %>
+	 </table>
+	 <br />
+	 <br />
+
+
+	</p>
+	
+	</div>
+	</body>
+</html>	
+

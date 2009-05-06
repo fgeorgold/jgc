@@ -1,0 +1,31 @@
+<div id="organization_popup_<%= organization.id %>" class="popup popup_draghandle" style="display:none">
+  <p>
+    <b>Name:</b>
+    <%=h organization.name %>
+  </p>
+  <p>
+    <b>Website:</b>
+    <%=h organization.website %>
+  </p>
+  <p>
+    <b>After School Programs:</b>
+    <%=h organization.asp %>
+  </p>
+  <p>
+    <b>About us:</b>
+    <%=h organization.description %>
+  </p>
+  <p>
+    <b>Resources:</b>
+    <%=h organization.resources %>
+  </p>
+  <p>
+    <b>Contact Info.:</b>
+    <%=h organization.contact %>
+  </p>
+  <p>
+    <b>Partners:</b>
+    <%=h organization.partners %>
+  </p>
+</div>
+<%= javascript_tag "new Popup('organization_popup_#{organization.id}','organization_link_#{organization.id}')" %>

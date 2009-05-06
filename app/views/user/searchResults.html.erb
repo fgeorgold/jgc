@@ -3,13 +3,18 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+
+  	<%= javascript_include_tag :defaults %>
+	<%= stylesheet_link_tag '../stylesheets/popup.css' %>
+	<%= javascript_include_tag '/javascripts/popup.js' %>
     <title>John Gardner Center</title>
 	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
   </head>
+  <a target="_blank" id="feedback-tab" href="userComment"></a>
     <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
   <div id ="content">
 		<div align="right">
@@ -111,12 +116,11 @@
 			<%for post in @posts %>
 			<% if(post.visible)%>
 			<%= post.highlight(@query,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<%= link_to post.name, post %><br/>
-			<br/>
-			<%=post.website%>
-			<br/>
-			<%=post.email%>
-			<%=post.description%> <br/><br/>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
+		      About us :<%=post.description%><br/>
+		      Go To    :<%=post.website%><br/>
+			  Contact  :<%=post.email%> <br/><br/>
 			<% end %>
 			<% end%>
 			</div>

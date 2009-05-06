@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
 
   </head>
+	<a target="_blank" id="feedback-tab" href="userComment"></a>
     <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
   <div id ="content">
 		<div align="right">
@@ -93,7 +94,7 @@
 				<p> Please enter the text you want to search </p>
 				<hr style="color:#CCC"/>
 		  	
-		  		<%= form_tag ({:action=> "searchActivityResults"}, :method => "get")%>
+		  		<%= form_tag({:action=> "searchActivityResults"}, :method => "get")%>
 		  		
 				<div align="centered">
 				<label for="input_text"></label><br/>

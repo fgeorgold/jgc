@@ -1,0 +1,5 @@
+<div id ="age_group">
+<%= select_tag 'activity[age_group]', options_for_select([ "0-8", "8-10", "10-12","12-14","14-16" ], "0-8")%>
+</div>
+<br/>
+
