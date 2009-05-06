@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(:version => 20090504213831) do
     t.string "partner_org_id"
   end
 
+  create_table "pd_users", :force => true do |t|
+    t.string "screen_name"
+    t.string "email"
+    t.string "password"
+  end
+
   create_table "programs", :force => true do |t|
     t.string "activity_id"
     t.string "program_name"
