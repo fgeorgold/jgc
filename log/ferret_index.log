@@ -1741,3 +1741,44 @@ LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/devel
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
 LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:hello updated_at:hello description:hello contact:hello created_at:hello name:hello visible:hello partners:hello asp:hello email:hello website:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:yell resources:yell cost:yell updated_at:yell programs:yell description:yell age_group:yell created_at:yell duration:yell name:yell visible:yell category:yell comments:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:yell resources:yell cost:yell updated_at:yell programs:yell description:yell age_group:yell created_at:yell duration:yell name:yell visible:yell category:yell comments:yell
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+query: instructions:hello resources:hello cost:hello updated_at:hello programs:hello description:hello age_group:hello created_at:hello duration:hello name:hello visible:hello category:hello comments:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/activity
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:heloo updated_at:heloo description:heloo contact:heloo created_at:heloo name:heloo visible:heloo partners:heloo asp:heloo email:heloo website:heloo
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+query: resources:hello updated_at:hello description:hello contact:hello created_at:hello name:hello visible:hello partners:hello asp:hello email:hello website:hello
+stored_fields: 
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
+LocalIndex: ensure_index_exists at /Users/leo/workspace/checkout/jgc/index/development/organization
