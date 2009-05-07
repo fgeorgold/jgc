@@ -66,7 +66,7 @@
 				
 				<td class="centered">
 					<div>
-					<a class="p7currentmark" href="../organizations">Organizations </a>
+					<a href="../organizations">Organizations </a>
 					</div>
 				</td>
 				<td class="centered">					
@@ -80,7 +80,7 @@
 					</div></td>
 				<td class="centered">					
 					<div>
-					<a href="../programdirectors.html">Program Director </a>
+					<a class="p7currentmark" href="../programdirectors.html">Program Director </a>
 					</div></td>
 				<td class="centered">					
 					<div>
@@ -99,16 +99,50 @@
   		<%= @program %>
 		<hr style="color:#CCC"/>
 	</div>
-	<div id ="content">
-		<div class ="copy">
-		Total number of results: <%= @activities.size() %></p>
-			<%for activity in @activities %>
-			<%= link_to activity.name, activity %><br/>
-			<%=activity.description%> <br/><br/>
-			
-			<% end%>
-	</div>
-</div>	
+	
+		
+		<table>
+			<tr>
+				<td class="left">
+					<h3> Cost </h3>
+					<% @statistic.costs.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "CostFilterOnProgram", :cost => "#{key}", :program => "#{@program}" %>
+					
+					<br/>
+					<% end %>
+					<h3> Duration </h3>
+					
+					<% @statistic.duration.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "DurationFilterOnProgram", :duration => "#{key}", :program => "#{@program}" %>
+
+				
+					<br/>
+					<% end %>
+					<h3> Age Group </h3>
+					<% @statistic.age_group.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "AgeFilterOnProgram", :age => "#{key}", :program => "#{@program}" %>
+					
+					<br/>
+					<% end %>
+					
+				</td>
+			<div id ="content">
+				<div class ="copy">
+				<td class="left">
+					Total number of results: <%= @activities.size() %></p>
+					<br/>
+				    <br/>
+					<%for activity in @activities %>
+					<%= link_to activity.name, activity %><br/>
+					<%=activity.description%> <br/><br/>
+					<% end%>
+				</td>
+			</tr>
+			</div>
+		</div>
+	</table>
+	
+	
 
 <%= link_to 'Back', :back %>
 

@@ -28,11 +28,15 @@ end
 
  def showActivitiesByPrograms
     @program = params[:program]
+    @statistic = Statistics.new()
     @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
    
     @activities = []
     for program in @program_id
       activity = Activity.find(program.activity_id)
+      @statistic.costs[activity.cost] =+1
+      @statistic.age_group[activity.age_group] =+1
+      @statistic.duration[activity.duration] =+1
       @activities.push activity 
     end
   end
@@ -42,9 +46,6 @@ end
     @statistic = Statistics.new()
     @type = params[:type]
     @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
-    @cost_count = [] # Array to keep track of the cost of the activities
-    @age_group_count = [] #Array to keep track of the age group of the activities
-    @duration_count = []
     @activities = []
     for category in @category_id
       activity = Activity.find(category.activity_id)
@@ -55,6 +56,100 @@ end
     end
   end
   
+  def DurationFilterOnCategory
+    @duration = params[:duration]
+    @category = params[:category]
+    @activities = []
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
+    for category in @category_id
+      activity = Activity.find(category.activity_id)
+      if(activity.duration == @duration)
+        @activities.push activity 
+      end
+    end  
+  end
+  
+    def CostFilterOnCategory
+    @cost = params[:cost]
+    @category = params[:category]
+    @activities = []
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
+    for category in @category_id
+      activity = Activity.find(category.activity_id)
+      if(activity.cost == @cost)
+        @activities.push activity 
+      end
+    end 
+    
+  end
+  
+    def AgeFilterOnCategory
+    @age = params[:age]
+    @category = params[:category]
+    @activities = []
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where category_name = ?",@category]
+    for category in @category_id
+      activity = Activity.find(category.activity_id)
+      if(activity.age_group == @age)
+        @activities.push activity 
+      end
+    end 
+    
+  end
+  
+  def DurationFilterOnProgram
+    @program = params[:program]
+    @duration = params[:duration]
+    @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
+    @activities = []
+    for program in @program_id
+      activity = Activity.find(program.activity_id)
+      if(activity.duration == @duration)
+        @activities.push activity 
+      end
+    end
+    
+  end
+
+  def CostFilterOnProgram
+    @program = params[:program]
+    @cost = params[:cost]
+    @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
+    @activities = []
+    for program in @program_id
+      activity = Activity.find(program.activity_id)
+      if(activity.cost == @cost)
+        @activities.push activity 
+      end
+    end
+  end
+
+  def AgeFilterOnProgram
+    @program = params[:program]
+    @age = params[:age]
+   
+    @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
+    @activities = []
+    for program in @program_id
+      activity = Activity.find(program.activity_id)
+      if(activity.age_group == @age)
+        @activities.push activity 
+      end
+    end
+    
+  end
+    
+  def DurationFilterOnAge
+    
+  end
+  
+  def CostFilterOnAge
+    
+  end
+  
+
+  
+  def 
   def searchActivityResults
     @activityQuery = params[:user][:text]
     @activityPosts = Activity.find_by_contents(@activityQuery)
@@ -116,8 +211,8 @@ end
         if(@userC && !@userC.admin && !@userC.affiliateOrg)
           redirect_to :action=> 'welcomeUser'
         end
-         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
-        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)          
+        @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
+        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)             
       else
         flash[:warning] = "Signup unsuccessful"
       end
@@ -267,9 +362,9 @@ def userComment
     flash[:notice] = 'Unable to process comment'
     
   end
-  
-  
 end
+
+
 
 
 end

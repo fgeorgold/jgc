@@ -95,7 +95,7 @@
 				are looking for. </p>
 			<hr style="color:#CCC"/>
 				<div id = "content">
-				<%= form_tag ({ :action=> "showActivitiesByPrograms" }, :class => "browse_by_activities", :id => "browse_by_activities" ) %>
+				<%= form_tag({:action=> "showActivitiesByPrograms" }, :class => "browse_by_activities", :id => "browse_by_activities" , :method => "get") %>
 				<%= select_tag(:program,"<option>-Select a program</option>" + options_for_select(@programs)) %>
 				<%= hidden_field_tag 'type', 'programs'%>
 				<%= submit_tag "Show" %>
