@@ -3,20 +3,14 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-   <%= javascript_include_tag :defaults %>
-
-  <%= stylesheet_link_tag '../stylesheets/popup.css' %>
-
- <%= javascript_include_tag '/javascripts/popup.js' %>
     <title>John Gardner Center</title>
-	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/p7tmcoollines.css" />
 
   </head>
-  <a target="_blank" id="feedback-tab" href="userComment"></a>
-    <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+    <img src="../../images/JGC.gif" alt="John Gardner Center Logo" />
   <div id ="content">
 		<div align="right">
 			<table border="1">
@@ -96,50 +90,24 @@
 		
 		<div id="loginbox">
 			<div class="copy">
-				<p> Please enter the text you want to search </p>
 				<hr style="color:#CCC"/>
-		  	
-		  
-		  		<%= form_tag :action=> "searchResults" %>
-				<div align="centered">
-				<label for="input_text"></label><br/>
-				
-					
-				<%= text_field "user", "text", :size => 40 %><br/>
+				<br/>
+				Total number of results: <%= @activities.size() %></p>
+				<br/>
+				<br/>
+				<div id ="content">
+		
+					<div class ="copy">
+						<%for activity in @activities %>
+							<%= link_to activity.name, activity %><br/>
+							<%=  activity.description %> 
+							<%= activity.duration %>
+						<% end %>
 				</div>
-				<div align="centered">
-				<%= submit_tag "Search" %>
-				</div>
-				</form>
-			
-			<hr style="color:#CCC"/>
-			Total number of results: <%= @posts.total_hits %></p>
-			<%for post in @posts %>
-			<% if(post.visible)%>
-			<%= post.highlight(@query,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
-			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
-		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
-		      About us :<%=post.description%><br/>
-		      Go To    :<%=post.website%><br/>
-			  Contact  :<%=post.email%> <br/><br/>
-			<% end %>
-			<% end%>
 			</div>
-			<hr style="color:#CCC"/>
-			Have something more in mind, try our <a href="advancedSearch"> Advanced Search </a>
-		</div>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		</div>
+		<br/>
+		<br/>
+		<a href="searchActivities"> Try free text based Search of Activities</a> | 
+		<a href="../activities"> Back to search by categories,programs and Age Group</a>
+		</div>
