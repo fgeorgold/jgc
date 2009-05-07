@@ -1,2 +1,0 @@
-
-<li><b><%= link_to temporganization.name, temporganization %></b></li>

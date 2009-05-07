@@ -147,12 +147,13 @@ end
     
   end
   
-
   
-  def 
   def searchActivityResults
     @activityQuery = params[:user][:text]
     @activityPosts = Activity.find_by_contents(@activityQuery)
+    if(!@activityPosts)
+      render :layout => "searchActivities"
+      end
   end
   
   def advancedSearchResults
