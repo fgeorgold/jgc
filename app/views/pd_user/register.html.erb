@@ -1,18 +1,19 @@
-<%= stylesheet_link_tag "pd_user" %>	
+<%= stylesheet_link_tag "pd_user" %>
 
 <h2>Register</h2>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
 <% form_for :pd_user do |form| %>
   <fieldset>
-    <legend>Enter Your Details</legend>
-	
-	<!-- Catch the errors and put the error messages on the screen. -->
-    <%= error_messages_for "user" %>
+    <legend>Enter Your Details</legend>	
 		
 	<div class="form_row">
-      <label for="screen_name">Screen name:</label>
-      <%= form.text_field :screen_name,
-                          :size => PDUser::SCREEN_NAME_SIZE,
-                          :maxlength => PDUser::SCREEN_NAME_MAX_LENGTH %>
+      <label for="screen_name">Login name:</label>
+      <%= form.text_field :login_name,
+                          :size => PDUser::LOGIN_NAME_SIZE,
+                          :maxlength => PDUser::LOGIN_NAME_MAX_LENGTH %>
     </div>
 	
 	<div class="form_row">
@@ -21,13 +22,21 @@
                           :size => PDUser::EMAIL_SIZE,
                           :maxlength => PDUser::EMAIL_MAX_LENGTH %>
 	</div>
-	
+
 	<div class="form_row">
-      <label for="password">Password:</label>
+      <label for="password">Choose a password:</label>
       <%= form.password_field :password,
                               :size => PDUser::PASSWORD_SIZE,
                               :maxlength => PDUser::PASSWORD_MAX_LENGTH %>
     </div>
+	
+	<div class="form_row">
+      <label for="confirmation_password">Re-enter password:</label>
+      <%= form.password_field :password_confirmation,
+                              :size => PDUser::PASSWORD_SIZE,
+                              :maxlength => PDUser::PASSWORD_MAX_LENGTH %>
+    </div>
+	
 	
 	<div class="form_row">
       <%= submit_tag "Register", :class => "submit" %>
@@ -35,3 +44,5 @@
 	
   </fieldset>
 <% end %>
+
+<br/>

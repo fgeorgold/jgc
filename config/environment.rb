@@ -15,7 +15,6 @@ require 'acts_as_ferret'
 require 'fastercsv'
 
 
-
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -62,13 +61,13 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_Demo_session',
-    :secret      => 'b584fa482124a769b4209625b2ab6767c40b67fc00d7cd66536ecfc07dc314442320fc05bd7f02f7d5d4c8d2ea36f6271296429d60bd6fbd5610a41099f51fb0'
+    :secret      => 'secretpass'#'b584fa482124a769b4209625b2ab6767c40b67fc00d7cd66536ecfc07dc314442320fc05bd7f02f7d5d4c8d2ea36f6271296429d60bd6fbd5610a41099f51fb0'
   }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
-  # config.action_controller.session_store = :active_record_store
+  config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -80,7 +79,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :tls => true,
+  :tls => true,  
   :address => "smtp.gmail.com",
   :port => "587",
   :domain => "gmail.com",

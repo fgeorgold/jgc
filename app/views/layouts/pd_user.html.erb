@@ -11,75 +11,95 @@
    <%= stylesheet_link_tag "p7tmcoollines" %>
    <title><%= @title_description %></title>
    
-   <%= javascript_include_tag :defaults %>	
+   <%= javascript_include_tag :defaults %>
   </head>
     
   <body>
     <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
 	<div id ="content">
-		<div align="right">
-				<a href="user">Login </a>
-		</div>
-	</div>	
-	<hr/>		
-	
-    <div id="content">
-	              
-		<table border="1">
-              <td class="centered">
-              	<div>				
-   	              <a href="../index.html"> About Us </a>
-				</div>
-			  </td>
-			  
-              <td class="centered">
-                <div id="nav">
-                  <%= link_to_unless_current("Organizations",   { :action => "organizations" }) %>
-                </div>
-			  </td>
-			  
-              <td class="centered">
-              	<div>				
-                  <a href="../programs.html">After School Programs </a>
-				</div>
-			  </td>
-			  
-              <td class="centered">
-              	<div>				
-         	      <a href="../parents.html">Parents</a>
-				</div>
-			  </td>
-			  
-              <td class="centered">
-              	<div>				
-     		      <a href="../programdirectors.html">Program Director </a>
-				</div>
-			  </td>
-
-              <td class="centered">
-                <div id="nav">
-                  <%= link_to_unless_current("Search",          { :controller => "user", :action => "search"  }) %>
-                </div>
-			  </td>
-		</table>
-       <br/>
+	  <div align="right">
+        <% if (session[:pd_user_id] != nil) -%>
+          <%= nav_link "Profile", "pd_user", "show_basic_info" %> |
+          <%= nav_link "Logout", "pd_user", "logout" %>
+        <% else -%>
+          <%= nav_link "Register", "pd_user", "register" %> |
+          <%= nav_link "Login", "pd_user", "login" %>
+        <% end -%>		
+      </div>
     </div>  
-	  
+    <hr/>    
+  
+    <div id="content">                
+      <table border="1">
+        <td class="centered">
+          <div>        
+            <a href="../index.html"> About Us </a>
+          </div>
+        </td>
+        
+        <td class="centered">
+          <div id="nav">
+            <%= nav_link_controller "Organizations", "organizations" %>
+          </div>
+        </td>
+        
+        <td class="centered">
+          <div>        
+            <a href="../programs.html">After School Programs </a>
+          </div>
+        </td>
+        
+        <td class="centered">
+          <div>        
+            <a href="../parents.html">Parents</a>
+          </div>
+        </td>
+        
+        <td class="centered">
+          <div>        
+            <a href="../programdirectors.html">Program Director </a>
+          </div>
+        </td>
+
+        <td class="centered">
+          <div id="nav">
+            <%= nav_link "Search", "user", "search" %>
+          </div>
+        </td>
+		
+      </table>
+      <br/>
+    </div>  
+    
             
     <div id="main_content">
-      <% if flash[:notice] -%>
-        <div id="notice"><%= flash[:notice] %></div>
+      <% if flash[:user_notification] -%>
+        <div id="notice"><%= flash[:user_notification] %></div>
       <% end -%>
-		
+    
       <%= @content_for_layout %>
-    </div>  
-	  
-      <!-- D E B U G G I N G -->	  
-      <% if ENV["RAILS_ENV"] == "development" %>
-        <%= debug(params) %>
-      <% end %>
-	  	  
-    </div>
+    </div> 
+	
+ 
+    
+    <!-- D E B U G G I N G -->    
+    <% if ENV["RAILS_ENV"] == "development" %>
+      <div id="debug">          
+        <a href="#" onclick="Element.toggle('params_debug_info');return false">params</a> |
+        <a href="#" onclick="Element.toggle('session_debug_info');return false">session</a>
+      
+        <fieldset id="params_debug_info" class="debug_info" style="display:none">
+          <legend>params</legend>
+          <%= debug(params) %>
+        </fieldset>
+      
+        <fieldset id="session_debug_info" class="debug_info" style="display:none">
+          <legend>session</legend>
+          <%= debug(session) %>
+        </fieldset>      
+      </div>
+    <% end %>          
+  
   </body>
         
 </html>

@@ -1,4 +1,3 @@
-
 #whole_page
 {
 	width: 50em;
@@ -10,7 +9,7 @@
 
 #main_content
 {
-	width: 50em;
+	width: 38em;
 	margin: auto;
 	padding: 2px;
 	text-align: left;
@@ -20,7 +19,7 @@
 	
     height: 100%;
     background: white;
-    padding: 1em;
+    padding: 1em 2em 1em 2em;
 }
 
 #content h1
@@ -69,17 +68,19 @@ legend
 
 label
 {
-	width: 10em;
+	width: 12em;
 	float: left;
 	text-align: right;
 	margin-right: 0.2em;
+	margin-top: 0.3em;
 	display: block;
 }
 
 .form_row
 {
 	white-space: nowrap;
-	padding-bottom: 0.5em;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
 }
 
 .submit
@@ -92,15 +93,24 @@ label
 /*    D E B U G   S T Y L E    */
 /*******************************/
 /* Debug Style */
-.debug_dump 
+#debug
 {
-    text-align: left;
-    border-top: 1px dashed black;
-    background: #ccc;
-    margin: 0;
-    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: auto;
 }
 
+#debug a, #debug a.visited
+{
+    text-decoration: none;
+    color: maroon;
+}
+
+fieldset.debug_info
+{
+    text-align: left;
+    margin: 1em;
+    background: #eee;
+}
 
 /*****************************************************/
 /*    E R R O R   R E P O R T I N G   S T Y L E S    */

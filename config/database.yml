@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: Demo_development
+  database: Demo1_development
   pool: 5
   username: root
   password: rakshit
@@ -29,7 +29,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: Demo_test
+  database: Demo1_test
   pool: 5
   username: root
   password: rakshit    
@@ -38,7 +38,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: Demo_production
+  database: Demo1_production
   pool: 5
   username: root
   password: rakshit
