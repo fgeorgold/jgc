@@ -213,7 +213,9 @@ end
           redirect_to :action=> 'welcomeUser'
         end
         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
-        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)             
+        if @u[0].mailpref
+        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)   
+        end
       else
         flash[:warning] = "Signup unsuccessful"
       end
@@ -269,6 +271,15 @@ end
       @user.update_attributes(:password=>params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
       if @user.save
         flash[:notice]="Password Changed"
+       if @user.admin
+          redirect_to :action=>'welcomeAdminUser'
+        else
+        if @user.affiliateOrg
+        redirect_to :action=>'welcomeOrgUser'
+      else
+     redirect_to :action=>'welcomeUser'
+      end
+    end
       end
     end
   end
@@ -366,7 +377,27 @@ def userComment
 end
 
 
-
+  def change_mail_pref
+    @user=session[:user]
+  
+   #@mailpref = params[:user][:mailpref]
+    if request.post?
+     @user.update_attributes(:mailpref=>params[:user][:mailpref])
+     #User.find_by_sql ["Update users SET mailpref =  where organization_id = ?",@id];
+      #if @user.save 
+        flash[:notice]="Mail Preference changed"
+        if @user.admin
+          redirect_to :action=>'welcomeAdminUser'
+        else
+        if @user.affiliateOrg
+        redirect_to :action=>'welcomeOrgUser'
+      else
+     redirect_to :action=>'welcomeUser'
+      end
+    end
+      #end
+   end
+  end
 
 end
 
