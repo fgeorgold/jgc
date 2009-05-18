@@ -76,7 +76,11 @@ class PdUserController < ApplicationController
     @pd_user = PDUser.find(session[:pd_user_id])    
   end
   
-  
+  def pd_user_activities
+    @title_description = "My Activities"
+    @pd_user = PDUser.find(session[:pd_user_id])
+    @pd_user_activity = Activity.find_by_sql ["SELECT * FROM activities where created_by = ?",@pd_user.login_name]
+  end
   #######################
   #       E D I T       #
   #######################

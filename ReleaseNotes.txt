@@ -1,0 +1,77 @@
+Alpha Release
+0. Signing up for organizational user
+	- Register	  	
+		- Validate fields (e-mail format, password length, name length)
+  		- Password confirmation
+	  	- Create DB entry
+		
+	- Login
+  		- Validate fields
+  		- Check if user exists and entered the correct password
+  		- Redirect to appropriate page on login
+	- Create home pages for different types of user
+	
+	
+
+1. Organizations module
+	i) Adding
+		- Validating neccessary fields
+		- Keeping it hidden
+
+	ii)Editing
+		- Updating the DB
+
+	iii) Show
+		- Pull appropriate fields from the DB
+
+2. Organization Admin
+	0) Create home page
+	i) Approving organizations
+		- Update DB
+
+3. Search
+	i) Text search
+		- Build index
+		- Update index
+	ii)Advanced Search by categories 
+
+
+
+Beta Release
+1. Added partners to the organizations
+
+2. Improved Search UI
+	i) Hoover and pop-ups
+
+3. Added Activities module
+	i)  Adding a new acitivity
+	ii) Activities search
+		a) Simple text search
+		b) Advanced search - by categories, cost and age group
+
+4. Activities Admin
+	i) Approving activities
+
+
+5. Progam Directors:
+	- Register 
+	  	- Validate fields (e-mail format, password length, name length)
+  		- Password confirmation
+	  	- Create DB entry
+	- Login
+  		- Validate fields
+  		- Check if user exists and entered the correct password
+  		- Upon successful login open session
+
+	- Show info
+  		- Upon login show the basic info
+
+	- Edit info  
+  		- Give the user the option to edit the basic (session protected)
+  		- Clear password
+  		- Remember current password, ask for new + confirmation
+  		- All fields are validated using the same rules as in registration
+
+
+This piece of code is stylistically rub-ish. Some pieces can be factored out, but for the most part the code is polishes
+Things that are not completely adopted to the stylesheets/env are not part of the beta release (rest of PD profile, blogs) 
