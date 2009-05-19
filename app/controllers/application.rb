@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-  # protect_from_forgery :secret => 'secretpass'#'b584fa482124a769b4209625b2ab6767c40b67fc00d7cd66536ecfc07dc314442320fc05bd7f02f7d5d4c8d2ea36f6271296429d60bd6fbd5610a41099f51fb0'
+  protect_from_forgery :secret => 'secretpass'#'b584fa482124a769b4209625b2ab6767c40b67fc00d7cd66536ecfc07dc314442320fc05bd7f02f7d5d4c8d2ea36f6271296429d60bd6fbd5610a41099f51fb0'
   
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters
@@ -61,7 +61,11 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  
+  #########################################################
+  ###       C H E C K _ A U T H O R I Z A T I O N       ###
+  #########################################################
+  # Pick a unique cookie name to distinguish our session data from others
+  session :session_key => '_pd_user_session_id'
 
 end
 

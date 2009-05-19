@@ -1,0 +1,3 @@
+ page.alert('This message is from Rails!')
+
+page[:partner_div].toggle

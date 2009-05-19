@@ -1,0 +1,9 @@
+<div class ="partner">
+	<%= select_tag 'organization[partner_attribute][][partner_org_id]', options_for_select(@organizations)%>
+	<%= link_to_function "Remove", "$(this).up('.partner').remove()" %>
+	
+	<br/>
+	<br/>
+	
+
+</div>

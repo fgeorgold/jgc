@@ -1,0 +1,82 @@
+/* Profile Styles */
+td.label
+{
+  text-align: right;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+input
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.edit_link a 
+{
+  text-decoration: none;
+  color: blue;
+}
+
+#left_column
+{
+  float: left;
+  width: 450px;
+}
+
+#main_content
+{
+  margin-left: 150px;
+  
+/*  width: 48em; */
+/*  border-width: 0px 0px 0px 0px; */
+}
+
+.sidebar_box
+{
+  background-color: #ddd;
+  border: 3px solid #aaa;
+  font-size: 16px;
+  margin-bottom: 100px;
+}
+
+.sidebar_box h2 
+{
+  margin-top: 0px;
+  padding: 3px;
+  background-color: #ccc;
+  font-size: 18px;
+  color: maroon;
+  font-weight:bold;
+}
+
+.sidebar_box p 
+{
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.sidebar_box .header 
+{
+  float: left;
+}
+
+.sidebar_box .edit_link
+{
+  float: right;
+}
+
+/* Spec Style */
+#full_name
+{
+  font-size: xx-large;
+}
+
+#occupation
+{
+  font-size: x-large;
+}
+
+#location
+{
+  font-size: large;
+}

@@ -1,0 +1,9 @@
+<tr>
+  <td class="label"><%= field_row.humanize %> :</td>
+  
+  <!-- Trick: Use letter h. This is the minimalist Rails function for HTML
+              escape, which replaces HTML tags with their escaped versions
+			  (e.g., &lt; for <). -->
+  <!-- Trick: @pd_user.spec[field_row] is the same as @pd_user.spec.<field_row> -->
+  <td><%= h @pd_user.spec[field_row] %></td>
+</tr>

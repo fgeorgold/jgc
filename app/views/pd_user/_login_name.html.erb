@@ -1,0 +1,10 @@
+<!--
+ Partial for the login name field.
+ -->
+ 
+<div class="form_row">
+  <label for="login_name">Login name:</label>
+  
+  <%= form.text_field :login_name, :size => PDUser::LOGIN_NAME_SIZE,
+                                   :maxlength => PDUser::LOGIN_NAME_MAX_LENGTH %>
+</div>  

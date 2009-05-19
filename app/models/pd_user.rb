@@ -1,4 +1,12 @@
+require 'digest/sha1' # Needed for the hashing generation of the authorization_token
+
 class PDUser < ActiveRecord::Base
+  # The PDUser class declares that each pd_user has one spec
+  has_one :spec
+
+  # Way to create a remember_me attribute in the PDUser class
+  # without introducing a new column name in the database.  
+  attr_accessor :remember_me
   
   #***************************************************************#
   #******     C O N S T A N T     D E C L A R A T I O N     ******#
@@ -17,10 +25,12 @@ class PDUser < ActiveRecord::Base
   PASSWORD_SIZE = 10
   EMAIL_SIZE = 30
   
+  # Cookie expiration
+  COOKIE_EXPIRATION = 10.years.from_now
   
-  #***************************************************************#
-  #******   U S E R     M O D E L     V A L I D A T I O N   ******#
-  #***************************************************************#
+  #*******************************************************************#
+  #******   P D U S E R     M O D E L     V A L I D A T I O N   ******#
+  #*******************************************************************#
   # Validate attribute :login_name
   validates_uniqueness_of :login_name
   validates_length_of :login_name, :within => LOGIN_NAME_RANGE  
@@ -42,13 +52,117 @@ class PDUser < ActiveRecord::Base
   # Make sure that the :password_confirmation matches the :password  
   validates_confirmation_of :password
 
-  ###########################################
-  #       C L E A R   P A S S W O R D       #
-  ###########################################
+
+  #################################
+  #       R E M E M B E R !       #
+  #################################
+  # Remember a user for future login.
+  def remember!(cookies)
+    cookies[:remember_me] = {:value => "1",
+                             :expires => COOKIE_EXPIRATION }
+                              
+    self.authorization_token = unique_identifier
+    self.save!
+    cookies[:authorization_token] = {:value => self.authorization_token,
+                                     :expires => COOKIE_EXPIRATION }
+  end
+  
+  #############################
+  #       F O R G E T !       #
+  #############################
+  # Forget a user's login status.
+  def forget!(cookies)
+    cookies.delete(:remember_me)
+    cookies.delete(:authorization_token)
+  end
+  
+  #####################################
+  #       R E M E M B E R M E ?       #
+  #####################################
+  # Return true if the user wants the login status remembered.
+  def remember_me?
+    return (self.remember_me == "1")
+  end  
+  
+  #############################################
+  #       C L E A R   P A S S W O R D !       #
+  #############################################
   # Clear the password (typically to suppress its display in a view).
   def clear_password!
-    self.password = nil
-    self.password_confirmation = nil
-    self.current_password = nil
-  end      
+    unless (self.password.nil?)
+      self.password = nil
+    end
+    
+    unless (self.password_confirmation.nil?)
+      self.password_confirmation = nil
+    end  
+    
+    unless (self.current_password.nil?)
+      self.current_password = nil
+    end  
+  end
+  
+  ###############################################
+  #       C O R R E C T   P A S S W O R D       #
+  ###############################################  
+  # Return true if the password from params is correct.
+  def correct_password?(params)
+    current_password = params[:pd_user][:current_password]
+    return (password == current_password)
+  end
+
+  #############################################
+  #       P A S S W O R D   E R R O R S       #
+  #############################################  
+  # Generate messages for password errors.
+  def password_errors(params)
+    # Use PDUser model's valid? method to generate error messages
+    # for a password mismatch (if any).
+    self.password = params[:pd_user][:password]
+    self.password_confirmation = params[:pd_user][:password_confirmation]
+    valid?
+    # The current password is incorrect, so add an error message.
+    errors.add(:current_password, "is incorrect")
+  end
+
+  ###########################
+  #       L O G I N !       #
+  ###########################  
+  # Log a user in.
+  def login!(session)
+    session[:pd_user_id] = self.id
+  end  
+
+  #############################
+  #       L O G O U T !       #
+  #############################  
+  # Log a user out.
+  #
+  # Class method.
+  def self.logout!(session, cookies)
+    session[:pd_user_id] = nil  
+    cookies.delete(:authorization_token)
+  end
+
+  #############################################################
+  #############################################################
+  ##               H    E    L    P    E    R                ##
+  ##        F    U    N    C    T    I    O    N    S        ## 
+  #############################################################
+  #############################################################
+  # All functions that follow will be made private
+  # => not accessible for outside objects 
+  private
+  
+  #################################################
+  #       U N I Q U E   I D E N T I F I E R       #
+  #################################################
+  # Generate a unique identifier for a user
+  # We can call directly Digest::SHA1.hexdigest, but it's better to build
+  # an abstraction layer between the unique identifier used to remember 
+  # the user and the algorithm used to generate it
+  def unique_identifier
+    Digest::SHA1.hexdigest("#{login_name}:#{password}")
+  end 
+  
 end

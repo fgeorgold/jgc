@@ -19,7 +19,7 @@
 	<div id ="content">
 	  <div align="right">
         <% if (session[:pd_user_id] != nil) -%>
-          <%= nav_link "Profile", "pd_user", "show_basic_info" %> |
+          <%= nav_link "Profile", "pd_user", "index" %> |
           <%= nav_link "Logout", "pd_user", "logout" %>
         <% else -%>
           <%= nav_link "Register", "pd_user", "register" %> |

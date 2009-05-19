@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20090514215613) do
     t.string "login_name"
     t.string "email"
     t.string "password"
+    t.string "authorization_token"
   end
 
   create_table "programs", :force => true do |t|
@@ -85,6 +86,18 @@ ActiveRecord::Schema.define(:version => 20090514215613) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "specs", :force => true do |t|
+    t.integer "pd_user_id",                 :null => false
+    t.string  "first_name", :default => ""
+    t.string  "last_name",  :default => ""
+    t.string  "gender"
+    t.date    "birthdate"
+    t.string  "occupation", :default => ""
+    t.string  "city",       :default => ""
+    t.string  "state",      :default => ""
+    t.string  "zip_code",   :default => ""
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"

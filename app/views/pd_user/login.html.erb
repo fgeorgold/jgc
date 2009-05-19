@@ -2,25 +2,23 @@
 
 <h2>Log in</h2>
 
-<!-- Catch the errors and put the error messages on the screen. -->
-<%= error_messages_for "pd_user" %>
-
 <% form_for :pd_user do |form| %>
   <fieldset>
     <legend>Enter Your Details</legend>
 	
-    <div class="form_row">
-      <label for="screen_name">Login name:</label>
-      <%= form.text_field :login_name,
-                          :size => PDUser::LOGIN_NAME_SIZE,
-                          :maxlength => PDUser::LOGIN_NAME_MAX_LENGTH %>
-    </div>
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+    <%= render :partial => "login_name",
+               :locals => { :form => form } %>
 	
-    <div class="form_row">	
-      <label for="password">Password:</label>
-      <%= form.password_field :password,
-                              :size => PDUser::PASSWORD_SIZE,
-                              :maxlength => PDUser::PASSWORD_MAX_LENGTH %>
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password",
+                            :field_title => "Password" } %>
+							
+    <div class="form_row">
+      <label for="remember_me">Remember Me?:</label>
+      <%= form.check_box :remember_me %>
     </div>
 	
     <div class="form_row">
