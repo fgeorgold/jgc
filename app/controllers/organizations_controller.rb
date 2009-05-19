@@ -147,7 +147,18 @@ end
         format.html { redirect_to(@organization) }
         format.xml  { render :xml => @organization, :status => :created, :location => @organization }
         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
-        Notifications.deliver_send_notice(@u[0].email,@organization.name,@userC.login)
+        if @u[0].mailpref    
+        subject = "New organization has been created"
+        to = @u[0].email
+        from = 'helpjgc@gmail.com'
+        mail = 'A new Organization: '+ @organization.name+' has been created by '+ @userC.login + ' .Kindly review and approve the organization'
+        email = Emails.new
+        email.from = from
+        email.to = to
+        email.mail = mail
+        email.subject = subject
+        email.save
+       end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }

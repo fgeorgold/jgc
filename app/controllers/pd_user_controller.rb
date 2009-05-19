@@ -23,6 +23,19 @@ class PdUserController < ApplicationController
       if @pd_user.save
         session[:pd_user_id] = @pd_user.id
         flash[:notification] = "User #{@pd_user.login_name} registered successfully!"
+        @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
+        if @u[0].mailpref
+        subject = "New Program Director has joined the network "
+        to = @u[0].email
+        from = 'helpjgc@gmail.com'
+        mail = 'A new Program Director: '+ @pd_user.login_name + ' has joined the network.Contact the new user at '+ @pd_user.email
+        email = Emails.new
+        email.from = from
+        email.to = to
+        email.mail = mail
+        email.subject = subject
+        email.save
+        end
         redirect_to :action => "show_basic_info"
       end
     end    

@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "pd_user" %>	
+
+<h2>Basic Information</h2>
+<ul>
+  <li>Login Name: <%= @pd_user.login_name %></li>
+  <li>Email: <%= @pd_user.email %></li>
+  <li>Password: *******</li>
+</ul>
+  
+<ul>
+  <li><%= link_to "Edit my info", :action => "edit" %></li>
+</ul>

@@ -1,4 +1,5 @@
 class Notifications < ActionMailer::Base
+ 
   def forgot_password(to, login, pass, sent_at = Time.now)
     @subject = "Your new password for JGC website"
     @body['login']=login
@@ -27,6 +28,16 @@ class Notifications < ActionMailer::Base
     @sent_on = sent_at
     @headers = {}
   end
+  
+  def send_mail(to,from,mail,subject, sent_at = Time.now)
+    @subject = subject
+    @body = mail
+    @recipients = to
+    @from = from
+    @sent_on = sent_at
+    @headers = {}
+  end
+  
 end
 
   

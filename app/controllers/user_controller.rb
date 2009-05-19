@@ -214,7 +214,17 @@ end
         end
         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
         if @u[0].mailpref
-        Notifications.deliver_new_user(@u[0].email,@userC.login,@userC.email)   
+        subject = "New User has joined the network "
+        to = @u[0].email
+        from = 'helpjgc@gmail.com'
+        mail = 'A new User: '+ @userC.login + ' has joined the network.Contact the new user at '+ @userC.email
+        email = Emails.new
+        email.from = from
+        email.to = to
+        email.mail = mail
+        email.subject = subject
+        email.save
+      #  Emails.sendMail#deliver_send_mail(to,from,mail,subject)
         end
       else
         flash[:warning] = "Signup unsuccessful"
