@@ -9,7 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20090518221040) do
+
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -25,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20090518221040) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "visible",      :default => false
+    t.string   "created_by"
+  end
+
+  create_table "activities_comments", :force => true do |t|
+    t.string  "activity_id"
+    t.text    "comment_text"
+    t.string  "email"
+    t.boolean "visible",      :default => false
   end
 
   create_table "categories", :force => true do |t|
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20090518221040) do
     t.string "login_name"
     t.string "email"
     t.string "password"
+    t.string "authorization_token"
   end
 
   create_table "programs", :force => true do |t|
@@ -86,6 +97,18 @@ ActiveRecord::Schema.define(:version => 20090518221040) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "specs", :force => true do |t|
+    t.integer "pd_user_id",                 :null => false
+    t.string  "first_name", :default => ""
+    t.string  "last_name",  :default => ""
+    t.string  "gender"
+    t.date    "birthdate"
+    t.string  "occupation", :default => ""
+    t.string  "city",       :default => ""
+    t.string  "state",      :default => ""
+    t.string  "zip_code",   :default => ""
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"

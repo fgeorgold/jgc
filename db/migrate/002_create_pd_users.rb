@@ -4,6 +4,7 @@ class CreatePdUsers < ActiveRecord::Migration
       t.column :login_name, :string      
       t.column :email, :string
       t.column :password, :string
+      t.column :authorization_token, :string      
     end
   end
 

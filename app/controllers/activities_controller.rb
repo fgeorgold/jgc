@@ -38,8 +38,14 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(@id)
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
     @programNames = []
     @categoryNames = []
+    @comments = []
+    for comment in @comment_id
+      @comments.push comment
+    end
+    
     for currentProgram in @program_id
          @programNames.push currentProgram.program_name
     end
@@ -53,9 +59,70 @@ class ActivitiesController < ApplicationController
     end
   end
   
+  
+  def save_activity_comment
+    @activity_comment = Activities_Comment.new(params[:comment])
+    @id = params[:comment][:activity_id]
+    @activity = Activity.find(@id)
+    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+    @programNames = []
+    @categoryNames = []
+    @comments = []
+    for comment in @comment_id
+      @comments.push comment.comment_text
+    end
+    
+    for currentProgram in @program_id
+         @programNames.push currentProgram.program_name
+    end
+
+    for currentCategory in @category_id
+         @categoryNames.push currentCategory.category_name
+    end
+    respond_to do |format|
+      if @activity_comment.save
+        flash[:notice] = 'Activity was successfully created.'
+        format.html { redirect_to(@activity) }
+      else
+        format.html { render :action => "show" } 
+      end
+    end
+      
+  end
+  
+  def delete_activity_comment
+    @id = params[:activityId]
+    @activity = Activity.find(@id)
+    @commentId = params[:commentId]
+    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
+    @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+    @programNames = []
+    @categoryNames = []
+    @comments = []
+    for comment in @comment_id
+      @comments.push comment.comment_text
+    end
+    
+    for currentProgram in @program_id
+         @programNames.push currentProgram.program_name
+    end
+
+    for currentCategory in @category_id
+         @categoryNames.push currentCategory.category_name
+    end
+    Activities_Comment.find_by_sql ["DELETE FROM activities_comments where activity_id = ? and id = ?",@id,@commentId]
+    redirect_to(@activity)
+    
+  end
+  
   def showActivity
+    
     idOrg = params[:activity][:id]
     @activity = Activity.find(idOrg)
+    @title_description = @activity.name
   end
 
 
@@ -75,7 +142,9 @@ class ActivitiesController < ApplicationController
   # GET /activities/new
   # GET /activities/new.xml
   def new
-    
+    if(session[:pd_user_id])
+      @pdUser =  PDUser.find(session[:pd_user_id]) 
+    end
     @activity = Activity.new
     1.times { @activity.programs.build }
     1.times { @activity.categories.build }

@@ -25,8 +25,6 @@ class Organization < ActiveRecord::Base
     partners.each do |p|
       if p.should_destroy?
         p.destroy
-      else
-        p.save(false)
       end
     end
   end

@@ -6,11 +6,19 @@ class UserController < ApplicationController
   before_filter :login_required, :only=>['welcome','change_password']
 
   def searchResults
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "Organizations Search Results"
     @query = params[:user][:text]
     @posts = Organization.find_by_contents(@query) 
   end
   
-  def BrowseByPrograms 
+
+  
+  
+  def BrowseByPrograms
+    @title_description = "Activities Search - Browse By Programs"
+    @orgUser = false
     @activities = Activity.find(:all)
      @programs = Set.new
      for my_activity in @activities do
@@ -26,7 +34,19 @@ class UserController < ApplicationController
  
 end
 
+  def BrowseByCategories
+    @orgUser = false
+    @title_description = "Activities Search - Browse by Categories"
+  end
+  
+  def BrowseByAgeGroups
+    @orgUser = false
+    @title_description = "Activities Search - Browse by Age Groups"
+  end
+
  def showActivitiesByPrograms
+    @orgUser = false
+    @title_description = "Activities Search - Browse by Programs"
     @program = params[:program]
     @statistic = Statistics.new()
     @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
@@ -42,6 +62,8 @@ end
   end
   
   def showActivitiesByCategory
+    @orgUser = false
+    @title_description = "Activities Search - Browse by Categories"
     @category = params[:category]
     @statistic = Statistics.new()
     @type = params[:type]
@@ -57,6 +79,8 @@ end
   end
   
   def DurationFilterOnCategory
+    @orgUser = false
+    @title_description = "Activities Search"
     @duration = params[:duration]
     @category = params[:category]
     @activities = []
@@ -69,7 +93,9 @@ end
     end  
   end
   
-    def CostFilterOnCategory
+  def CostFilterOnCategory
+    @title_description = "Activities Search"
+    @orgUser = false
     @cost = params[:cost]
     @category = params[:category]
     @activities = []
@@ -83,7 +109,9 @@ end
     
   end
   
-    def AgeFilterOnCategory
+  def AgeFilterOnCategory
+    @title_description = "Activities Search"
+    @orgUser = false
     @age = params[:age]
     @category = params[:category]
     @activities = []
@@ -98,6 +126,8 @@ end
   end
   
   def DurationFilterOnProgram
+    @title_description = "Activities Search"
+    @orgUser = false
     @program = params[:program]
     @duration = params[:duration]
     @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
@@ -112,6 +142,8 @@ end
   end
 
   def CostFilterOnProgram
+    @title_description = "Activities Search"
+    @orgUser = false
     @program = params[:program]
     @cost = params[:cost]
     @program_id = Category.find_by_sql ["SELECT * FROM programs where program_name = ?",@program]
@@ -125,6 +157,9 @@ end
   end
 
   def AgeFilterOnProgram
+    @orgUser = false
+   
+    @title_description = "Activities Search"
     @program = params[:program]
     @age = params[:age]
    
@@ -140,23 +175,52 @@ end
   end
     
   def DurationFilterOnAge
-    
+    @orgUser = false
+   
+    @title_description = "Activities Search"
   end
   
   def CostFilterOnAge
-    
+    @orgUser = false
+   
+    @title_description = "Activities Search"
   end
   
+  def searchActivities
+    @hDisplay = false
+    @orgUser = false
+    @title_description = "Activities Search"
+  end
   
   def searchActivityResults
+    @hDisplay = false
+    @orgUser = false
+    @title_description = "Activities Search Results"
     @activityQuery = params[:user][:text]
     @activityPosts = Activity.find_by_contents(@activityQuery)
     if(!@activityPosts)
       render :layout => "searchActivities"
-      end
+    end
+  end
+  
+  def search
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "Organizations Search"
+  end
+  
+  def advancedSearch
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "Advanced Organizations Search"
+    @orgUser = true
   end
   
   def advancedSearchResults
+     @hDisplay = true
+    @orgUser = true
+    @title_description = "Advanced Organizations Search Results"
+    
     name = params[:user][:name]
     resources = params[:user][:resources]
     asp = params[:user][:asp]
@@ -194,6 +258,9 @@ end
 
 
   def signup
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - Organizational User Signup"
     @user = User.new(params[:user])
     if request.post?  
       if @user.save
@@ -231,20 +298,32 @@ end
       end
     end
   end
+  
+  def index
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - Welcome Organizational User"
+  end
 
   def login
+    @title_description = "JGC - Welcome Organizational User"
+    @hDisplay = true
+    @orgUser = true
     if request.post?
       if session[:user] = User.authenticate(params[:user][:login], params[:user][:password])
         flash[:message]  = "Login successful"
         redirect_to_stored 
       else
-        flash[:warning] = "Login unsuccessful"
+        flash[:error] = "Invalid login name or password"
       end
     end
   end
   
   
   def activitiesAdmin
+    @hDisplay = false
+    @orgUser = false
+    @title_description = "JGC - Activities Admin"
      if request.post?
       if session[:user] = User.authenticate(params[:user][:login], params[:user][:password])
         if session[:user].activitesadmin
@@ -258,6 +337,8 @@ end
   end
 
   def logout
+    @hDisplay = true
+    @orgUser = true
     session[:user] = nil
     flash[:message] = 'Logged out'
     redirect_to :action => 'login'
@@ -295,6 +376,9 @@ end
   end
 
   def welcomeOrgUser
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - Organizational User"
     @userC = session[:user]
     @organization = Organization.find_by_name(@userC.affiliateOrg)
 
@@ -302,6 +386,7 @@ end
   end
 
   def welcomeActivitiesAdmin
+   @hDisplay = true
    @userC =  session[:user]
    allActivities = Activity.find(:all)
    @activities = []
@@ -313,6 +398,9 @@ end
   end
 
   def welcomeAdminUser
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - Admin"
     @userC = session[:user]
     @allorganizations = Organization.find(:all)
     @organizations = []
@@ -326,6 +414,9 @@ end
   
 
   def welcomeUser
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - User"
     @userC = session[:user]
     allorganizations = Organization.find(:all)
     @organizations = []
@@ -377,6 +468,9 @@ def export_to_csv
 end
 
 def userComment
+  @hDisplay = false
+  @orgUser = false
+  @title_description = "JGC - Feedback"
   @comment = Comment.new(params[:user])
   if @comment.save
     redirect_to "../index.html"
@@ -386,6 +480,15 @@ def userComment
   end
 end
 
+ def delete_activity_comment
+    @id = params[:activityId]
+    @activity = Activity.find(@id)
+    @commentId = params[:commentId]
+    Activities_Comment.delete(@commentId)
+    redirect_to(@activity)
+    
+
+ end
 
   def change_mail_pref
     @user=session[:user]

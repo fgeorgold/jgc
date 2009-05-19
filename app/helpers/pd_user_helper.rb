@@ -1,5 +1,16 @@
 module PdUserHelper
   
+  ###################################
+  #       L O G G E D _ I N ?       #
+  ###################################
+  # Return true if some user is logged in, false otherwise.
+  def logged_in?
+    return (session[:pd_user_id] != nil)
+  end  
+  
+  ###############################
+  #       N A V _ L I N K       #
+  ###############################
   # Pass as arguments:
   # 1) the text that will be displayed on screen to represent the link
   # 2) the controller
@@ -12,7 +23,10 @@ module PdUserHelper
     return link_to_unless_current(text, {:controller => controller,
                                          :action => action} )
   end
-
+  
+  #####################################################
+  #       N A V _ L I N K _ C O N T R O L L E R       #
+  #####################################################
   # Pass as arguments:
   # 1) the text that will be displayed on screen to represent the link
   # 2) the controller
@@ -22,6 +36,10 @@ module PdUserHelper
     return link_to_unless_current(text, {:controller => controller})
   end
   
+    
+  #############################################
+  #       N A V _ L I N K _ A C T I O N       #
+  #############################################
   # Pass as arguments:
   # 1) the text that will be displayed on screen to represent the link
   # 2) the action
@@ -29,6 +47,5 @@ module PdUserHelper
   # Return a link for use in layout navigation.
   def nav_link_action(text, action)
     return link_to_unless_current(text, { :action => action})
-  end
-  
+  end  
 end 

@@ -61,7 +61,11 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  
+  #########################################################
+  ###       C H E C K _ A U T H O R I Z A T I O N       ###
+  #########################################################
+  # Pick a unique cookie name to distinguish our session data from others
+  session :session_key => '_pd_user_session_id'
 
 end
 
