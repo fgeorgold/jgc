@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :organizations
 
   # The priority is based upon order of creation: first created -> highest priority.
+  # Remap the profile/foo URL to the one we want profile/show/foo
+  map.profile 'profile/:login_name', :controller => 'profile', :action => 'show'
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

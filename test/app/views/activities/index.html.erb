@@ -1,0 +1,119 @@
+<img src="images/JGC.gif" alt="John Gardner Center Logo" />
+
+ <div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					<td class="right">
+						<%  hDisplay = false
+							if(session[:user])
+								hDisplay = true
+								if(session[:user].admin)
+									concat "<a href = user/welcomeAdminUser >Home </a>"
+								else
+									if(session[:user].affiliateOrg)
+										concat "<a href = user/welcomeOrgUser >Home </a>"
+									else
+										concat "<a href = user/welcomeUser >Home </a>"
+									end
+								end
+							end
+
+						%>
+						
+						
+					</td>
+					<td class="right">
+					<%
+				  		if (session[:user])
+							cDisplay = "logout"
+				  		else
+				    		cDisplay = "login"
+				  		end
+					%>
+					<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+	  <div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a href="organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a class="p7currentmark" href="programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="user/search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+			<p> Please select an attribute from the drop down menu to browse activites. You can also use 
+			    our <a href="user/searchActivities">Search </a> interface to find the activity you
+				are looking for. </p>
+			<hr style="color:#CCC"/>
+				<div id = "content">
+				<p>
+				Select a category to see the activities that belong to it.
+				</p>
+				<div id="categories">
+				<a href="user/BrowseByCategories"> Browse By Category </a>
+
+				</div>
+
+				<br />
+				<br />
+				Select a program to see the activities that have been used on it.
+				<div id="programs">
+				<br />
+				<a href="user/BrowseByPrograms"> Browse By Programs </a>
+
+				</div>
+				<br />
+				<br />
+				Select an age-group to see the activites for that particular age-group.
+				<div id="age_group">
+				<br />
+				<a href="user/BrowseByAgeGroups"> Browse By Age Groups </a>
+
+				</div>
+				<br />
+				<br />
+				</div>
+				<p> Help us increase our database of activities by creating a new activity</p>
+				<%= link_to 'New activity', new_activity_path %>
+			</div>
+		</div>
+		
+
+
+

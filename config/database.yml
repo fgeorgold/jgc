@@ -17,10 +17,10 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: Demo1_development
+  database: Demo_development
   pool: 5
   username: root
-  password: xaxas13
+  password: rakshit
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -29,17 +29,17 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: Demo1_test
+  database: Demo_test
   pool: 5
   username: root
-  password: xaxas13    
+  password: rakshit    
   host: localhost
 
 production:
   adapter: mysql
   encoding: utf8
-  database: Demo1_production
+  database: Demo_production
   pool: 5
   username: root
-  password: xaxas13
+  password: rakshit
   host: localhost

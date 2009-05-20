@@ -1,0 +1,2 @@
+A new Organization <%= @org %> has been created by <%= @user %>.
+Kindly review and approve the organization

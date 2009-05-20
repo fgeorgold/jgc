@@ -14,7 +14,6 @@ require 'acts_as_ferret'
 
 require 'fastercsv'
 
-
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -78,6 +77,8 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.delivery_method = :activerecord 
+   
   config.action_mailer.smtp_settings = {
   :tls => true,  
   :address => "smtp.gmail.com",
