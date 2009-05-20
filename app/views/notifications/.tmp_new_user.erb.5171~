@@ -1,2 +1,0 @@
-A new User : <%= @user %> has joined the network.
-Contact the new user at <%= @email%>.
