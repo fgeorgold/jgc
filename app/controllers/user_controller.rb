@@ -365,7 +365,10 @@ end
   end
 
   def welcomeActivitiesAdmin
-   @hDisplay = true
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "JGC - Activities Admin"
+   
    @userC =  session[:user]
    allActivities = Activity.find(:all)
    @activities = []
