@@ -23,7 +23,7 @@ class PdUserController < ApplicationController
         @pd_user.login!(session)
         flash[:notification] = "User #{@pd_user.login_name} registered successfully!"
 
-        @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
+        @u = User.find_by_sql ["SELECT * FROM users where activitesadmin = ?","1"];
         if @u[0].mailpref
         subject = "New Program Director has joined the network "
         to = @u[0].email

@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "pd_user" %>
+
+<h2><%= @title %></h2>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
+
+<% form_for :pd_user do |form| %>
+  <fieldset>
+    <legend>Email</legend>
+    <%= hidden_field_tag "attribute", "email", :id => nil%>	
+	
+    <%= render :partial => "email_field_row",
+               :locals => { :form => form } %>
+
+	<div class="form_row">
+      <%= submit_tag "Update", :class => "submit" %>
+    </div>
+	
+  </fieldset>
+<% end %>
+
+
+<% form_for :pd_user do |form| %>
+  <fieldset>
+    <legend>Password</legend>
+		
+    <%= render :partial => "password_field_row",
+               :locals => { :form  => form,
+                            :field => "current_password" } %>
+							
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password",
+                            :field_title => "New password" } %>
+							
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password_confirmation",
+                            :field_title => "Confirm new password" } %>	
+							
+    <%= hidden_field_tag "attribute", "password", :id => nil%>	
+    <%= submit_tag "Update", :class => "submit" %>
+  </fieldset>
+<% end %>

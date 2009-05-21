@@ -356,24 +356,7 @@ end
     end
   end
 
-  def change_password
-    @user=session[:user]
-    if request.post?
-      @user.update_attributes(:password=>params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
-      if @user.save
-        flash[:notice]="Password Changed"
-       if @user.admin
-          redirect_to :action=>'welcomeAdminUser'
-        else
-        if @user.affiliateOrg
-        redirect_to :action=>'welcomeOrgUser'
-      else
-     redirect_to :action=>'welcomeUser'
-      end
-    end
-      end
-    end
-  end
+
 
   def welcomeOrgUser
     @hDisplay = true
@@ -490,29 +473,58 @@ end
 
  end
 
-  def change_mail_pref
-    @user=session[:user]
+
   
-   #@mailpref = params[:user][:mailpref]
-    if request.post?
-     @user.update_attributes(:mailpref=>params[:user][:mailpref])
-     #User.find_by_sql ["Update users SET mailpref =  where organization_id = ?",@id];
-      #if @user.save 
-        flash[:notice]="Mail Preference changed"
+  def edit_profile
+  @user=session[:user]
+  if request.post?
+ 
+      if params[:password_button]
+           @user.update_attributes(:password=>params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
+        if @user.save 
+        flash[:notice]="Password Changed"
         if @user.admin
           redirect_to :action=>'welcomeAdminUser'
+        end
+        if @user.activitesadmin
+        redirect_to :action=>'welcomeActivitiesAdmin'
         else
         if @user.affiliateOrg
         redirect_to :action=>'welcomeOrgUser'
-      else
-     redirect_to :action=>'welcomeUser'
+        else
+       redirect_to :action=>'welcomeUser'
+        end
+        end
       end
-    end
+    else
+       # @user = User.find(session[:user])
+        @user.update_attribute(:mailpref,params[:mailpref])
+        #if @UserC.save 
+        flash[:notice]="Mail Preference changed"
+        if @user.admin
+          redirect_to :action=>'welcomeAdminUser'
+        end
+        if @user.activitesadmin
+        redirect_to :action=>'welcomeActivitiesAdmin'
+        else
+        if @user.affiliateOrg
+        redirect_to :action=>'welcomeOrgUser'
+        else
+       redirect_to :action=>'welcomeUser'
+        end
+        end
       #end
-   end
+    end    
   end
-
 end
+  
+  
+  
+  
+  
+  
+end
+
 
 
 
