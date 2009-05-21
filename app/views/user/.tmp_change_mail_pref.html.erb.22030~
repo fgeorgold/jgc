@@ -1,8 +1,0 @@
-<h3>Change Mail Preferences</h3>
-
-<%= form_tag :action => 'change_mail_pref' %>
-	 <%= check_box "user","mailpref",{},1,0 %> Uncheck the box if you don't want emails.
-	 </br>
-	 
-	 <%= submit_tag "Submit" %>
-</form>
