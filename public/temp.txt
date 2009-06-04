@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Welcome - JGC</title>
+		 
+		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    	<link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    	<link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+    </head>
+	<img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+	<p>
+     The current user is <%= session[:user].login %> with the email id <%= session[:user].email%>
+    </p>
+
+	<body>
+	</body>
+</html>
+
+
+<a style="background-color: rgb(0, 0, 0);" class="fdbk_tab_right" id="fdbk_tab" href="">FEEDBACK</a>
+
+From _show_partner.html
+<%= link_to_function "Remove", "mark_for_destroy(this)" %>
+
+
+
+<%= partner_form.hidden_field :should_destroy, :index => nil, :class => 'should_destroy' %>
+
+<%= link_to 'Remove', :action => 'RemovePartner', :id => @org_id, :name => @partnerName %>
+
+
+render :action => "edit", :controller => "organizations"
+
+<%= render :partial => "show_partner"  %>
+
+
+
+        
+      else
+        format.html { render :action => "show" }
+        
+        
+ --Deleted from the organizations module--
+ <head>
+    <title> Organization - <%=@organization.name%></title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../sytlesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+  </head>
+  <a target="_blank" id="feedback-tab" href="../user/userComment"></a>  
+  <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+  
+  
+<div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					<td class="right">
+						<%  hDisplay = false
+							if(session[:user] && session[:user].admin && session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeAdminUser >Home </a>"
+							end
+							if(session[:user] && session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && session[:user].affiliateOrg)
+								
+								concat "<a href = ../../user/welcomeOrgUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							
+						%>
+						
+						
+					</td>
+					<td class="right">
+					<%
+				  		if (session[:user])
+							cDisplay = "logout"
+				  		else
+				    		cDisplay = "login"
+				  		end
+					%>
+					<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+	<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a class="p7currentmark" href="../organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="../programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="../user/search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+
+  <br />
+  <br/>
+  
+  
+  -- deleted from new from organizations --
+  <a target="_blank" id="feedback-tab" href="../user/userComment"></a>
+<img src="/images/JGC.gif" alt="John Gardner Center Logo" />
+
+<div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					<td class="right">
+						<%  hDisplay = false
+							if(session[:user] && session[:user].admin && session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeAdminUser >Home </a>"
+							end
+							if(session[:user] && session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && session[:user].affiliateOrg)
+								
+								concat "<a href = ../../user/welcomeOrgUser >Home </a>"
+							end
+							if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg)
+								concat "<a href = ../../user/welcomeUser >Home </a>"
+							end
+							
+						%>
+						
+						
+					</td>
+					<td class="right">
+					<%
+				  		if (session[:user])
+							cDisplay = "logout"
+				  		else
+				    		cDisplay = "login"
+				  		end
+					%>
+					<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+	
+	<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a class="p7currentmark" href="organizations">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="user/search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+		<br>
+		<br>
+		
+		
+--Deleted from activities_admin
+?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>John Gardner Center</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/p7tmcoollines.css" />
+
+  </head>
+  <body>
+
+<img src="../images/JGC.gif" alt="John Gardner Center Logo" />
+	
+  <div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					
+					<td class="right">
+					<%
+				    	cDisplay = "login"
+				  		
+					%>
+					<a href="/user/<%= cDisplay%>" ><%= cDisplay%> </a>
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+			<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="../index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+					<div>
+					<a href="../organizations.html">Organizations </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../programs.html">After School Programs </a>
+					</div>
+				</td>
+				<td class="centered">					
+					<div>
+					<a href="../parents.html">Parents</a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="../programdirectors.html">Program Director </a>
+					</div></td>
+				<td class="centered">					
+					<div>
+					<a href="search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+			</div>
+				
+				
+
+			<!--
+			Total number of results: <%= @posts.total_hits %>
+			<% for post in @posts %>
+			<% if(post.visible)%>
+			<%= post.highlight(@query,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post}%>
+		      About us :<%=post.description%><br/>
+		      Go To    :<%=post.website%><br/>
+			  Contact  :<%=post.email%> <br/><br/>
+			<% end%>
+			<%end%>
+			-->
+			
+			<!--Total number of results: <%= @activityPosts.size()%></p>
+				<%for activity in @activityPosts %>
+					<%= activity.highlight(@activityQuery,:field => :description, :num_excertps => 1,:pre_tag => "<strong>", :post_tag => "</strong>")%>
+	        		<p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+					<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+				  	About : <%=activity.description%><br/>
+				  	Category : <%=activity.category%><br/><br/>
+				<% end%>-->

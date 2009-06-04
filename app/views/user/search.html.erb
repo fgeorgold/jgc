@@ -1,0 +1,27 @@
+		<br>
+		<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+				<p> Please enter the text you want to search </p>
+				<hr style="color:#CCC"/>
+		  	
+		  		<%= form_tag({:action=> "searchResults"}, :method => "get")%>
+		  		
+				<div align="centered">
+				<label for="input_text"></label><br/>
+				
+					
+				<%= text_field "user", "text", :size => 40 %><br/>
+				</div>
+				<div align="centered">
+				<%= submit_tag "Search" %>
+				
+				<hr style="color:#CCC"/>
+				
+				Have something more in mind, try our <a href="advancedSearch"> Advanced Search </a>
+				</div>
+				</form>
+			</div>
+			
+		</div>	

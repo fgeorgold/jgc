@@ -1,0 +1,28 @@
+
+<br>
+<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+				<p> Advanced Search </p>
+				<hr style="color:#CCC"/>
+		  	
+		  
+		  		<%= form_tag({:action=> "advancedSearchResults"}, :method => "get")%>
+				<div align="centered">
+					
+  				<label for="user_name_organization">Name of the organization</label><br/>
+  				<%= text_field "user", "name", :size => 30 %><br/>
+				OR <br/>
+  				<label for="user_name_resources"> Resources </label><br/>
+  				<%= text_field "user", "resources", :size => 30 %><br/>
+
+				OR <br/>
+  				<label for="user_name_asp"> After School Programs </label><br/>
+  				<%= text_field "user", "asp", :size => 30 %><br/>
+
+				<%= submit_tag "Search" %>
+				</form>
+			</div>
+			
+		</div>	

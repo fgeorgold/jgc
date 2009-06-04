@@ -1,0 +1,24 @@
+<div class="sidebar_box">
+  <h2>
+    <span class="header">
+      <%= sidebar_box.humanize %>
+    </span>
+	
+    <% unless hide_edit_links? %>
+      <span class="edit_link">
+        <%= link_to "[edit]", :controller => "personal_life", :action => "edit" %>
+      </span>
+    <% end %>
+	
+    <!-- Add an empty line -->	
+    <br clear="all" />
+  </h2>
+  
+  <!-- Trick: Use letter h. This is the minimalist Rails function for HTML
+              escape, which replaces HTML tags with their escaped versions
+			  (e.g., &lt; for <).
+    -->
+  <div class="sidebar_box_contents">
+    <%= sanitize @personal_life[sidebar_box] %>
+  </div>
+</div>

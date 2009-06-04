@@ -1,0 +1,31 @@
+<br>
+		<br>
+		<div id="loginbox">			
+		<div class="copy">
+			<p>Edit your personal details </p>
+			
+			<hr style="color:#CCC"/>
+				<%= error_messages_for 'user' %>
+
+				<p>Change password</p>
+
+				<%= form_tag :action => 'edit_profile' %>
+
+				<label for="user_password">Choose password:</label><br/>
+				<%= password_field "user", "password", :size => 20, :value=>"" %><br/>
+
+				<label for="user_password_confirmation">Confirm password:</label><br/>
+				<%= password_field "user", "password_confirmation", :size => 20, :value=>"" %><br/>
+				<%= submit_tag "Submit", :name => 'password_button' %>
+
+				</form>
+
+			<hr style="color:#CCC"/>
+			<p>Change Mail Preferences</p>
+
+			<%= form_tag :action => 'edit_profile' %>
+	 		<%= check_box_tag("mailpref", '1', @user.mailpref) %> Uncheck the box if you don't want emails.	
+	</br>
+	 <%= submit_tag "Submit", :name => 'mailpref_button'%>
+</form>
+

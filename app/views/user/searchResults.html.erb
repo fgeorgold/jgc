@@ -1,0 +1,45 @@
+
+		<br>
+		<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+				<p> Please enter the text you want to search </p>
+				<hr style="color:#CCC"/>
+		  	
+		  
+		  		<%= form_tag :action=> "searchResults" %>
+				<div align="centered">
+				<label for="input_text"></label><br/>
+				
+					
+				<%= text_field "user", "text", :size => 40 %><br/>
+				</div>
+				<div align="centered">
+				<%= submit_tag "Search" %>
+				</div>
+				</form>
+			
+			<hr style="color:#CCC"/>
+			<!-- Commenting search -->
+			<p>Due to technical difficulties free text search is currently disabled. We are fixing it. Thank you for your patience. 
+			You can try our <a href="advancedSearch"> Advanced Search </a></p>
+			</div>
+			<hr style="color:#CCC"/>
+			Have something more in mind, try our <a href="advancedSearch"> Advanced Search </a>
+		</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

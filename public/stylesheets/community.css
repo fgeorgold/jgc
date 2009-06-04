@@ -1,0 +1,71 @@
+/* Community Styles */
+a, a#visited
+{
+  color: maroon;
+  text-decoration: none;
+}
+
+.letter, .letter_current
+{
+  width: 1em;
+  text-align: center;
+  border: 1px solid gray;
+  background: #fff;
+  padding: 5px 2px 1px 2px;
+  float: left;
+  margin: 3px
+}
+
+.letter:hover
+{
+  background: #fe4;
+}
+
+.letter_current
+{
+  background: #fe4;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+table.pd_users
+{
+  background: #fff;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+table.pd_users td.bottom
+{
+  border-top: 1px solid #999;
+  padding-top: 10px;
+}
+
+table.pd_users th
+{
+  color: white;
+  background: maroon;
+  font-weight: normal;
+}
+
+table.pd_users th a
+{
+  color: white;
+  text-decoration: underline;
+}
+
+table.pd_users tr.even
+{
+  background: #ddd;
+}
+
+table.users tr.odd
+{
+  background: #eee;
+}
+
+.submit
+{
+  margin-left: 15em;
+}

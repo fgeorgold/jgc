@@ -1,0 +1,16 @@
+<!-- 
+     Simple form to pass a query string to the search action. The
+     form_tag function takes in a block for the form. When the block
+     ends, it automatically produces the </form> tag to end the form.
+-->
+<% form_tag({ :action => "search" }, :method => "get") do %>
+  <fieldset>  	
+    <legend>Search</legend>
+	
+    <div class="form_row">
+      <label for="q">Search for:</label>
+      <%= text_field_tag "q", params[:q] %>
+      <input type="submit" value="Search" />
+    </div>	
+  </fieldset>
+<% end %>

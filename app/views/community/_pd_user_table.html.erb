@@ -1,0 +1,31 @@
+<% if @pd_users and not @pd_users.empty? %>
+  <table class="pd_users" border="0" cellpadding="5" cellspacing="1">
+  	
+    <tr class="header">
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Employee</th>
+      <th>Age Group</th>
+      <th>Location</th>
+    </tr>
+  
+    <% @pd_users.each do |pd_user| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= link_to pd_user.name, profile_for(pd_user) %></td>
+        <td><%= pd_user.spec.occupation %></td>
+        <td><%= pd_user.spec.current_employee %></td>
+        <td><%= pd_user.spec.age_group %></td>
+        <td><%= pd_user.spec.location %></td>
+      </tr>
+    <% end %>
+	
+    <% if paginated? %>
+      <tr>
+        <td colspan="4" align="right">
+          Pages: <%= pagination_links(@pages, :params => params) %>
+        </td>
+      </tr>
+    <% end %>	
+	
+  </table>
+<% end %>

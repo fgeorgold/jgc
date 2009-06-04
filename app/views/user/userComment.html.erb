@@ -1,0 +1,35 @@
+		<br>
+		<br>
+		<div id="loginbox">
+			<div class="copy">
+			<p>JGC Feedback</p>
+			<br />
+			
+			<hr style="color:#CCC"/>
+			</div>
+			<div id ="content">
+				<%= error_messages_for 'comment' %>
+				<%= form_tag :action=> "SaveComment" %>
+				
+    			<p> We appreciate the time you have taken to give us feedback</p> 
+
+  				<label for="user_comment_text">Feedback :</label><br/>
+  				<%= text_area "user", "comment_text", :rows => 5 %><br/>
+
+  				<label for="user_email">Email* :</label><br/>
+  				<%= text_field "user", "email", :size => 20 %><br/>
+				
+				<label for="user_name">Name :</label><br/>
+  				<%= text_field "user", "name", :size => 20 %><br/>
+
+				<%= submit_tag "Submit Feedback" %>
+    
+
+			</form>
+			</div>
+			<br>
+			<br>
+
+				
+			</div>
+		</div>

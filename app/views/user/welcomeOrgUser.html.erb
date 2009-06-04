@@ -1,0 +1,45 @@
+
+		<br>
+		<br>
+
+		<p>
+     
+	 <div id="content">
+	 <hr style="color:#CCC"/>
+	 <% tempUser = @userC %>
+	 Welcome! <%= tempUser.login %>
+	 <br/>
+	 You are a part of the network of the  organization : <%= tempUser.affiliateOrg%>
+	 
+	 <br/>
+
+	 <%
+	 if(@organization.visible)
+		concat "This organization is publicly visible ."
+	 else
+		concat "The organization added by you is still in private mode . Please add the website and contact information, if you haven't  already done so for faster approval of content ."
+     end
+	 %>
+	 <br/>
+	 <br/>
+	
+	 
+	 <br />
+	 <% if(tempUser.edit_perms)%>
+	 	 Click on the organization to edits it contents
+	 	<%= link_to @organization.name, @organization %>
+	 <% else %>
+	    You have requested to be a part of the <%=@organization.name%>. You are
+		currently awaiting approval. As soon as you are approved you'll see a link
+		to edit the contents of the organization. Thank you for your patience.
+	 <%end%>
+	</p>
+	 <br />
+	 <br />
+	 <%= link_to ' Edit Profile ', :action => 'edit_profile' %>
+	<br />
+	 <br />
+
+	</div>
+	</body>
+</html>

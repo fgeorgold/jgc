@@ -1,0 +1,20 @@
+<div class="sidebar_box">
+  <h2>
+    <span class="header">
+      <%= sidebar_box.humanize %>
+	</span>
+	
+    <% unless hide_edit_links? %>
+      <span class="edit_link">
+        <%= link_to "[edit]", :controller => "professional_life", :action => "edit" %>
+      </span>
+    <% end %>
+	
+    <!-- Add an empty line -->			
+    <br clear="all" />
+  </h2>
+  
+  <div class="sidebar_box_contents">
+    <%= h @pd_user.professional_life[sidebar_box] %>
+  </div>  
+</div>

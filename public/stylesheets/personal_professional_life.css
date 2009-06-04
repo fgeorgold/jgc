@@ -1,0 +1,45 @@
+/* Professional Life Style */
+.personal_life, .professional_life
+{
+  float: left;
+  padding: 20px 0px 20px 50px;
+}
+
+.sidebar_box_contents, .text_field_user_entry
+{
+  padding: 20px 0px 20px 30px;
+}
+
+.date_form
+{
+  white-space: nowrap;
+  float: left;
+  padding: 20px 0px 20px 50px;
+}
+
+
+.text_field_user_entry text_field
+{
+  width: 180px;
+  background: #ff9;
+}
+
+
+.form_row
+{
+  white-space: nowrap;
+  padding: 10px 10px 10px 24px;
+  float: left
+}
+
+
+.submit
+{
+  margin-left: 15em;
+}
+
+.single_line_field
+{
+  margin-left: 50px;
+  Overflow:hidden;
+}

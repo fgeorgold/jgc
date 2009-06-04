@@ -1,0 +1,70 @@
+<%= stylesheet_link_tag "pd_user" %>
+<%= stylesheet_link_tag "personal_professional_life" %>
+
+<h2><%= @title %></h2>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
+<% form_for :professional_life do |form| %>
+  <fieldset>  	
+    <legend>Professional Info</legend>
+	
+    <%= error_messages_for 'professional_life' %>
+	
+	<!-- START DATE -->	
+    <div class="date_form">
+      Start Date :
+      <%= date_select :professional_life, :start_date,
+                                          :start_year => ProfessionalLife::START_YEAR,
+                                          :end_year => Time.now.year,
+                                          :include_blank => true,
+                                          :order => [:month, :day, :year] %>
+    </div>
+
+	<!-- PAST WORK EXPERIENCE -->
+    <%= render :partial => "text_field_user_entry",
+               :locals => { :form  => form,
+                            :text_field_user_entry => "past_work_experience",
+                            :rows => ProfessionalLife::TEXT_ROWS,
+                            :cols => ProfessionalLife::TEXT_COLUMNS } %>
+																											
+	<!-- YEARS OF WORK -->
+    <%= text_field_for form, "years_of_work", ProfessionalLife::NUMBER_TEXT_BOX_LENGTH  %>
+															
+	<!-- SOCIAL ACTIVITIES -->
+    <%= render :partial => "text_field_user_entry",
+               :locals => { :form  => form,
+                            :text_field_user_entry => "social_activities",
+                            :rows => ProfessionalLife::TEXT_ROWS,
+                            :cols => ProfessionalLife::TEXT_COLUMNS } %>
+							
+	<!-- SKILLS -->
+    <%= render :partial => "text_field_user_entry",
+               :locals => { :form  => form,
+                            :text_field_user_entry => "skills",
+                            :rows => ProfessionalLife::TEXT_ROWS,
+                            :cols => ProfessionalLife::TEXT_COLUMNS } %>
+							
+	<!-- FUTURE PLANS -->
+    <%= render :partial => "text_field_user_entry",
+               :locals => { :form  => form,
+                            :text_field_user_entry => "future_plans",
+                            :rows => ProfessionalLife::TEXT_ROWS,
+                            :cols => ProfessionalLife::TEXT_COLUMNS } %>
+
+	<!-- DESIRED JOB DESCRIPTION -->
+    <%= render :partial => "text_field_user_entry",
+               :locals => { :form  => form,
+                            :text_field_user_entry => "desired_job_description",
+                            :rows => ProfessionalLife::TEXT_ROWS,
+                            :cols => ProfessionalLife::TEXT_COLUMNS } %>
+							
+	<!-- DESIRED JOB SALARY -->
+    <%= text_field_for form, "desired_salary_per_year", ProfessionalLife::NUMBER_TEXT_BOX_LENGTH  %>
+	
+    <!-- Add an empty line -->
+    <br clear="all" />
+    <%= submit_tag "Update", :class => "submit" %>
+  </fieldset>
+<% end %>

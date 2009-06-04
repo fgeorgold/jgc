@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag "pd_user" %>	
+
+<h2>Log in</h2>
+
+<% form_for :pd_user do |form| %>
+  <fieldset>
+    <legend>Enter Your Details</legend>
+	
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+    <%= render :partial => "login_name",
+               :locals => { :form => form } %>
+	
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password",
+                            :field_title => "Password" } %>
+							
+    <div class="form_row">
+      <label for="remember_me">Remember Me?:</label>
+      <%= form.check_box :remember_me %>
+    </div>
+	
+    <div class="form_row">
+      <%= submit_tag "Login", :class => "submit" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<p>
+  Do not have an account? <%= link_to "Register now!", :action => "register" %>
+</p>

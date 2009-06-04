@@ -1,0 +1,181 @@
+#whole_page
+{
+  width: 50em;
+  margin: auto;
+  padding: 0;
+  text-align: left;
+}
+
+
+#main_content
+{
+  width: 38em;
+  margin: auto;
+  padding: 2px;
+  text-align: left;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+  border-style: solid;
+  
+  height: 100%;
+  background: white;
+  padding: 1em 2em 1em 2em;
+}
+
+#content h1
+{
+  font-size: 18pt;
+}
+
+/********************************************************/
+/*    D I S P L A Y   F I E L D S E T  / L E G E N D    */
+/********************************************************/
+
+/* Hack to get IE to display fieldset/legend correctly */
+html fieldset
+{
+  position: relative;
+}
+
+html legend
+{
+  position:absolute;
+  top: -1em;
+  left: 0.5em;
+}
+
+html fieldset
+{
+  position: relative;
+  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;  
+}
+
+
+/* Form Styles */
+fieldset
+{
+  background: #ddd;
+}
+
+legend
+{
+  color: white;
+  background: maroon;
+  padding: 0.4em 1em;
+}
+
+label
+{
+  width: 12em;
+  float: left;
+  text-align: right;
+  margin-right: 0.2em;
+  margin-top: 0.3em;
+  display: block;
+}
+
+.form_row
+{
+  white-space: nowrap;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.submit
+{
+  margin-left: 13em;
+}
+
+.submit_text_field
+{
+  margin-left: 10em;
+}
+
+.age_group
+{
+  padding-top: 0.3em;
+  margin-left: 72px;
+  padding-bottom: 0.3em;
+}
+
+/*******************************/
+/*    D E B U G   S T Y L E    */
+/*******************************/
+/* Debug Style */
+#debug
+{
+  margin-top: 1em;
+  margin-left: auto;
+}
+
+#debug a, #debug a.visited
+{
+  text-decoration: none;
+  color: maroon;
+}
+
+fieldset.debug_info
+{
+  text-align: left;
+  margin: 1em;
+  background: #eee;
+}
+
+/*****************************************************/
+/*    E R R O R   R E P O R T I N G   S T Y L E S    */
+/*****************************************************/
+.fieldWithErrors
+{
+  margin: 2px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation
+{
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2
+{
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12pt;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p
+{
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li
+{
+  font-size: 11pt;
+  list-style: square;
+}
+
+/*********************************************/
+/*    F L A S H   N O T I C E   S T Y L E    */
+/*********************************************/
+#notice
+{
+  border: 1px solid green;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 2em;
+  background-color: lightgray;
+  font: bold smaller sans-serif;
+}

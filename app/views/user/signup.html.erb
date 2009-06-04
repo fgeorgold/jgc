@@ -1,0 +1,38 @@
+	<br>
+		<br>
+		<div id="loginbox">
+			<div class="copy">
+			<p>Signup as a organizational user for JGC. </p>
+			
+			<hr style="color:#CCC"/>
+			</div>
+			<div id ="content">
+				
+				<%= form_tag :action=> "signup" %>
+				<%= error_messages_for 'user' %><br/>
+				
+				<br/>
+				<label for="user_login">Username</label><br/>
+				<%= text_field "user", "login", :size => 20 %><br/>
+				
+				<label for="user_password">Password</label><br/>
+				<%= password_field "user", "password", :size => 20 %><br/>
+
+				<label for="user_password_confirmation">Password Confirmation</label><br/>
+				<%= password_field "user", "password_confirmation", :size => 20 %><br/>
+
+				<label for="user_email">Email</label><br/>
+				<%= text_field "user", "email",  :size => 20 %><br/>
+
+
+
+				<%= submit_tag "Signup" %>
+
+				</form>
+			</div>
+			<br>
+			<br>
+
+				
+			</div>
+		

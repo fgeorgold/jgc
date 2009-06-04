@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "pd_user" %>
+<%= stylesheet_link_tag "personal_professional_life" %>
+
+<h2><%= @title %></h2>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
+<% form_for :personal_life do |form| %>
+  <fieldset>  	
+    <legend>Personal Info</legend>
+	
+    <%= error_messages_for 'personal_life' %>
+	
+    <%= render :partial => "professional_life/text_field_user_entry",
+               :collection => PersonalLife::ALL_FIELDS,
+               :locals => { :form => form,
+                            :rows => PersonalLife::TEXT_ROWS,
+                            :cols => PersonalLife::TEXT_COLUMNS } %>
+							
+    <!-- Add an empty line -->													
+    <br clear="all" />
+    <%= submit_tag "Update", :class => "submit" %>
+  </fieldset>
+<% end %>

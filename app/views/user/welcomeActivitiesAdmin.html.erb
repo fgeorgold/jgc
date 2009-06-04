@@ -1,0 +1,38 @@
+<br>
+<br>
+
+		
+     
+	 <div id="content">
+	 <hr style="color:#CCC"/>
+	 <% tempUser = @userC %>
+	 Welcome! <%= tempUser.login %>
+	 
+	 <br/>
+	 <br/>
+	 You are currently registered as an activities admin.
+	 <br />
+	 <br />
+	 The activities listed below haven't been approved. Please click on the activity 
+	 to view its content. If you are satisfied with the content, click on approve to make
+	 the activity available publicly.	
+	 <br/>
+	 <br/>
+	 There are <%= @activities.size%> activities waiting your approval
+	 <table border="1">
+	 <% for activity in @activities %>
+	 <tr>
+	 	<td><b><%= link_to activity.name, activity %></b> <%= button_to 'Approve' , :action => :approveActivity, :id => activity.id %></td>
+	 </tr>
+	 <% end %>
+	 </table>
+	 <br />
+	 <br />
+ <%= link_to ' Edit Profile ', :action => 'edit_profile' %>
+
+	</p>
+	
+	</div>
+	</body>
+</html>	
+

@@ -1,0 +1,51 @@
+<%= stylesheet_link_tag "pd_user" %>
+<%= stylesheet_link_tag "profile" %>
+<%= stylesheet_link_tag "pd_user_profile" %>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
+<!--div id="main_content"-->
+<div id="content">
+  <div id="full_name">
+    <%= h @spec.full_name %>
+  </div>
+  
+  <div id="occupation">
+    <%= h @spec.occupation %>
+  </div>
+
+  <div id="email">
+    <%= h @pd_user.email %>
+  </div>
+
+  <div id="location">
+    <%= h @spec.location %>
+  </div>
+
+  <!-- Add a horizontal line as separator -->
+  <hr noshade />
+
+  Bio:
+  <div id="bio">
+    <%= sanitize @personal_life.bio %>
+  </div>
+
+</div>
+
+<!-- Add a horizontal line as separator -->
+<hr noshade />
+<!-- Add 1 empty line -->
+<br />  
+
+<!-- div id="left_column"-->
+<div id="content">
+  <!-- PERSONAL LIFE ENTRIES (EXCEPT BIO) -->	
+  <%= render :partial => 'personal_life/sidebar_box',
+             :collection => PersonalLife::ALL_FIELDS_EXCLUDING_BIO %>
+			 
+  <!-- PROFESSIONAL LIFE ENTRIES -->	
+  <%= render :partial => 'professional_life/sidebar_box',
+             :collection => ProfessionalLife::ALL_FIELDS %>
+</div>
+

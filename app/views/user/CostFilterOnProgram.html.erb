@@ -1,0 +1,44 @@
+  <div id ="content">
+	  <div align="right">
+	  		<% if (session[:pd_user_id] != nil) -%>
+          		<%= nav_link "Profile", "pd_user", "index" %> |
+          		<%= nav_link "Logout", "pd_user", "logout" %>
+        	<% else -%>
+          		<%= nav_link "Register", "pd_user", "register" %> |
+          		<%= nav_link "Login", "pd_user", "login" %>
+        	<% end -%>	
+		
+      </div>
+   </div> 
+<br>
+<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+				<hr style="color:#CCC"/>
+				<br/>
+				Total number of results: <%= @activities.size() %></p>
+				<br/>
+				<br/>
+				<div id ="content">
+		
+					<div class ="copy">
+						<%for activity in @activities %>
+					<p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+					<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+					Description : <%=activity.description%> <br/>
+					Cost : <%= activity.cost %><br/><br/>
+					<div id="star-ratings-block">
+    				<%= render :partial => "ratings/currentrating", :locals => { :activity => activity } %>
+					</div>
+							<br/>
+							<br/>
+						<% end %>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<a href="searchActivities"> Try free text based Search of Activities</a> | 
+		<a href="../activities"> Back to search by categories,programs and Age Group</a>
+		</div>

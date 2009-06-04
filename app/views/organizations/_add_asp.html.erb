@@ -1,0 +1,10 @@
+<div class ="asp">
+<% for asp in @organization.asps %>
+	<% fields_for "organization[asp_attributes][]", asp do |asp_form| %>
+	<%= asp_form.text_field :program_name %>	
+	<%= link_to_function "Remove", "$(this).up('.asp').remove()"%>
+	<br/>
+	<br/>
+	<% end %>
+ <% end %>
+</div>

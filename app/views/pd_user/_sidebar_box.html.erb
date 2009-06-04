@@ -1,0 +1,33 @@
+<div class="sidebar_box">
+  <h2>
+    <span class="header">
+      <%= title %>
+	</span>
+	
+    <span class="edit_link">
+      <%= link_to "[edit]", :controller => "pd_user", :action => "edit" %>
+    </span>
+	
+    <!-- Add an empty line -->		
+    <br clear="all" />
+  </h2>
+    
+  <div class="sidebar_box_contents">
+    <table>
+      <tr>
+        <td class="label">Login name :</td>
+        <td><%= @pd_user.login_name %></td>
+      </tr>
+	  
+      <tr>
+        <td class="label">Email :</td>
+        <td><%= @pd_user.email %></td>
+      </tr>
+		
+      <tr>
+        <td class="label">Password :</td>
+        <td>********</td>
+      </tr>
+    </table>      	
+  </div>  
+</div>

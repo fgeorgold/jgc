@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag "pd_user" %>
+<%= stylesheet_link_tag "community" %>
+
+<h2><%= @title %></h2>
+
+<fieldset>
+  <legend>Alphabetical Index</legend>
+  
+  <% @letters.each do |letter| %>
+    <!-- For each letter define a CSS class to indicate whether a particular letter is currently selected -->
+    <% letter_class = (letter == @initial) ? "letter_current" : "letter" %>
+	
+	<!-- Link back to the index page with the current letter as the id -->
+    <%= link_to letter, { :action => "index",
+                          :id => letter },
+                          :class => letter_class %>
+  <% end %>
+  
+  <!-- The table with the results once the used clicks on a letter -->
+  <%= render :partial => "result_summary" %>
+  <!-- Add an empty line -->
+  <br clear="all" />  
+  <%= render :partial => "pd_user_table" %> 
+</fieldset>
+
+<!-- Put the search form on the community index page (but only if there is no
+     @initial variable. The reason is that when the initial exists we want to
+     display only the users whose last names begin with that letter
+-->
+<% if (@initial == nil) %>
+  <!-- Add an empty line -->
+  <br clear="all" />
+  <%= render :partial => "browse_form" %>  
+  <br />  
+  <!--%= render :partial => "search_form" %-->
+<% end %>    
+  

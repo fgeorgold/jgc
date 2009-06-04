@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+       	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/user.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/p7tmcoollines.css" />
+	 <%= javascript_include_tag :defaults %>
+	<title><%= @title_description %></title>
+  </head>
+  
+<body>
+	<a target="_blank" id="feedback-tab" href="../user/userComment"></a>
+	<img src="/images/JGC.gif" alt="John Gardner Center Logo" />
+
+
+ 	<div id ="content">
+		<div align="right">
+			<table border="1">
+				<tr>
+					<td class="right">
+						<%  if(@hDisplay)
+								if(session[:user] && session[:user].admin && session[:user].affiliateOrg)
+							    	concat "<a href = /user/welcomeAdminUser >Home </a>"
+								end
+								if(session[:user] && session[:user].admin && !session[:user].affiliateOrg)
+									concat "<a href = /user/welcomeUser >Home </a>"
+								end
+								if(session[:user] && !session[:user].admin && session[:user].affiliateOrg)
+									concat "<a href = /user/welcomeOrgUser >Home </a>"
+								end
+								if(session[:user] && !session[:user].admin && !session[:user].affiliateOrg && !session[:user].activitesadmin)
+									concat "<a href = /user/welcomeUser >Home </a>"
+								end
+								if(session[:user] && session[:user].activitesadmin)
+									concat "<a href = /user/welcomeActivitiesAdmin >Home </a>"
+								end
+							end
+							
+						%>
+						
+						
+					</td>
+					<td class="right">
+					<%	if(@orgUser)
+				  			if (session[:user])
+								concat "<a href = /user/logout> Logout </a>"
+							else
+				    			concat "<a href = /user/login> Organization Login </a>"
+				  			end
+						end
+					%>
+					
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</div>
+	<hr/> 
+	<br/>
+	<br/>
+	<div id ="content">
+		<table border="1">
+			<tr>
+				<td class="centered">					
+					<div>
+					<a href="/index.html"> About Us </a>
+					</div>
+				</td>
+				
+				<td class="centered">
+		          <div id="nav">
+            		<%= nav_link_controller "Organizations", "organizations" %>
+		          </div>
+				</td>
+        		<td class="centered">
+           
+				  <div id="nav">
+		            <%= nav_link_controller "After School Activities", "activities" %>
+        		  </div>       
+            
+        		</td>
+				<td class="centered">					
+					<div>
+					<a href="/parents.html">Parents</a>
+				</div></td>
+
+                <td class="centered">
+                  <div id="nav">
+                    <%= nav_link_controller "Program Directors", "pd_user" %>
+                  </div>   
+                </td>
+
+                <td class="centered">
+                  <div id="nav">
+                    <%= nav_link_controller "Teachers", "pd_user" %>
+                  </div
+                </td>
+
+				<td class="centered">					
+					<div>
+					<a href="/user/search">Search </a>
+					</div></td>
+			</tr>
+		</table>
+	</div>
+	<%= yield  %>
+</body>
+</html>

@@ -1,0 +1,35 @@
+  <div id ="content">
+	  <div align="right">
+	  		<% if (session[:pd_user_id] != nil) -%>
+          		<%= nav_link "Profile", "pd_user", "index" %> |
+          		<%= nav_link "Logout", "pd_user", "logout" %>
+        	<% else -%>
+          		<%= nav_link "Register", "pd_user", "register" %> |
+          		<%= nav_link "Login", "pd_user", "login" %>
+        	<% end -%>	
+		
+      </div>
+   </div> 
+
+<br>
+<br>
+		
+		<div id="loginbox">
+			<div class="copy">
+			<p> Please select a name of the actitivity from the drop down menu to view detials about the activites. You can also use 
+			    our <a href="/user/searchActivities">Search </a> interface to find the activity you
+				are looking for. </p>
+			<hr style="color:#CCC"/>
+				<div id = "content">
+				<%= form_tag :action=> "showActivitiesByAgeGroup" %>
+				<%= select_tag(:age_group,"<option>-Select an age group</option>" + options_for_select([ "0-8", "8-10", "10-12","12-14","14-16" ])) %>
+				<%= submit_tag "Show" %>
+			</div>
+			</div>
+			<br/>
+			<br/>
+			<%= link_to 'Back', :activities %>
+
+		</div>
+				
+

@@ -1,0 +1,87 @@
+<% form_tag({ :action => "browse" }, :method => "get") do %>
+  <!-- Add an empty line -->
+  <br />
+  
+  <fieldset>
+    <legend>Browse</legend>
+
+    <!-- FIRST NAME -->
+    <div class="form_row">
+      <label for="name">First Name:</label>
+      <%= text_field_tag "first_name", params[:first_name], :size => 20 %>
+    </div>
+	
+    <!-- LAST NAME -->
+    <div class="form_row">
+      <label for="name">Last Name:</label>
+      <%= text_field_tag "last_name", params[:last_name], :size => 20 %>
+    </div>
+	
+    <!-- GENDER -->
+    <div class="form_row">
+      <label for="gender">Gender:</label>
+      <%= radio_button_tag :gender, "Male",
+                           params[:gender] == 'Male',
+                           :id => "Male" %>Male
+      <%= radio_button_tag :gender, "Female",
+                           params[:gender] == 'Female',
+                           :id => "Female" %>Female
+    </div>
+
+    <!-- OCCUPATION -->
+    <div class="form_row">
+      <label for="occupation">Occupation:</label>
+      <%= text_field_tag "occupation", params[:occupation], :size => 15 %>
+    </div>
+
+    <!-- CURRENT EMPLOYEE -->
+    <div class="form_row">
+      <label for="current_employee">Employee:</label>
+      <%= text_field_tag "current_employee", params[:current_employee], :size => 15 %>
+    </div>
+	
+    <!-- AGE GROUP -->
+    <div class="form_row">
+      <label for="age_group">Age Group:</label>
+      <%= select_tag "age_group", options_for_select([ "","0-8", "8-10", "10-12","12-14","14-16" ]) %>
+    </div>
+      
+    <!-- LOCATION -->
+    <div class="form_row">
+      <label for="location">Address:</label>     
+      <%= text_field_tag "address", params[:address], :size => 20 %>
+    </div>
+    <div class="form_row">
+      <label for="location">City:</label>     
+      <%= text_field_tag "city", params[:city], :size => 15 %>
+    </div>
+    <div class="form_row">
+      <label for="location">State:</label>     
+      <%= text_field_tag "state", params[:state], :size => 6 %>
+      &ndash;
+      Zip Code:
+      <%= text_field_tag "zip_code", params[:zip_code], :size => Spec::ZIP_CODE_LENGTH %>
+    </div>
+		
+    <!-- PHONE -->
+    <div class="form_row">
+      <label for="phone">Phone:</label>     
+      <%= text_field_tag "phone", params[:phone], :size => 15 %>
+    </div>
+	
+    <!-- BROSWE LOGIC FUNCTION -->
+    <div class="form_row">
+      <label for="logic_function">Must match:</label>
+      <%= radio_button_tag :logic_function, "OR",
+                           params[:logic_function] == 'OR',
+                           :id => "OR" %>Any term
+      <%= radio_button_tag :logic_function, "AND",
+                           params[:logic_function] == 'AND',
+                           :id => "AND" %>All terms
+    </div>
+	
+    <!-- Add an empty line -->
+    <br />
+    <%= submit_tag "Browse", :class => "submit" %>
+  </fieldset>
+<% end %>

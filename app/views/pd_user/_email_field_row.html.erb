@@ -1,0 +1,7 @@
+<!-- Partial for the e-mail field. -->
+ 
+<div class="form_row">
+  <label for="email">Email:</label>
+  <%= form.text_field :email, :size => PdUser::EMAIL_SIZE,
+                              :maxlength => PdUser::EMAIL_MAX_LENGTH %>
+</div>

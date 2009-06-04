@@ -1,0 +1,47 @@
+<br>
+<br>
+	<div id="loginbox">
+			<div class="copy">
+				<p> Advanced Search </p>
+				<hr style="color:#CCC"/>
+		  	
+		  
+		  		<%= form_tag :action=> "advancedSearchResults" %>
+				<div align="centered">
+					
+  				<label for="user_name_organization">Name of the organization</label><br/>
+  				<%= text_field "user", "name", :size => 30 %><br/>
+				OR <br/>
+  				<label for="user_name_resources"> Resources </label><br/>
+  				<%= text_field "user", "resources", :size => 30 %><br/>
+
+				OR <br/>
+  				<label for="user_name_asp"> After School Programs </label><br/>
+  				<%= text_field "user", "asp", :size => 30 %><br/>
+
+				<%= submit_tag "Search" %>
+				</form>
+			</div>
+			Total number of results: <%= @organizationsMatchingName.size + @organizationsMatchingResources.size + @organizationsMatchingASPs.size%></p>
+			<p> Matching Resources </p>
+			<%for post in @organizationsMatchingResources %>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
+			Description : <%=post.description%> <br/>
+			Website : <%=post.website%> <br/>
+			<% end %>
+			<p> Matching After School Programs </p>
+			<%for post in @organizationsMatchingASPs %>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
+			Description : <%=post.description%> <br/>
+			Website : <%=post.website%> <br/>
+			<% end %>
+			<p> Matching Names </p>
+			<%for post in @organizationsMatchingName %>
+			<p><span id="organization_link_<%= post.id %>" class="popup_link"><%= link_to post.name, post %><br/></span></p>
+		    <%= render :partial => 'organization_popup', :locals => {:organization => post} %>
+			Description : <%=post.description%> <br/>
+			Website : <%=post.website%> <br/>
+			<% end %>
+		</div>	

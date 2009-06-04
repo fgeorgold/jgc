@@ -1,0 +1,13 @@
+<div class ="partner">
+<% for partner in @organization.partners %>
+	<% fields_for "organization[partner_attribute][]", partner do |partner_form| %>
+	<%= select_tag 'organization[partner_attribute][][partner_org_id]', options_for_select(@organizations,:include_blank => true)%>
+	<%= link_to_function "Remove", "$(this).up('.partner').remove()"%>
+	<br/>
+	<br/>
+	<% end %>
+ <% end %>
+</div>
+
+
+

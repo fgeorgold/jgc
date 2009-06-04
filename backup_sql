@@ -1,0 +1,458 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: Demo_development
+-- ------------------------------------------------------
+-- Server version	5.0.77-community-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `activities`
+--
+
+DROP TABLE IF EXISTS `activities`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `activities` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `description` text,
+  `resources` text,
+  `cost` text,
+  `comments` text,
+  `duration` varchar(255) default NULL,
+  `instructions` text,
+  `programs` varchar(255) default NULL,
+  `age_group` varchar(255) default NULL,
+  `category` varchar(255) default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `visible` tinyint(1) default '0',
+  `created_by` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `activities`
+--
+
+LOCK TABLES `activities` WRITE;
+/*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+INSERT INTO `activities` VALUES (1,'ADJECTIVE NAME GAME','In a circle go around and say an adjective that describes you and starts with the first letter of your name (e.g., Happy Hanna).\r\nThe next person begins by saying everyone’s adjective and name and then adds his or her name and adjective (e.g., Happy\r\nHanna, Jolly Jill, Mysterious María).','','$0-$20','10-15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:20:11','2009-05-27 09:20:11',0,'Yell'),(2,'SILENT NAME GAME','Ask all the youth to go around and say their names aloud. Then tell them that they are no longer allowed to talk. Ask them\r\nto line up in alphabetical order according to their first name. Starting at the front of the line, individuals say their name to\r\ndetermine if the order is correct.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:25:14','2009-05-27 09:25:14',0,'Yell'),(3,'SILENT LINE UP BY BIRTH DATE','Ask the youth to stand up and to arrange themselves in line from oldest to youngest (point where the oldest goes and the\r\nyoungest goes) without saying a word or making a sound. They can make signals, like nodding, but nothing else. Once they feel\r\nthey are in order from youngest to oldest (including month, day, and year), ask them to go down the line and say their birthday.\r\nHave them each write their name and birthday on a sticky note. The sticky notes can then be placed on a timeline in the room\r\nto serve as a reminder.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:26:50','2009-05-27 09:26:50',0,'Yell'),(4,'SILENT LINE UP BY BIRTH DATE','Ask the youth to stand up and to arrange themselves in line from oldest to youngest (point where the oldest goes and the\r\nyoungest goes) without saying a word or making a sound. They can make signals, like nodding, but nothing else. Once they feel\r\nthey are in order from youngest to oldest (including month, day, and year), ask them to go down the line and say their birthday.\r\nHave them each write their name and birthday on a sticky note. The sticky notes can then be placed on a timeline in the room\r\nto serve as a reminder.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:31:39','2009-05-27 09:31:39',0,'Yell'),(5,'NAME ORIGINS','Ask all the youth to go around and say how they got their name or what its origin is. Allow one or two follow-up questions to\r\neach person if others would like to know a little more.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:33:02','2009-05-27 09:33:02',0,'Yell'),(6,'NAME GAME TOSS','Person one says their name, then someone else’s name and throws the ball to that person. That person now has to say person\r\none’s name, his or her name, and the name of someone else and throw the ball to them. That person says everyone’s name that\r\ncame before them, then his or her name until everyone has gotten the ball. You have to throw it to someone who hasn’t had\r\nthe ball yet, so pay attention!\r\nEvery time someone messes up, go back to the beginning using the same order. After successfully completing the circle, have the\r\ngroup do the sequence backwards. You can also add additional balls and have a couple of sequences going at the same time.','','$0-$20','15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:34:46','2009-05-27 09:34:46',0,'Yell'),(7,'MOVEMENT NAME GAME','Ask each person to think of a movement for him or herself. Ask one youth to say his or her name and do the movement. The\r\nnext person will do that person’s movement and say their name and then do one him or herself. Keep going until everyone has\r\nhad a turn.','','$0-$20','10-15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:36:03','2009-05-27 09:36:03',0,'Yell'),(8,'BALLOON NAME GAME','Stand in a circle and toss a balloon in the air and call someone’s name. That person must catch the balloon – or hit it up – before\r\nit touches the ground. That person calls out another person’s name as soon as the balloon is back up in the air.','','$0-$20','10-15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:37:04','2009-05-27 09:37:04',0,'Yell'),(9,'COMMONALITIES','Ask youth to get into pairs with someone they do not know very well. Ask them to make a list of things they have in\r\ncommon (e.g., neighborhood, personality trait, experience), ability. After a few minutes, go around the room, and ask\r\nthem to share with the group their most surprising commonality.','','$0-$20','5 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:38:41','2009-05-27 09:38:41',0,'Yell'),(10,'STAND UP IF','Ask participants to “Please stand up if you…” (select categories that are interesting or important for that session).\r\nYou can also ask for volunteers to say a quality about themselves, something they like, or a goal they have, for\r\nexample, and then everyone who also has that similarity will stand up. This is a good activity to start off a presentation:\r\nIt can help youth get to know their audience.','','','5-10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:39:28','2009-05-27 09:39:28',0,'Yell'),(11,'BIG WIND BLOWS','Begin by making a circle of chairs. There should be one less chair than the total number of people playing. One person\r\nstarts by standing in the middle of the circle and saying something about themselves, ending with “Who else?”\r\nExample: “I love chocolate, who else loves chocolate?” All the group members who love chocolate must get up and\r\nswitch places without selecting the chairs directly on either side of them. The person who is left without a chair goes\r\nto the center of the circle and picks the next statement. This game can be light hearted or serious, depending on the\r\ncontent and the group.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:40:26','2009-05-27 09:40:26',0,'Yell'),(12,'TWO TRUTHS AND A LIE','Each person has to think of three statements to share with the group about him or herself, two of which are true and\r\none of which is a lie. Everyone else in the group tries to guess which statement is the lie after each person shares the\r\nthree statements. Hint: Hand out index cards or scrap paper and have youth take a few minutes before beginning the\r\nactivity to think about what they are going to say. This will keep the truths and lies varied and will help the activity\r\nto move more smoothly.','','','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:41:25','2009-05-27 09:41:25',0,'Yell'),(13,'THIS CORNER','Number the corners of the room 1-4, writing each number on a large piece of paper so that it is visible. Let youth know that\r\nthey are to stand by the number that best fits them. Start by using an example: Ask youth to go to #1 if they are an only child,\r\n#2 if they have one sibling, #3 if they have two, and #4 if they have three or more siblings. Repeat this process several times\r\nusing different categories (e.g., types of pets, neighborhoods, where they were born). Depending on the group, you can also\r\nhave the students discuss topics in their categories (either general “get to know you” questions, or questions specifically related\r\nto the project).','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:43:03','2009-05-27 09:43:03',0,'Yell'),(14,'YOU WOULDN’T KNOW BY LOOKING AT ME','Give each participant a 3x5 index card and ask them write a little-known fact about him or herself on the card, something he or\r\nshe wouldn’t mind the group knowing. State that they are not to write their name on the card. Collect all the cards, shuffle, and\r\nredistribute to the group. If someone gets his or her own card back, exchange it for another. Once they all have an unfamiliar\r\ncard, ask them to circulate, asking one another yes or no questions about the information on the card. For example, if the card\r\nsays “I have a pet iguana,” they could ask “Do you have a pet? Is it an iguana?” When the person answering the description is\r\nfound, he or she signs the card and tapes it on a designated wall space. Once all cards are up read them aloud.','','$0-$20','15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:43:50','2009-05-27 09:43:50',0,'Yell'),(15,'CANDY GAME','Pass around a bowl of small multi-colored candies, and instruct each person to take two to five (they choose the number). Once\r\neveryone has picked their candy, youth must tell one unique fact about themselves for each candy in their hands – they can’t\r\neat them to reduce facts needed! Variation: each color has a different question or statement that the person needs to respond\r\nto. For example:\r\n-Red: Something you don’t like or try to avoid.\r\n-Orange: Name something that motivates you.\r\n-Yellow: If you were ruler of the universe for a day, what is the first thing you would do?\r\n-Green: If you could have any job, what would it be?\r\n-Blue: What is a dream you have about your future?\r\n-Pink: Something daring that you have done.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:45:09','2009-05-27 09:45:09',0,'Yell'),(16,'CLUSTER GAME','The goal of this activity is to form groups quickly based on similarities. Direct youth members to form smaller groups\r\nbased on criteria you give them. Speed is not essential, but the activity should proceed at a fairly rapid pace, while still\r\nallowing individuals to create groups and introduce themselves each time.\r\nSample Criteria:\r\nPeople who have the same...\r\n-eye color.\r\n-shirt color.\r\n-Extra-curricular activities.\r\n-birthdays in the same season (within season group, arrange by birth date).\r\n-favorite sport or movie.\r\n-last digit of your telephone number.\r\n-state where they were born.\r\n-neighborhood where they live.\r\nFind someone who...\r\n-had the same breakfast as you.\r\n-has the same shoe size (or has the same size hand).\r\n-has a different religious belief.\r\n-you haven’t met yet.\r\n-has the same favorite season.\r\n-has been to a place you would like to visit.\r\nLine up according to:\r\n-Number of siblings.\r\n-Introversion/extraversion.\r\n-How tired/alert you feel.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 09:47:07','2009-05-27 09:47:07',0,'Yell'),(17,'HUMAN SCAVENGER HUNT','Divide the group in half and send each half to a different side of the room. The facilitator stands in the center and calls out the\r\ncategories listed below (or others). Each group has to figure out which combination of people in their group fits the category,and\r\nthen send those people to the center of the room. The group who gets their representatives to the center first wins a point.\r\nSample Categories:\r\n-Two people who have the same first and last initial.\r\n-The person who was born the farthest away from here and the person born closest.\r\n-Two people with the same middle name.\r\n-A group whose ages add up to 50.\r\n-A group whose shoe sizes add up to 30.\r\n-A group who have attended school for a total of 38 years.\r\n-Two people with the same birthday (or birthday month).\r\n-A group of people who can spell a word by putting together the first letters of their first names.\r\n-A group of at least three people who all have different colored eyes.\r\nDebrief: Did anything surprise you? What was the most difficult category for your group? Did someone in your group take the\r\nlead? How did you figure out each answer?','','$0-$20','15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 10:02:20','2009-05-27 10:02:20',0,'Yell'),(18,'LISTEN AND RESPOND','The purpose of this exercise is for youth to practice, as a group, the skill of listening and responding to questions. Pick a\r\nvolunteer to be “interviewed” by the group, and pick another volunteer to ask an initial question (e.g., “What do you think of\r\nyour city?” or “What are your hobbies?”). After the first question has been asked and answered, have other youth go around in\r\na circle asking follow-up questions based on the responses of the person being interviewed. Because they don’t have a script,\r\nthis exercise requires participants to listen and respond to what was said. Remind youth to keep questions respectful.','','','5 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 10:03:30','2009-05-27 10:03:30',0,'Yell'),(19,'LISTENING LINES','Have each youth silently stand and face a partner. Each partner will have one to two minutes to share an experience of not\r\nbeing listened to. What was the situation? What was it like? How could you tell you were not being heard? While one partner\r\nis talking, the other partner is to be silent. Time the youth and tell them when to switch speaker and listener roles. When the\r\nactivity is complete, ask the youth to name some of the experiences they have had of not being listened to and some of the\r\nissues that came up.\r\nVariation: When it is time to switch roles, ask the new listener to remain with their back turned as the speaker shares his or her\r\nexperience. With this variation, ask youth (both listeners and talkers in turn) what it was like to be in that situation.','','$0-$20','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 10:04:54','2009-05-27 10:04:54',0,'Yell'),(20,'NAME THAT TUNE/FIND YOUR OTHER HALF','Each person receives an index card with either the title of a well-known song printed on it or the name of its\r\nassociated artist. The task is to create pairs based on aligning the song with its respective artist. Once the pairs have\r\nbeen made, introductions are done and each individual gives a specific fact about themselves. This can be continued\r\nfor multiple iterations with new index cards. Other possible pair combinations:\r\n-Book title and author.\r\n-Movie title with actors/actresses.\r\n-Countries with leaders.\r\n-Cities with professional sports teams.\r\nVariation: You can also do this with duos (e.g., Mickey and Minnie, Bonnie and Clyde). In this case, participants have\r\ntheir character taped to their back and must ask yes or no questions to their peers to find out who they are. Once they\r\nknow who they are, they can find their other half.','','$0-$20','','0-30min','',NULL,'',NULL,'2009-05-27 10:06:24','2009-05-27 10:06:24',0,'Yell'),(21,'TAKING A STAND','Place signs saying Strongly Agree and Strongly Disagree on opposite walls. Emphasize that there is no right or wrong\r\nanswer. Have students stand in the center of the room. Read a list of statements and tell the students to line up\r\nagainst the sign they most agree with – they can also remain in the middle. Begin with simple questions, such as,\r\n“Pizza is my favorite food” or “I think grades are important for my future.” Gradually move to deeper topics by using\r\nquestions like, “I feel safe walking home after dark” or “There’s a problem with gangs in our community.”\r\nDebrief: Talk about different perspectives on the issues. Discuss how this learning experience could be helpful in working together as a team.','','$0-$20','15 MINUTES\r\n(ADAPTED FROM INNOVATION CENTER FOR COMMUNITY AND YOUTH DEVELOPMENT) \r\n','0-30min','',NULL,'',NULL,'2009-05-27 10:08:10','2009-05-27 10:08:10',0,'Yell'),(22,'BACK-TO-BACK DRAWING','This activity highlights the importance of clear directions and active listening.\r\nGive each person two blank pieces of paper and a marker or pen. Ask everyone to find a partner and sit down back to\r\nback. Ask everyone to draw a picture on one of the sheets of paper. After all youth have drawn a picture (make sure\r\nthey don’t let their partner see!), have each pair designate one person as the artist and the other person as the “art\r\ndirector.” Sitting back to back (and therefore unable to see the other person’s sheet of paper), the artist must follow\r\nthe art director’s verbal directions and try to successfully draw the same picture as their partner. This requires very\r\ngood directions! Switch roles, so each person in the pair has a chance to be the artist and the art director.\r\nDebrief: Discuss their experiences and compare the original drawings with the instructed drawings. What was difficult about this activity?','','$0-$20','15 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 10:10:02','2009-05-27 10:10:02',0,'Yell'),(23,'LIFE LINE','The purpose of this activity is to share life events; to build trust and empathy; to gain understanding into the events in our life\r\nthat were beyond our control and how we coped; and to gain insight into those which were within our control and how we\r\nproblem solved.','Paper (one sheet for each participant); colored pencils or pen.','$0-$20','10 MINUTES','0-30min','Ask participants to draw a horizontal line across the paper, with their birth date at one end and today’s date at the other. Instruct\r\nthem to mark significant life events along the line, to write a brief description of each, and to note their age at the time (e.g., 3\r\nyears/mumps; 4 years/brother born). After each life line is complete, have them write beside each event whether it was within\r\ntheir control or not (N=No Control, C=Control). Take turns sharing life lines. If appropriate, probe to find out how they coped or\r\nresolved problems. Point out similarities. If grief is a central theme, discuss what this was like for them.',NULL,'',NULL,'2009-05-27 10:14:12','2009-05-27 10:14:12',0,'Yell'),(24,'LABELS','The purpose of this activity is to examine the phenomenon of using labels for ourselves and for others and to consider the\r\nmeanings labels can acquire in particular cultural contexts.','Create worksheets with the heading “I am…” that contain several labels categorized in groups such as gender/\r\nsex; height; eye color; hair color; religion; school clique; ethnicity and race. You will also need sticky notes and butcher paper\r\nsheet titled The Label Junkyard.','$0-$20','ADAPTED FROM THE NATIONAL CONFERENCE\r\n(30 MINUTES)','0-30min','Distribute the worksheets and ask participants to circle the labels that apply to them personally. Ask them to use the sticky note\r\nto write down one label they never wish to hear used about them again. Have them post their sticky notes on the labeled The\r\nLabel Junkyard. Discuss the worksheet and the Junkyard, using such questions as:\r\n-How do you feel about labels?\r\n-What is the advantage of being a person with your labels? What are the disadvantages?\r\n-Why do you think we use labels?\r\n-What harm can be done by labeling?\r\nRead the labels in the Junkyard and then use the YELL decision-making process to decide what to do with this sheet. Options may include\r\nposting it in the room, deciding on a consequence for each time someone uses a label, or giving everyone a turn to tear it up.',NULL,'',NULL,'2009-05-27 10:16:58','2009-05-27 10:16:58',0,'Yell'),(25,'GONE FISHING','Prepare for this activity by drawing a fish on each of three sheets of paper. Draw one fish big, one fish small, and one fish a\r\nmedium size. Have the participants stand in two lines facing one another, with enough space between the two lines for you to\r\nwalk comfortably between them. Tell participants that this will be a silent exercise until the end. Arrange the fish drawings so\r\nthat you can walk down the center of the two groups showing one line of participants the biggest fish and the other side the\r\nsmallest fish (you can tape the papers back to back – but make sure that the lines don’t show through). Then walk back down\r\nthe center of the two lines with the medium size fish drawing so that both sides can see. Tell the group that on the count of\r\nthree they are going to shout out a description of the second fish they saw. Reflection: What does this exercise show about\r\nperception of what you see?','','','10 MINUTES','0-30min','',NULL,'',NULL,'2009-05-27 10:18:45','2009-05-27 10:18:45',0,'Yell');
+/*!40000 ALTER TABLE `activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `activities_comments`
+--
+
+DROP TABLE IF EXISTS `activities_comments`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `activities_comments` (
+  `id` int(11) NOT NULL auto_increment,
+  `activity_id` varchar(255) default NULL,
+  `comment_text` text,
+  `email` varchar(255) default NULL,
+  `visible` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `activities_comments`
+--
+
+LOCK TABLES `activities_comments` WRITE;
+/*!40000 ALTER TABLE `activities_comments` DISABLE KEYS */;
+INSERT INTO `activities_comments` VALUES (1,'1','','jgcstanford@gmail.com',0),(3,'3','','jgcstanford@gmail.com',0),(5,'16','Variation: Role Call\r\nDivide the group into two teams. Ask the teams to line up according to various criteria (birthday, name, hair length,\r\namount of time living in the community, number of siblings, number of cousins, etc). The team that lines up in the\r\ncorrect order the fastest wins that round. Go through the order to make sure they are correct. If one team is winning\r\nmore frequently than the other, mix up the teams. After you have completed a few rounds of the activity, discuss what\r\nstrategies helped and hindered their organization process. You can also do this as a full group and time them to see\r\nhow fast they can complete the tasks.\r\nThis activity great to do when your group is working on research analysis since they can notice clusters or “trends”\r\nwithin their group','jgcstanford@gmail.com',0);
+/*!40000 ALTER TABLE `activities_comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL auto_increment,
+  `activity_id` varchar(255) default NULL,
+  `category_name` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'1','Icebreakers'),(2,'2','Icebreakers'),(3,'3',''),(4,'4','Icebreakers'),(5,'5','Icebreakers'),(6,'6','Icebreakers'),(7,'7','Icebreakers'),(8,'8','Icebreakers'),(9,'9','Icebreakers'),(10,'10','Icebreakers'),(11,'11','Icebreakers'),(12,'12','Icebreakers'),(13,'13','Icebreakers'),(14,'14','Icebreakers'),(15,'15','Icebreakers'),(16,'16','Icebreakers'),(17,'17','Icebreakers'),(18,'18','Icebreakers'),(19,'19','Icebreakers'),(20,'20','Icebreakers'),(21,'21','Icebreakers'),(22,'22','Icebreakers'),(23,'23','General'),(24,'24','General'),(25,'25','General');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL auto_increment,
+  `comment_text` text,
+  `email` varchar(255) default NULL,
+  `name` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `emails`
+--
+
+DROP TABLE IF EXISTS `emails`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `emails` (
+  `id` int(11) NOT NULL auto_increment,
+  `from` text,
+  `to` text,
+  `mail` text,
+  `subject` text,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `emails`
+--
+
+LOCK TABLES `emails` WRITE;
+/*!40000 ALTER TABLE `emails` DISABLE KEYS */;
+INSERT INTO `emails` VALUES (1,'helpjgc@gmail.com','jgcstanford@gmail.com','A new Organization: John Gardner Center has been created by admin .Kindly review and approve the organization','New organization has been created','2009-05-27 06:49:23','2009-05-27 06:49:23');
+/*!40000 ALTER TABLE `emails` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `organizations`
+--
+
+DROP TABLE IF EXISTS `organizations`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `organizations` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `website` varchar(255) default NULL,
+  `description` text,
+  `resources` text,
+  `contact` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `partners` varchar(255) default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `visible` tinyint(1) default '0',
+  `asp` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `organizations`
+--
+
+LOCK TABLES `organizations` WRITE;
+/*!40000 ALTER TABLE `organizations` DISABLE KEYS */;
+INSERT INTO `organizations` VALUES (1,'John Gardner Center','http://gardnercenter.stanford.edu/','Community and youth development go hand in hand: a community only prospers when its young people prosper, and young people only flourish in a flourishing community. At the John W. Gardner Center (JGC) at Stanford University, we partner with local communities to support their efforts to continually renew themselves, by way of developing well-rounded young people who are successful—intellectually, emotionally, physically and socially—and who in turn are motivated to contribute to their communities, both as leaders and as responsible participants.','','Katrina Brink','kbrink@stanford.edu',NULL,'2009-05-27 06:49:23','2009-05-27 06:50:09',1,NULL);
+/*!40000 ALTER TABLE `organizations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `partners`
+--
+
+DROP TABLE IF EXISTS `partners`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `partners` (
+  `id` int(11) NOT NULL auto_increment,
+  `organization_id` varchar(255) default NULL,
+  `partner_org_id` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `partners`
+--
+
+LOCK TABLES `partners` WRITE;
+/*!40000 ALTER TABLE `partners` DISABLE KEYS */;
+/*!40000 ALTER TABLE `partners` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pd_users`
+--
+
+DROP TABLE IF EXISTS `pd_users`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `pd_users` (
+  `id` int(11) NOT NULL auto_increment,
+  `login_name` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `password` varchar(255) default NULL,
+  `authorization_token` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `pd_users`
+--
+
+LOCK TABLES `pd_users` WRITE;
+/*!40000 ALTER TABLE `pd_users` DISABLE KEYS */;
+INSERT INTO `pd_users` VALUES (1,'Yell','charis@stanford.edu','yelluser','ab126f3d0a303373039c6c7f4280d80e054fd461'),(2,'test44','test44@gmail.com','test44',NULL);
+
+/*!40000 ALTER TABLE `pd_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `personal_lives`
+--
+
+DROP TABLE IF EXISTS `personal_lives`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `personal_lives` (
+  `id` int(11) NOT NULL auto_increment,
+  `pd_user_id` int(11) NOT NULL,
+  `bio` text,
+  `academic_background` text,
+  `interests` text,
+  `other_info` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `personal_lives`
+--
+
+LOCK TABLES `personal_lives` WRITE;
+/*!40000 ALTER TABLE `personal_lives` DISABLE KEYS */;
+INSERT INTO `personal_lives` VALUES (1,1,'sdsssssssssssssssssssssssssss','z','',''),(2,2,'','','','');
+/*!40000 ALTER TABLE `personal_lives` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `professional_lives`
+--
+
+DROP TABLE IF EXISTS `professional_lives`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `professional_lives` (
+  `id` int(11) NOT NULL auto_increment,
+  `pd_user_id` int(11) NOT NULL,
+  `current_employee` text,
+  `start_date` date default NULL,
+  `past_work_experience` text,
+  `num_of_work_experience_years` int(11) default NULL,
+  `social_activities` text,
+  `skills` text,
+  `future_plans` text,
+  `desired_job_description` text,
+  `desired_job_salary` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `professional_lives`
+--
+
+LOCK TABLES `professional_lives` WRITE;
+/*!40000 ALTER TABLE `professional_lives` DISABLE KEYS */;
+INSERT INTO `professional_lives` VALUES (1,1,'','2003-02-28','test',NULL,'','','','',NULL),(2,2,'JGC','2009-05-28','none',NULL,'a few','','','',NULL);
+/*!40000 ALTER TABLE `professional_lives` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `programs`
+--
+
+DROP TABLE IF EXISTS `programs`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `programs` (
+  `id` int(11) NOT NULL auto_increment,
+  `activity_id` varchar(255) default NULL,
+  `program_name` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `programs`
+--
+
+LOCK TABLES `programs` WRITE;
+/*!40000 ALTER TABLE `programs` DISABLE KEYS */;
+INSERT INTO `programs` VALUES (1,'1',''),(2,'2',''),(3,'3',''),(4,'4',''),(5,'5',''),(6,'6',''),(7,'7',''),(8,'8',''),(9,'9',''),(10,'10',''),(11,'11',''),(12,'12',''),(13,'13',''),(14,'14',''),(15,'15',''),(16,'16',''),(17,'17',''),(18,'18',''),(19,'19',''),(20,'20',''),(21,'21',''),(22,'22',''),(23,'23',''),(24,'24',''),(25,'25','');
+/*!40000 ALTER TABLE `programs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('2'),('20090227000327'),('20090301221130'),('20090308004047'),('20090308004757'),('20090308010800'),('20090413232041'),('20090421234634'),('20090423082204'),('20090425232827'),('20090427005206'),('20090428024927'),('20090428085038'),('20090503224603'),('20090504213831'),('20090512223055'),('20090513211955'),('20090514215613'),('20090518221040'),('3'),('4'),('5'),('6');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `sessions` (
+  `id` int(11) NOT NULL auto_increment,
+  `session_id` varchar(255) NOT NULL,
+  `data` text,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `index_sessions_on_session_id` (`session_id`),
+  KEY `index_sessions_on_updated_at` (`updated_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES (1,'480db21a189807b4f60d1d9444aab896','BAh7CDoJdXNlcjA6D3BkX3VzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29u\ndHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==\n','2009-05-27 06:47:12','2009-05-28 04:00:45'),(2,'5dead3042ac98abe960d67002ba2a499','BAh7BzoPcGRfdXNlcl9pZDAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6\nOkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=\n','2009-05-27 09:13:22','2009-05-28 07:00:45'),(3,'570e78d5bfd09090b21ea02902a85b1c','BAh7BzoPcGRfdXNlcl9pZGkHIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy\nOjpGbGFzaDo6Rmxhc2hIYXNoewY6EW5vdGlmaWNhdGlvbiITQ2hhbmdlcyBz\nYXZlZC4GOgpAdXNlZHsGOwdU\n','2009-05-28 07:01:08','2009-05-28 07:02:56');
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `specs`
+--
+
+DROP TABLE IF EXISTS `specs`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `specs` (
+  `id` int(11) NOT NULL auto_increment,
+  `pd_user_id` int(11) NOT NULL,
+  `first_name` varchar(255) default '',
+  `last_name` varchar(255) default '',
+  `gender` varchar(255) default NULL,
+  `birthdate` date default NULL,
+  `occupation` varchar(255) default '',
+  `city` varchar(255) default '',
+  `state` varchar(255) default '',
+  `zip_code` varchar(255) default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `specs`
+--
+
+LOCK TABLES `specs` WRITE;
+/*!40000 ALTER TABLE `specs` DISABLE KEYS */;
+INSERT INTO `specs` VALUES (1,1,'Yell','Organzation',NULL,NULL,'','','','');
+/*!40000 ALTER TABLE `specs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `login` varchar(255) default NULL,
+  `hashed_password` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `salt` varchar(255) default NULL,
+  `created_at` datetime default NULL,
+  `admin` tinyint(1) default '0',
+  `affiliateOrg` varchar(255) default NULL,
+  `activitesadmin` tinyint(1) default '0',
+  `mailpref` tinyint(1) default '1',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','91d69c7ec20c2c54e655cc0ae5d631123a4f4997','jgcstanford@gmail.com','ZZ2SbtAKNp','2009-05-27 06:47:30',1,'John Gardner Center',0,1);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2009-05-28  7:35:24

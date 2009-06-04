@@ -1,0 +1,72 @@
+ <div id ="content">
+	  <div align="right">
+	  		<% if (session[:pd_user_id] != nil) -%>
+          		<%= nav_link "Profile", "pd_user", "index" %> |
+          		<%= nav_link "Logout", "pd_user", "logout" %>
+        	<% else -%>
+          		<%= nav_link "Register", "pd_user", "register" %> |
+          		<%= nav_link "Login", "pd_user", "login" %>
+        	<% end -%>	
+		
+      </div>
+   </div> 
+
+<br/>
+<br/>
+  <div id="loginbox">
+  	<div class="copy">
+  		<h3> Browse results by category </h3>
+		<hr style="color:#CCC"/>
+	</div>
+
+		<table>
+			<tr>
+				<td align="left" valign="top">
+					<h3> Cost </h3>
+					<% @statistic.costs.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "CostFilterOnCategory", :cost => "#{key}", :category => "#{@category}" %>
+					<br/>
+					<% end %>
+					<h3> Duration </h3>
+					
+					<% @statistic.duration.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "DurationFilterOnCategory", :duration => "#{key}", :category => "#{@category}" %>
+
+				
+					<br/>
+					<% end %>
+					<h3> Age Group </h3>
+					<% @statistic.age_group.sort.each do  |key,value| %>
+					<%= link_to " #{key}(#{value})", :action => "AgeFilterOnCategory", :age => "#{key}", :category => "#{@category}" %>
+					<br/>
+					<% end %>
+					
+				</td>
+			<div id ="content">
+		
+				<div class ="copy">
+				<td class="left" valign="top">
+					Total number of results: <%= @activities.size() %></p>
+					<br/>
+				    <br/>
+					<%for activity in @activities %>
+					<p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+					<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+					Description : <%=activity.description%> <br/><br/>
+					<div id="star-ratings-block">
+					<%= render :partial => "ratings/currentrating", :locals => { :activity => activity } %>
+					<br/>
+					</div>
+					<% end%>
+				</td>
+				</div>
+			</div>	
+			</tr>
+			
+			
+	</table>
+
+
+<%= link_to 'Back', :back %>
+
+</div>

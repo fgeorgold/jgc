@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "pd_user" %>
+
+<h2>Register</h2>
+
+<!-- Catch the errors and put the error messages on the screen. -->
+<%= error_messages_for "pd_user" %>
+
+<% form_for :pd_user do |form| %>
+  <fieldset>
+    <legend>Enter Your Details</legend>	
+			
+    <%= render :partial => "login_name",
+               :locals => { :form => form } %>
+		
+    <%= render :partial => "email_field_row",
+               :locals => { :form => form } %>
+
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password",
+                            :field_title => "Choose a password" } %>	
+	
+    <%= render :partial => "password_field_row",
+               :locals => { :form => form,
+                            :field => "password_confirmation",
+                            :field_title => "Re-enter password" } %>	
+	
+	<div class="form_row">
+      <%= submit_tag "Register", :class => "submit" %>
+    </div>
+	
+  </fieldset>
+<% end %>
+
+<br/>

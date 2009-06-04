@@ -1,0 +1,14 @@
+#main_content
+{
+  width: 45em;
+  margin: auto;
+  padding: 2px;
+  text-align: left;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+  border-style: solid;
+  
+  height: 100%;
+  background: white;
+  padding: 1em 2em 1em 2em;
+}

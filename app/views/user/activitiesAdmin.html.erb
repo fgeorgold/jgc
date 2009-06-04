@@ -1,0 +1,35 @@
+<br>
+		<br>
+		<div id="loginbox">
+			<div class="copy">
+			<p>JGC Activities Admin Login</p>
+			<br />
+			<p> To login as a program director please click <a href ="/pd_user/login"> here</a>, or to login as an organizational user please
+			click  <a href="login"> here </a> </p>
+			<hr style="color:#CCC"/>
+			</div>
+			<div id ="content">
+				<%= form_tag :action=> "activitiesAdmin" %>
+    			<h3>Login</h3> 
+
+  				<label for="user_login">Login:</label><br/>
+  				<%= text_field "user", "login", :size => 20 %><br/>
+
+  				<label for="user_password">Password:</label><br/>
+  				<%= password_field "user", "password", :size => 20 %><br/>
+
+				<%= submit_tag "Submit" %>
+
+    			
+    			<%= link_to 'Forgot my password', :action => 'forgot_password' %>     
+
+			</form>
+			</div>
+			<br>
+			<br>
+
+				
+			</div>
+		</div>
+</body>
+</html>

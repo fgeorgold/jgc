@@ -1,0 +1,18 @@
+<div id="loginbox">
+			<div class="copy">
+			<p> Please select an orgnization from the drop down menu. You can also use 
+			    our <a href="user/search">Search </a> interface to find the organization you
+				are looking for. </p>
+			<hr style="color:#CCC"/>
+				<div id = "content">
+				<%= form_tag :action=> "showOrg" %>
+				<%= collection_select(:organization, :id, @organizations.sort{|x,y| x.name <=> y.name}, :id, :name, options ={:prompt => "-Select an organization"}, :class =>"organization") %>
+				<%= submit_tag "Show" %>
+				<br />
+				<br />
+				</div>
+			</div>
+		</div>
+<br />
+
+

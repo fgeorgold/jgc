@@ -1,0 +1,11 @@
+
+<% for @partnerName in @partnerNames %>
+	<div class ="partner">
+	<% form_for (@partnerName) do |partner_form| %>
+	<%= h @partnerName %>
+	<%= button_to 'Remove', :action => :RemovePartner, :controller => :organization, :id => @org_id, :name => @partnerName %>
+	<% end %>
+	</div>
+ <% end %>
+
+
