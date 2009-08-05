@@ -1,16 +1,17 @@
-
-
-
 class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.xml
   
   before_filter :login_required, :only=>['edit','update','destroy','new']
   
-  
-
-  
   def index
+    @user = session[:user]
+    @openingText = ""
+    if(@user == nil)
+      @openingText = "Hello, it looks like you are not a registered user.  To find an organization near you, please enter your city, state, or zipcode below, or just select an orgnization using our index."
+		end
+    
+    @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     @hDisplay = true
     @orgUser = true
     @title_description = "John Gardner Center"
@@ -20,10 +21,16 @@ class OrganizationsController < ApplicationController
     @organizations = []
 
     for organization in allorganizations do
-        if(organization.visible== true)
+        if(organization.visible == true)
           @organizations.push organization
         end
     end
+    @organizations.sort! { |x,y| x.name.downcase <=> y.name.downcase }
+    
+  	@AlphabeticalList = Organization.find(:all).to_set.classify {
+    |organization| organization.name[0].chr}
+    
+    #Can't sort set???
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +38,7 @@ class OrganizationsController < ApplicationController
       format.xml  { render :xml => @organizations }
     end
   end
-  
+
   def populate
     
   end
@@ -75,25 +82,24 @@ class OrganizationsController < ApplicationController
 
   end
   
-   def add_partner
+  def add_partner
     allorganizations = Organization.find(:all)
     @porganizations = []
     for vorganization in allorganizations do
-        if(vorganization.visible== true)
-          @porganizations.push vorganization
-        end
+      if(vorganization.visible== true)
+        @porganizations.push vorganization
+      end
     end
     render :partial => "add_partner"
 
-end
+  end
 
-def add_selectedOrg
-  orgID = params[:organization][:id]
-  @organization = Organization.find(orgID)
-  orgName = @organization.name
-  render :text => "<br>"+orgID
-  
-end
+  def add_selectedOrg
+    orgID = params[:organization][:id]
+    @organization = Organization.find(orgID)
+    orgName = @organization.name
+    render :text => "<br>"+orgID
+  end
   
    
   

@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
   before_filter :login_required, :only=>['welcome','change_password']
 
-   def RemovePartner
+    def RemovePartner
     @idOrg = params[:orgId]
     @row = params[:rowid]
     Partner.delete(@row)
@@ -15,8 +15,8 @@ class UserController < ApplicationController
       #Partner.delete(row_id)
     #end
     redirect_to :action => 'show', :controller => 'organizations',:id => @idOrg
-
-end
+    
+    end
 
     def RemoveASP
     @idOrg = params[:orgId]
@@ -31,13 +31,35 @@ end
       
     end
  
+  def organizationSearch
+    case params[:submit]
+      when "Find Near Me!"
+        redirect_to :action => "findByLocation", :input => params[:input], :address => params[:address]
+        return
+      when "Search"
+        redirect_to :action => "searchResults", :input => params[:input], :text => params[:text]
+        return
+    end      
+  end
+  
+  def findByLocation
+    @hDisplay = true
+    @orgUser = true
+    @title_description = "Organizations Search Results by Location"
+    @query = params[:input][:address]
+    @results = Organization.find_with_ferret(@query)
+    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
+  end
+  
   def searchResults
     @hDisplay = true
     @orgUser = true
     @title_description = "Organizations Search Results"
-    @query = params[:user][:text]
+    @query = params[:input][:text]
     # Commenting out Organizations free text search
-    # @posts = Organization.find_by_contents(@query) 
+    #@posts = Organization.find_by_contents(@query) 
+    @results = Organization.find_with_ferret(@query)
+    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
   end
   
 
@@ -276,6 +298,8 @@ end
     @activityQuery = params[:user][:text]
     # Commenting out search
     # @activityPosts = Activity.find_by_contents(@activityQuery)
+    @results = Activity.find_with_ferret(@activityQuery)
+    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
 
   end
   

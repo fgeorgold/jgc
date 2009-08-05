@@ -116,6 +116,9 @@ class PdUserController < ApplicationController
   ########################
   # Show the user's info
   def index
+  
+    @activities = Activity.find(:all)
+  
     @title_description = "Profile"
     @title = "User Information"
     @pd_user = PdUser.find(session[:pd_user_id])    

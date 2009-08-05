@@ -1,4 +1,5 @@
 class Activity < ActiveRecord::Base
+  acts_as_ferret
   acts_as_rateable
   has_many :programs
   has_many :categories

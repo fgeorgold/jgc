@@ -34,13 +34,22 @@
 				</form>
 			
 			<hr style="color:#CCC"/>
+			
+			Your search for <b>"<%= @activityQuery %>"</b> returned <b><%= @results.total_hits %></b> hits.  In order of relevance, they are:
+        <br/>
+				<% for activity in @results %>
+				  <br/>
+    			<%= link_to activity.name, :controller => "activities", :action => "show", :id => activity.id %>		
+				  <br>
+				  Description: <%= activity.description %>
+				<% end %>
+				
 			<table>
 			<tr>
 
 				<td class="left">
 				<!-- Commenting out search by acts_as_ferret, for production -->	
-				<p>Due to technical difficulties free text search is currently disabled. We are fixing it. Thank you for your patience. 
-				   You can try our <%= link_to "browsing through our activities databases", :controller => "activities"%> </a></p>
+				<p>Not sure what you are looking for?  You can try our <%= link_to "browsing through our activities databases", :controller => "activities"%> </a></p>
 				</td>
 			</tr>
 			</table>

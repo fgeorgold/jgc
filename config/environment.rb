@@ -11,6 +11,7 @@ RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 require 'fastercsv'
+require 'acts_as_ferret'
 
 # Required by community_controller for pagination
 #require 'will_paginate'

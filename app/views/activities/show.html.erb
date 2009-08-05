@@ -1,3 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+
+    <script src="http://maps.google.com/maps?file=api&v=1
+
+            &key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RTh4JSKb6ICin675p_ybbtjhoJD4xRJ2j7Xg5BommbMfWeFXq6R648kvg&sensor=false" type="text/javascript">
+
+    </script>
+
+  </head>
+
+  <body>
+
 <a target="_blank" id="feedback-tab" href="../user/userComment"></a>
   <div id="loginbox">
   	<div class="copy">
@@ -22,7 +40,6 @@
 				<td class="left">
 					<%=h @activity.name %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -31,9 +48,16 @@
 				</td>
 				<td class="left">
 					<%=h @activity.description %>
-					
 				</td>
+			</tr>
 			
+      <tr>
+				<td class="left">
+					<b>Address:</b>
+				</td>
+				<td class="left">
+					<a href="#map"><%=@activity.address%></a>
+				</td>
 			</tr>
 			
 			<tr>
@@ -43,7 +67,6 @@
 				<td class="left">
 					<%=h @activity.resources%>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -53,7 +76,6 @@
 				<td class="left">
 					<%=h @activity.cost %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -63,7 +85,6 @@
 				<td class="left">
 					<%=h @activity.comments %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -73,7 +94,6 @@
 				<td class="left">
 					<%=h @activity.duration %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -83,7 +103,6 @@
 				<td class="left">
 					<%=h @activity.instructions %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -96,7 +115,6 @@
 					<br/>
 					<% end %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -106,7 +124,6 @@
 				<td class="left">
 					<%=h @activity.age_group %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -122,6 +139,8 @@
 			</tr>
 			</table>
 			</div>
+
+
 
 <p>User comments:</p>
 
@@ -145,3 +164,68 @@
 <%= link_to 'Back', :back %>
 
 </div>	
+
+
+          <a name="map">
+          <div id="map" style="width: 800px; height: 450px"></div>
+          <script type="text/javascript">    
+
+           var geocoder;
+           var map;
+
+           var restaurant = "The Old Mohawk Restaurant";
+           var address = "<%=@activity.address%>";
+           load();
+
+           // On page load, call this function
+
+           function load()
+           {
+              // Create new map object
+              map = new GMap2(document.getElementById("map"));
+
+              // Create new geocoding object
+              geocoder = new GClientGeocoder();
+
+              // Retrieve location information, pass it to addToMap()
+              geocoder.getLocations(address, addToMap);
+           }
+
+           // This function adds the point to the map
+
+           function addToMap(response)
+           {
+              // Retrieve the object
+              place = response.Placemark[0];
+              var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
+              var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+              var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+              //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+
+
+              // Retrieve the latitude and longitude
+              point = new GLatLng(place.Point.coordinates[1],
+                                  place.Point.coordinates[0]);
+
+              // Center the map on this point
+              map.setCenter(point, 13);
+
+              // Create a marker
+              marker = new GMarker(point);
+
+              // Add the marker to map
+              map.addOverlay(marker);
+
+              // Add address information to marker
+              marker.openInfoWindowHtml("<%=@activity.name%>" + '<br/>' + "<%=@activity.address%>");
+
+           }      
+          
+          
+          </script> 
+          </a>
+          
+
+  </body>
+
+</html>

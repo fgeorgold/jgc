@@ -1,4 +1,7 @@
-
+require 'rubygems'
+require 'hpricot'
+require 'net/http'
+require 'uri'
 require 'set'
 
 
@@ -33,9 +36,11 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.xml
   def show
+
     @id = params[:id]
-    @title_description = " Show Activity"
-    @activity = Activity.find(@id)
+    @title_description = "Show Activity"
+    @activity = Activity.find(@id) 
+    
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
     @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
@@ -57,6 +62,9 @@ class ActivitiesController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @activity }
     end
+    
+
+    
   end
   
   
@@ -184,7 +192,26 @@ class ActivitiesController < ApplicationController
   # POST /activities.xml
   def create
     @activity = Activity.new(params[:activity])
-
+    
+    suffix = "&parse_address=1"
+    base = "http://rpc.geocoder.us/service/namedcsv?address="
+    address = @activity.address
+    address = address.gsub(/ /, '+')
+    webAddress = base << address << suffix
+    output = Net::HTTP.get(URI.parse(webAddress))
+    
+    lat_ss = "lat="
+    long_ss = "long="
+    
+    latIndex = output.index(lat_ss)
+    lat = output[latIndex + lat_ss.length, 9]
+    
+    longIndex = output.index(long_ss)
+    long = output[longIndex + long_ss.length, 9]
+    
+    @activity.lat = lat
+    @activity.lon = long   
+    
     respond_to do |format|
       if @activity.save
         flash[:notice] = 'Activity was successfully created.'

@@ -1,4 +1,9 @@
 class Organization < ActiveRecord::Base
+acts_as_ferret (:fields => ['name', 'description', 'address'],
+  :fields => {:address => { :boost => 5 }})
+  
+
+
   has_many :partners
   has_many :asps
   after_update :save_partners

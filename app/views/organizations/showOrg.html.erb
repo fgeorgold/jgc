@@ -13,7 +13,6 @@
 				<td class="left">
 					<%=h @organization.name %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -24,7 +23,15 @@
 					<% website = @organization.website %>
 					<a href= "<%=website%>" target="_blank"><%= website%></a>
 				</td>
+			</tr>
 			
+		  <tr>
+				<td class="left">
+					<b>Address:</b>
+				</td>
+				<td class="left">
+					<% website = @organization.address %>
+				</td>
 			</tr>
 			
 			<tr>
@@ -34,7 +41,6 @@
 				<td class="left">
 					<%=h @organization.asp %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -44,7 +50,6 @@
 				<td class="left">
 					<%=h @organization.description %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -54,7 +59,6 @@
 				<td class="left">
 					<%=h @organization.resources %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -64,7 +68,6 @@
 				<td class="left">
 					<%=h @organization.contact %>
 				</td>
-			
 			</tr>
 			
 			<tr>
@@ -74,7 +77,6 @@
 				<td class="left">
 					<%=h @organization.partners %>
 				</td>
-			
 			</tr>
 									
 		</table>

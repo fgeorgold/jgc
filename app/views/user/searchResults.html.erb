@@ -4,29 +4,34 @@
 		
 		<div id="loginbox">
 			<div class="copy">
+							
 				<p> Please enter the text you want to search </p>
 				<hr style="color:#CCC"/>
 		  	
-		  
-		  		<%= form_tag :action=> "searchResults" %>
+		  	<%= form_tag :action=> "searchResults" %>
 				<div align="centered">
 				<label for="input_text"></label><br/>
 				
-					
 				<%= text_field "user", "text", :size => 40 %><br/>
 				</div>
 				<div align="centered">
 				<%= submit_tag "Search" %>
 				</div>
 				</form>
+				<br/>
+			  Your search for <b>"<%= @query %>"</b> returned <b><%= @results.total_hits %></b> hits.  In order of relevance, they are:
+        <br/>
+				<% for organization in @results %>
+				  <br/>
+    			<%= link_to organization.name, :controller => "organizations", :action => "show", :id => organization.id %>		
+				  <br>
+				  Description: <%= organization.description %>
+				<% end %>
 			
+
 			<hr style="color:#CCC"/>
-			<!-- Commenting search -->
-			<p>Due to technical difficulties free text search is currently disabled. We are fixing it. Thank you for your patience. 
-			You can try our <a href="advancedSearch"> Advanced Search </a></p>
-			</div>
-			<hr style="color:#CCC"/>
-			Have something more in mind, try our <a href="advancedSearch"> Advanced Search </a>
+			<br/>
+			Have something more in mind?  Try our <a href="advancedSearch"> Advanced Search </a>
 		</div>	
 
 
