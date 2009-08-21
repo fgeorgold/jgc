@@ -8,7 +8,7 @@ class OrganizationsController < ApplicationController
     @user = session[:user]
     @openingText = ""
     if(@user == nil)
-      @openingText = "Hello, it looks like you are not a registered user.  To find an organization near you, please enter your city, state, or zipcode below, or just select an orgnization using our index."
+      @openingText = "Hello, it looks like you are not a registered user.  To find an organization near you, please enter your zipcode below, or just select an orgnization using our index."
 		end
     
     @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -37,10 +37,6 @@ class OrganizationsController < ApplicationController
       
       format.xml  { render :xml => @organizations }
     end
-  end
-
-  def populate
-    
   end
 
   # GET /organizations/1

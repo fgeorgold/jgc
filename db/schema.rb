@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090804205956) do
+ActiveRecord::Schema.define(:version => 20090821224304) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -19,29 +19,39 @@ ActiveRecord::Schema.define(:version => 20090804205956) do
     t.text     "comments"
     t.string   "duration"
     t.text     "instructions"
-    t.string   "programs"
+    t.string   "otherPrograms"
     t.string   "age_group"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "visible",      :default => false
+    t.boolean  "visible",       :default => false
     t.string   "created_by"
     t.text     "address"
     t.text     "lat"
     t.text     "lon"
+    t.integer  "pd_user_id"
+    t.string   "taggedAs"
   end
 
   create_table "activities_comments", :force => true do |t|
-    t.string  "activity_id"
+    t.integer "activity_id"
     t.text    "comment_text"
     t.string  "email"
     t.boolean "visible",      :default => false
   end
 
   create_table "activities_favorites", :force => true do |t|
-    t.string "Pduser_id"
-    t.string "activitiy_id"
+    t.integer "pd_user_id"
+    t.string  "activity_id"
   end
+
+  create_table "activities_tags", :id => false, :force => true do |t|
+    t.integer "activity_id"
+    t.integer "tag_id"
+  end
+
+  add_index "activities_tags", ["tag_id", "activity_id"], :name => "index_activities_tags_on_tag_id_and_activity_id", :unique => true
+  add_index "activities_tags", ["tag_id"], :name => "index_activities_tags_on_tag_id"
 
   create_table "asps", :force => true do |t|
     t.string "organization_id"
@@ -81,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20090804205956) do
     t.boolean  "visible",     :default => false
     t.text     "asp"
     t.text     "address"
+    t.text     "zipcode"
   end
 
   create_table "partners", :force => true do |t|
@@ -116,12 +127,12 @@ ActiveRecord::Schema.define(:version => 20090804205956) do
   end
 
   create_table "programs", :force => true do |t|
-    t.string "activity_id"
-    t.string "program_name"
+    t.integer "activity_id"
+    t.string  "program_name"
   end
 
   create_table "ratings", :force => true do |t|
-    t.integer  "rating",                      :default => 0
+    t.integer  "rating",                      :default => 3
     t.datetime "created_at",                                  :null => false
     t.string   "rateable_type", :limit => 15, :default => "", :null => false
     t.integer  "rateable_id",                 :default => 0,  :null => false
@@ -159,6 +170,13 @@ ActiveRecord::Schema.define(:version => 20090804205956) do
     t.string  "age_group",        :default => ""
   end
 
+  create_table "tags", :force => true do |t|
+    t.string   "description"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "hashed_password"
@@ -170,6 +188,16 @@ ActiveRecord::Schema.define(:version => 20090804205956) do
     t.boolean  "activitesadmin",  :default => false
     t.boolean  "mailpref",        :default => true
     t.boolean  "edit_perms",      :default => false
+  end
+
+  create_table "zips", :force => true do |t|
+    t.string   "code"
+    t.string   "city"
+    t.string   "state"
+    t.decimal  "lat",        :precision => 15, :scale => 10
+    t.decimal  "lon",        :precision => 15, :scale => 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

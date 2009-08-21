@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+
+    <script src="http://maps.google.com/maps?file=api&v=1
+
+            &key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RTh4JSKb6ICin675p_ybbtjhoJD4xRJ2j7Xg5BommbMfWeFXq6R648kvg&sensor=false" type="text/javascript">
+
+    </script>
+
+  </head>
+
+  <body>
+
+		<br>
+		<br>
+
+    <div id="loginbox">
+			<div class="copy">
+
+      <% if(@user == nil) %>
+			  <%= @openingText %>
+			  <br/>
+		  <% end %>
+		  <br/>
+		  
+      <table border="1">		  
+        <tr>
+          <td>
+            <%= form_tag({:controller => "user", :action=> "organizationSearch"}, :method => "get")%>	
+			      <%= text_field "input", "address", :size => 40 %>
+			      <%= submit_tag "Find Near Me!", :name => "submit" %>
+          <br/>
+          <br/>
+          </td>
+
+          <th rowspan="5", colspan ="2">
+				    <div id="map" style="width: 400px; height: 300px"></div>
+
+            <script type="text/javascript">    
+
+             var geocoder;
+             var map;
+             
+             load();
+
+             // On page load, call this function
+
+           function load()
+           {
+              // Create new map object
+              map = new GMap2(document.getElementById("map"));
+
+              // Create new geocoding object
+              geocoder = new GClientGeocoder();
+
+              // Retrieve location information, pass it to addToMap()
+              geocoder.getLocations("<%=@query%>", init);
+                            
+              <%if (@nearbyOrganizations.count >= 1) %>
+                <%for organization in @nearbyOrganizations %>
+                  geocoder.getLocations("<%=organization.address%>", addToMap);     
+                <%end%>
+              <%end%>
+           }
+
+
+
+             // This function adds the point to the map
+           function addToMap(response)
+           {
+              // Retrieve the object
+              place = response.Placemark[0];
+              var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
+              var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+              var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+              //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+
+
+              // Retrieve the latitude and longitude
+              point = new GLatLng(place.Point.coordinates[1],
+                                  place.Point.coordinates[0]);
+
+              // Create a marker
+              //marker = new GMarker(point);
+
+              // Add the marker to map
+              //map.addOverlay(marker);
+
+              // Add address information to marker
+
+           }
+             
+             function init(response)
+             {
+                // Retrieve the object
+                place = response.Placemark[0];
+                var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
+                var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+                var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+                //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+
+
+                // Retrieve the latitude and longitude
+                point = new GLatLng(place.Point.coordinates[1],
+                                    place.Point.coordinates[0]);
+
+                // Center the map on this point
+                map.setCenter(point, 13);
+
+                // Create a marker
+                marker = new GMarker(point);
+
+                // Add the marker to map
+                map.addOverlay(marker);
+
+                // Add address information to marker
+                marker.bindInfoWindowHtml("<%=@query%>");
+             } 
+
+            </script> 
+          </th>
+        </tr>
+        <tr>
+          <td>
+            These organizations were found in your area:
+				    <br/>
+            <% for organization in @nearbyOrganizations %>
+				      <br/>
+        			<%= link_to organization.name, :controller => "organizations", :action => "show", :id => organization.id %>		
+				      <br>
+				      Description: <%= organization.description %>
+				    <% end %>
+          </td>
+        </tr>
+      </table>
+
+      <br/>
+      <br/>
+
+      		Looking for something specific?  Try our search below		
+      		<br/>
+      		<br/>
+			    <%= text_field "input", "text", :size => 40 %>  
+       		<%= submit_tag "Search", :name => "submit" %>
+						    
+      <br/>
+      <br/>
+		  
+			<!-- <hr style="color:#CCC"/>
+				<div id = "content">
+				<%= form_tag :action=> "showOrg" %>
+				<%= collection_select(:organization, :id, @organizations.sort{|x,y| x.name <=> y.name}, :id, :name, options ={:prompt => "-Select an organization"}, :class =>"organization") %>
+				<%= submit_tag "Show" %> -->
+
+
+        <%=link_to "Browse Organizations", :controller => "user", :action => "browseOrganizations" %>
+				
+
+      
+      </div> 
+
+    </div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

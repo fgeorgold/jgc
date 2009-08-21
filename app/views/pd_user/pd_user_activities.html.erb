@@ -16,14 +16,30 @@ Total number of results: <%= @pd_user_activity.size()%></p>
 			Category : <%=activity.category%><br/><br/>
 	<% end%>
 <hr style="color:#CCC"/>
+
 <p>
 	<h3>Your favorite Activiies</h3>
 		<%for row in @pd_user_favorite_activity %>
-	      <%activity = Activity.find(row.activitiy_id)%>
+	    <%activity = Activity.find(row.activity_id)%>
 		  <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
 			<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
 			About : <%=activity.description%><br/>
 			Category : <%=activity.category%><br/><br/>
-	<% end%>
+  	<% end%>
+</p>
+
+<p>
+	<h3>Here are some other activities that you may find interesting</h3>
+		<%for activity in @similarActivities %>
+		  <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
+			<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
+			About : <%=activity.description%><br/>
+			Category : <%=activity.category%><br/><br/>
+      Tags : 
+        <% for tag in activity.tags %>
+          <%=tag.description << ','%>
+      <% end %> <br/>
+      Rating: <%=activity.rating%>
+  	<% end%>
 </p>
 

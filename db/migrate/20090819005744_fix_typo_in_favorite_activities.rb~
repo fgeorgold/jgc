@@ -1,0 +1,9 @@
+class FixTypoInFavoriteActivities < ActiveRecord::Migration
+  def self.up
+    rename_column "activities_favorite", "activitiy_id", "activity_id"
+  end
+
+  def self.down
+    rename_column "activities_favorite", "activity_id", "activitiy_id"
+  end
+end

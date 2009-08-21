@@ -1,18 +1,18 @@
 <div id="loginbox">
 			<div class="copy">
-
 			<% if(@user == nil) %>
 			  <%= @openingText %>
-			  </br>
-			  </br>
-
+			  <br/>
 		  <% end %>
+		  <br/>
 		  
 		  <%= form_tag({:controller => "user", :action=> "organizationSearch"}, :method => "get")%>	
-			%= text_field "input", "address", :size => 40 %>
-			%= submit_tag "Find Near Me!", :name => "submit" %>
+			<%= text_field "input", "address", :size => 40 %>
+			<%= submit_tag "Find Near Me!", :name => "submit" %>
+      <br/>
       <br/>
   		Looking for something specific?  Try our search below		
+  		<br/>
   		<br/>
 			<%= text_field "input", "text", :size => 40 %>  
    		<%= submit_tag "Search", :name => "submit" %>
@@ -28,25 +28,9 @@
 				<br />
 				<br />
 				</div>
-        <b>Alphabetical List of Organizations:</b>
-        <br>
-        <% for letter in @alphabet%>
-					<a href=<%="#"+letter%>><%=letter%></a>
-        <%end%>
-        <br />
-        <br />
-				<% @AlphabeticalList.each do |firstLetter, organizations|%>
-          <a name = <%=firstLetter%> >
-          <h1><%=firstLetter%></h1>
-          </a>
-          <%organizations = organizations.sort {|x,y| x.name <=> y.name }%>
-          <% for organization in organizations %>
-    				<%= link_to organization.name, :controller => "organizations", :action => "show", :id => organization.id %>			
-				    <br/>
-    				<br>
-          <%end%>
-          <br/>
-        <%end%>
+        
+        <%=link_to "Browse Organizations", :controller => "user", :action => "browseOrganizations" %>
+
         
 			</div>
 		</div>

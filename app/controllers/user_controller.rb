@@ -43,12 +43,38 @@ class UserController < ApplicationController
   end
   
   def findByLocation
+    @user = session[:user]
+    @openingText = ""
+    if(@user == nil)
+      @openingText = "Hello, it looks like you are not a registered user.  To find an organization near you, please enter your zipcode below, or just select an orgnization using our index."
+		end
+    
+    @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    allorganizations = Organization.find(:all)
+    # Commenting out search
+    # @posts = Organization.find_by_contents("american")
+    @organizations = []
+
+    for organization in allorganizations do
+        if(organization.visible == true)
+          @organizations.push organization
+        end
+    end
+    @organizations.sort! { |x,y| x.name.downcase <=> y.name.downcase }
+    
+  	@AlphabeticalList = Organization.find(:all).to_set.classify {
+    |organization| organization.name[0].chr}
+    
+    #Can't sort set???
+
     @hDisplay = true
     @orgUser = true
     @title_description = "Organizations Search Results by Location"
     @query = params[:input][:address]
-    @results = Organization.find_with_ferret(@query)
-    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
+    
+    zip = Zip.new
+    zip = zip.get_zipcode(@query)
+    @nearbyOrganizations = zip.find_nearby_organizations
   end
   
   def searchResults
@@ -59,7 +85,23 @@ class UserController < ApplicationController
     # Commenting out Organizations free text search
     #@posts = Organization.find_by_contents(@query) 
     @results = Organization.find_with_ferret(@query)
+    
     @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
+  end
+
+  def browseOrganizations
+    @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    allorganizations = Organization.find(:all)
+    @organizations = []
+    for organization in allorganizations do
+        if(organization.visible == true)
+          @organizations.push organization
+        end
+    end
+    @organizations.sort! { |x,y| x.name.downcase <=> y.name.downcase }
+    
+  	@AlphabeticalList = Organization.find(:all).to_set.classify {
+    |organization| organization.name[0].chr}
   end
   
 
@@ -67,9 +109,9 @@ class UserController < ApplicationController
     @title_description = "Activities Search - Browse By Programs"
     @orgUser = false
     @activities = Activity.find(:all)
-     @programs = Set.new
+    @programs = Set.new
      for my_activity in @activities do
-        @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
+      @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
         for currentProgram in @program_id
           if currentProgram.program_name.empty?
           else
@@ -295,11 +337,23 @@ class UserController < ApplicationController
     @hDisplay = false
     @orgUser = false
     @title_description = "Activities Search Results"
-    @activityQuery = params[:user][:text]
-    # Commenting out search
-    # @activityPosts = Activity.find_by_contents(@activityQuery)
+    @activityQuery = params[:input][:text]
+
     @results = Activity.find_with_ferret(@activityQuery)
     @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
+
+    tags = @activityQuery.split(',')
+
+    for tag in tags
+
+      x = Tag.find(:first, :conditions => {:description => tag} )
+      if(x != nil)
+        for activity in x.activities
+          @results.push activity
+        end
+      end
+
+    end
 
   end
   

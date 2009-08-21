@@ -21,12 +21,12 @@
 				<hr style="color:#CCC"/>
 		  	
 		  
-		  		<%= form_tag :action=> "searchActivityResults" %>
+		  	<%= form_tag :action=> "searchActivityResults" %>
 				<div align="centered">
 				<label for="input_text"></label><br/>
 				
 					
-				<%= text_field "user", "text", :size => 40 %><br/>
+				<%= text_field "input", "text", :size => 40 %><br/>
 				</div>
 				<div align="centered">
 				<%= submit_tag "Search" %>
@@ -35,13 +35,17 @@
 			
 			<hr style="color:#CCC"/>
 			
-			Your search for <b>"<%= @activityQuery %>"</b> returned <b><%= @results.total_hits %></b> hits.  In order of relevance, they are:
+			Your search for <b>"<%= @activityQuery %>"</b> returned <b><%= @results.count %></b> hits.  In order of relevance, they are:
         <br/>
 				<% for activity in @results %>
 				  <br/>
     			<%= link_to activity.name, :controller => "activities", :action => "show", :id => activity.id %>		
 				  <br>
-				  Description: <%= activity.description %>
+				  Description: <%= activity.description %> <br>
+          Tags: 
+            <%for tag in activity.tags%>
+            <%= tag.description << ', ' %>
+            <% end %>
 				<% end %>
 				
 			<table>

@@ -124,7 +124,7 @@ class PdUserController < ApplicationController
     @pd_user = PdUser.find(session[:pd_user_id])    
     
     # @pd_user.spec keeps its current value unless it's nil (i.e., keep current
-    # spec if there is one). If it is nil, give it is nil create a new spec
+    # spec if there is one). If it is nil, create a new spec
     @pd_user.spec ||= Spec.new
     @spec = @pd_user.spec
     
@@ -180,7 +180,37 @@ class PdUserController < ApplicationController
     @pd_user = PdUser.find(session[:pd_user_id])
     #@pd_user_activity = Activity.find_by_created_by(@pd_user.login_name)
     @pd_user_activity = Activity.find_by_sql ["SELECT * FROM activities where created_by = ?", @pd_user.login_name]    
-    @pd_user_favorite_activity = Activities_Favorite.find_by_sql ["SELECT * FROM activities_favorites where Pduser_id = ?", @pd_user.id]    
+    @pd_user_favorite_activity = ActivitiesFavorite.find_by_sql ["SELECT * FROM activities_favorites where pd_user_id = ?", @pd_user.id]    
+
+    @allActivities = Activity.find(:all)
+    @similarActivities = []
+    for activity in @allActivities
+      if(activity.created_by != @pd_user.login_name)
+
+        for favActivity in @pd_user_favorite_activity
+          favorite = favActivity.getActivity
+          if(activity.category == favorite.category) #&& activity.rating > (default rating)?
+            @similarActivities.push activity
+            break
+          end
+          numSimilarities = 0
+          for tag in favorite.tags
+            if(activity.tags.include?(tag))
+              numSimilarities += 1
+            end
+          end
+          if(numSimilarities >= 0)          
+          #if(numSimilarities.to_f / activity.tags.count >= 0.0)
+            #@similarActivities.push activity
+            break
+          end            
+        end
+
+      end
+    end
+
+
+
   end
   
   ###########################################

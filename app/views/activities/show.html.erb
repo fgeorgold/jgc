@@ -25,7 +25,7 @@
 		</div>
 		<div align="right">
         <% if (session[:pd_user_id] != nil) -%>
-		  <%= button_to 'Add as favorite', :action => :addActivityAsFavorite, :Pduser_id =>PdUser.find(session[:pd_user_id]).id ,:activitiy_id=>  @activity.id%></td>
+		  <%= button_to 'Add as favorite', :action => :addActivityAsFavorite, :Pduser_id =>PdUser.find(session[:pd_user_id]).id ,:activity_id=>  @activity.id%></td>
 		<% end -%>
   		<hr style="color:#CCC"/>
 		</div>
@@ -50,6 +50,15 @@
 					<%=h @activity.description %>
 				</td>
 			</tr>
+
+			<tr>
+				<td class="left">
+					<b>Tagged as:</b>
+				</td>
+				<td class="left">
+					<%=h @activity.taggedAs %>
+				</td>
+			</tr>
 			
       <tr>
 				<td class="left">
@@ -58,6 +67,76 @@
 				<td class="left">
 					<a href="#map"><%=@activity.address%></a>
 				</td>
+			</tr>
+
+      <tr>
+				<td class="left">
+				</td>
+				<th>
+          <a name="map">
+          <div id="map" style="centered width: 300px; height: 225px"></div>
+          <script type="text/javascript">    
+
+           var geocoder;
+           var map;
+
+           var address = "<%=@activity.address%>";
+           load();
+
+           // On page load, call this function
+
+           function load()
+           {
+              // Create new map object
+              map = new GMap2(document.getElementById("map"));
+
+              // Create new geocoding object
+              geocoder = new GClientGeocoder();
+
+              // Retrieve location information, pass it to addToMap()
+              geocoder.getLocations(address, addToMap);
+           }
+
+           // This function adds the point to the map
+
+           function addToMap(response)
+           {
+              if(response.Status.code == 200)
+              {
+
+                // Retrieve the object
+                place = response.Placemark[0];
+                var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
+                var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+                var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+                //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+
+
+                // Retrieve the latitude and longitude
+                point = new GLatLng(place.Point.coordinates[1],
+                                    place.Point.coordinates[0]);
+
+                // Center the map on this point
+                map.setCenter(point, 13);
+
+                // Create a marker
+                marker = new GMarker(point);
+
+                // Add the marker to map
+                map.addOverlay(marker);
+
+                // Add address information to marker
+                marker.bindInfoWindowHtml('<span style="font-size: 8pt; font-family: serif;">' + "<%=@activity.name%>" + '<br/>' + response.Placemark[0].address + '</span>');
+              }
+              else
+              {
+                geocoder.getLocations("Stanford University, Stanford, CA 94305", addToMap);
+              }
+           }               
+          </script> 
+          </a>
+
+				</th>
 			</tr>
 			
 			<tr>
@@ -166,64 +245,7 @@
 </div>	
 
 
-          <a name="map">
-          <div id="map" style="width: 800px; height: 450px"></div>
-          <script type="text/javascript">    
-
-           var geocoder;
-           var map;
-
-           var restaurant = "The Old Mohawk Restaurant";
-           var address = "<%=@activity.address%>";
-           load();
-
-           // On page load, call this function
-
-           function load()
-           {
-              // Create new map object
-              map = new GMap2(document.getElementById("map"));
-
-              // Create new geocoding object
-              geocoder = new GClientGeocoder();
-
-              // Retrieve location information, pass it to addToMap()
-              geocoder.getLocations(address, addToMap);
-           }
-
-           // This function adds the point to the map
-
-           function addToMap(response)
-           {
-              // Retrieve the object
-              place = response.Placemark[0];
-              var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
-              var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
-              var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
-              //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
-
-
-              // Retrieve the latitude and longitude
-              point = new GLatLng(place.Point.coordinates[1],
-                                  place.Point.coordinates[0]);
-
-              // Center the map on this point
-              map.setCenter(point, 13);
-
-              // Create a marker
-              marker = new GMarker(point);
-
-              // Add the marker to map
-              map.addOverlay(marker);
-
-              // Add address information to marker
-              marker.openInfoWindowHtml("<%=@activity.name%>" + '<br/>' + "<%=@activity.address%>");
-
-           }      
           
-          
-          </script> 
-          </a>
           
 
   </body>

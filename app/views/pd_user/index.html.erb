@@ -1,24 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-  <head>
-
-    <script src="http://maps.google.com/maps?file=api&v=1
-
-            &key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RTh4JSKb6ICin675p_ybbtjhoJD4xRJ2j7Xg5BommbMfWeFXq6R648kvg&sensor=false" type="text/javascript">
-
-    </script>
-
-  </head>
-
-  <body>
-
-
-
-
 <%= stylesheet_link_tag "pd_user" %>
 <%= stylesheet_link_tag "profile" %>
 <%= stylesheet_link_tag "pd_user_profile" %>
@@ -61,48 +40,8 @@
     <%= sanitize @personal_life.bio %>	
   </div>
   
-  <!-- Add 2 empty lines -->
-  <br />  
-  <br />
-  <% for activity in @activities %>
-   
-    <% if activity.lat != nil %>
-      <%= h activity.name %>
-      <br/>
-      <%= h activity.lat %> ,     <%= h activity.lon %>
-    <% end %>
-    
-  <% end %>
-  
-  <!-- Map of all activities -->
-
-          <div id="map" style="width: 400px; height: 300px"></div>
-
-          <script type="text/javascript">    
-
-          var map = new GMap(document.getElementById("map"));
-
-          map.centerAndZoom(new GPoint(    <%= -80 %>,     <%= 33 %>), 3);
-          
-          map.addControl(new GLargeMapControl());
-          
-          <% for activity in @activities %>
-          
-            <% if(activity.lon != nil)%>
-            
-              var point = new GPoint( <%= -80.0025 %>,     <%= 33.1 %>);
-
-              var marker = new GMarker(point);
-
-              map.addOverlay(marker);
-            
-            <% end %>
-          
-          <% end %>
-
-          </script> 
-      
-          </div> 
+  <!-- Add 2 empty lines --> 
+ 
 
 <!-- Add a horizontal line as separator -->
 <hr noshade />
@@ -136,8 +75,3 @@
              :collection => ProfessionalLife::ALL_FIELDS %>  
 </div>
 
-
-
-  </body>
-
-</html>

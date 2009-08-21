@@ -7,6 +7,8 @@ class PdUser < ActiveRecord::Base
   has_one :personal_life
   # The PdUser class declares that each pd_user has one professional_life
   has_one :professional_life
+  has_many :activities
+  has_many :activities_favorite
   
   # Way to create a remember_me attribute in the PdUser class
   # without introducing a new column name in the database.  

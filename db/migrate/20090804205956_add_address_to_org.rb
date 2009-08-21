@@ -1,0 +1,9 @@
+class AddAddressToOrg < ActiveRecord::Migration
+  def self.up
+    add_column :organizations, :address, :text
+  end
+
+  def self.down
+    remove_column :organizations, :address
+  end
+end

@@ -1,8 +1,5 @@
 class Organization < ActiveRecord::Base
-acts_as_ferret (:fields => ['name', 'description', 'address'],
-  :fields => {:address => { :boost => 5 }})
-  
-
+  acts_as_ferret
 
   has_many :partners
   has_many :asps
@@ -26,6 +23,8 @@ acts_as_ferret (:fields => ['name', 'description', 'address'],
      partners.build(attribute)
     end
   end
+  
+
   
   def save_partners
     partners.each do |p|

@@ -1,0 +1,49 @@
+ <div id ="content">
+	  <div align="right">
+	  		<% if (session[:pd_user_id] != nil) -%>
+          		<%= nav_link "Profile", "pd_user", "index" %> |
+          		<%= nav_link "Logout", "pd_user", "logout" %>
+        	<% else -%>
+          		<%= nav_link "Register", "pd_user", "register" %> |
+          		<%= nav_link "Login", "pd_user", "login" %>
+        	<% end -%>	
+		
+      </div>
+   </div> 
+
+<br/>
+<br/>
+		
+		<div id="loginbox">
+			<div class="copy">
+				<p> Please enter the text you want to search </p>
+				<hr style="color:#CCC"/>
+		  	
+		  		<%= form_tag({:action=> "searchActivityResults"}, :method => "get")%>
+		  		
+				<div align="centered">
+				<label for="input_text"></label><br/>
+				
+					
+				<%= text_field "user", "text", :size => 40 %><br/>
+				</div>
+				<div align="centered">
+				<%= submit_tag "Search" %>
+				
+        Your search for <b>"<%= @query %>"</b> returned <b><%= @results.total_hits %></b> hits.  In order of relevance, they are:
+        <br/>
+				<% for activity in @results %>
+				  <br/>
+    			<%= link_to activity.name, :controller => "activities", :action => "show", :id => activity.id %>		
+				  <br>
+				  Description: <%= activity.description %>
+				<% end %>
+				
+				<hr style="color:#CCC"/>
+				
+				
+				</div>
+				</form>
+			</div>
+			
+		</div>	

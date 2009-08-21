@@ -33,6 +33,39 @@ class ActivitiesController < ApplicationController
     end
   end
 
+def addActivityToCalendar
+  client = GData::Client::Calendar.new
+  client.clientlogin('jgccalendar@gmail.com', 'jgcadmin')
+  @person = "Jay"
+
+  # Return documents the authenticated user owns
+  feed = client.get('http://www.google.com/calendar/feeds/default/allcalendars/full').to_xml
+  entry = feed.elements['entry']  # first <atom:entry>
+
+  acl_entry_1 =
+  "<entry xmlns='http://www.w3.org/2005/Atom'
+      xmlns:gd='http://schemas.google.com/g/2005'>
+    <category scheme='http://schemas.google.com/g/2005#kind'
+      term='http://schemas.google.com/g/2005#event'></category>
+    <title type='text'>Tennis with Jeff</title>"
+acl_entry_2 = 
+    "<content type='text'>Meet for a quick lesson.</content>
+    <gd:transparency
+      value='http://schemas.google.com/g/2005#event.opaque'>
+    </gd:transparency>
+    <gd:eventStatus
+      value='http://schemas.google.com/g/2005#event.confirmed'>
+    </gd:eventStatus>
+    <gd:where valueString='Rolling Lawn Courts'></gd:where>
+    <gd:when startTime='2009-04-17T15:00:00.000Z'
+      endTime='2009-04-17T17:00:00.000Z'></gd:when>
+  </entry>"
+
+acl_entry = acl_entry_1 + acl_entry_2
+
+  response = client.post("http://www.google.com/calendar/feeds/default/private/full", acl_entry)
+end
+
   # GET /activities/1
   # GET /activities/1.xml
   def show
@@ -43,7 +76,7 @@ class ActivitiesController < ApplicationController
     
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
-    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+    @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
     @programNames = []
     @categoryNames = []
     @comments = []
@@ -69,12 +102,12 @@ class ActivitiesController < ApplicationController
   
   
   def save_activity_comment
-    @activity_comment = Activities_Comment.new(params[:comment])
+    @activity_comment = ActivitiesComment.new(params[:comment])
     @id = params[:comment][:activity_id]
     @activity = Activity.find(@id)
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
-    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+    @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
     @programNames = []
     @categoryNames = []
     @comments = []
@@ -119,7 +152,7 @@ class ActivitiesController < ApplicationController
     @commentId = params[:commentId]
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
-    @comment_id = Activities_Comment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+    @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
     @programNames = []
     @categoryNames = []
     @comments = []
@@ -134,7 +167,7 @@ class ActivitiesController < ApplicationController
     for currentCategory in @category_id
          @categoryNames.push currentCategory.category_name
     end
-    Activities_Comment.find_by_sql ["DELETE FROM activities_comments where activity_id = ? and id = ?",@id,@commentId]
+    ActivitiesComment.find_by_sql ["DELETE FROM activities_comments where activity_id = ? and id = ?",@id,@commentId]
     redirect_to(@activity)
     
   end
@@ -148,10 +181,15 @@ class ActivitiesController < ApplicationController
 
 
   def addActivityAsFavorite
-    @favorite = Activities_Favorite.new(:Pduser_id =>params[:Pduser_id],:activitiy_id=>params[:activitiy_id])
-    if @favorite.save
-      redirect_to :action => 'index', :controller => 'pd_user'
+    @pdUser =  PdUser.find(session[:pd_user_id])   
+    activity = ActivitiesFavorite.find(:first, :conditions => { :pd_user_id => params[:Pduser_id], :activity_id => params[:activity_id]})
+    if(activity == nil)  #if not found in database
+      @favorite = ActivitiesFavorite.new(:pd_user_id =>params[:Pduser_id],:activity_id=>params[:activity_id])
+      if @favorite.save
+        return redirect_to  :controller => 'pd_user', :action => 'index'
+      end
     end
+    redirect_to  :controller => 'pd_user', :action => 'index'
   end
 
     
@@ -174,8 +212,8 @@ class ActivitiesController < ApplicationController
       @pdUser =  PdUser.find(session[:pd_user_id]) 
     end
     @activity = Activity.new
-    1.times { @activity.programs.build }
-    1.times { @activity.categories.build }
+    #1.times { @activity.programs.build }
+    #1.times { @activity.categories.build }
     
     respond_to do |format|
       format.html # new.html.erb
@@ -192,25 +230,8 @@ class ActivitiesController < ApplicationController
   # POST /activities.xml
   def create
     @activity = Activity.new(params[:activity])
-    
-    suffix = "&parse_address=1"
-    base = "http://rpc.geocoder.us/service/namedcsv?address="
-    address = @activity.address
-    address = address.gsub(/ /, '+')
-    webAddress = base << address << suffix
-    output = Net::HTTP.get(URI.parse(webAddress))
-    
-    lat_ss = "lat="
-    long_ss = "long="
-    
-    latIndex = output.index(lat_ss)
-    lat = output[latIndex + lat_ss.length, 9]
-    
-    longIndex = output.index(long_ss)
-    long = output[longIndex + long_ss.length, 9]
-    
-    @activity.lat = lat
-    @activity.lon = long   
+    @activity.makeTags
+
     
     respond_to do |format|
       if @activity.save
@@ -218,7 +239,7 @@ class ActivitiesController < ApplicationController
         format.html { redirect_to(@activity) }
         format.xml  { render :xml => @activity, :status => :created, :location => @activity }
         @u = User.find_by_sql ["SELECT * FROM users where activitesadmin = ?","1"];
-
+        #Note:  What if there are multiple activities admins, each should get an email
         if @u[0].mailpref    
           subject = "New Activity has been created"
           to = @u[0].email
