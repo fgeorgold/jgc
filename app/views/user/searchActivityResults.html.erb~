@@ -41,10 +41,15 @@
 				  <br/>
     			<%= link_to activity.name, :controller => "activities", :action => "show", :id => activity.id %>		
 				  <br>
-				  Description: <%= activity.description %>
+				  Description: <%= activity.description %> <br>
+          Tags:
+            <%for tag in activity.tags %>
+            <%=tag.description + ', '%>
+            <%end%>
+          <br>
 				<% end %>
 				
-			<table>
+
 			<tr>
 
 				<td class="left">
@@ -52,7 +57,7 @@
 				<p>Not sure what you are looking for?  You can try our <%= link_to "browsing through our activities databases", :controller => "activities"%> </a></p>
 				</td>
 			</tr>
-			</table>
+
 			</div>
 			
 		</div>	

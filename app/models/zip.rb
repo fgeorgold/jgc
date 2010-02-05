@@ -18,6 +18,7 @@ class Zip < ActiveRecord::Base
         return zip
       end
     end
+    return nil;
   end
   
   def find_nearby_organizations
@@ -37,7 +38,7 @@ class Zip < ActiveRecord::Base
       
     end 
     
-    @nearbyOrganizations
+    return @nearbyOrganizations
   end
   
   def calculateDistanceTo(zip)

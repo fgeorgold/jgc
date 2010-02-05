@@ -191,7 +191,7 @@ class PdUserController < ApplicationController
           favorite = favActivity.getActivity
           if(activity.category == favorite.category) #&& activity.rating > (default rating)?
             @similarActivities.push activity
-            #break
+            break
           end
           numSimilarities = 0
           for tag in favorite.tags

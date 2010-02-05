@@ -189,19 +189,14 @@ class PdUserController < ApplicationController
 
         for favActivity in @pd_user_favorite_activity
           favorite = favActivity.getActivity
-          if(activity.category == favorite.category) #&& activity.rating > (default rating)?
-            @similarActivities.push activity
-            break
-          end
           numSimilarities = 0
           for tag in favorite.tags
             if(activity.tags.include?(tag))
               numSimilarities += 1
             end
           end
-          if(numSimilarities >= 0)          
-          #if(numSimilarities.to_f / activity.tags.count >= 0.0)
-            #@similarActivities.push activity
+          if(numSimilarities.to_f / activity.tags.count >= 0.0)
+            @similarActivities.push activity
             break
           end            
         end

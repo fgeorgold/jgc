@@ -13,7 +13,6 @@ Total number of results: <%= @pd_user_activity.size()%></p>
 	      <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
 			<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
 			About : <%=activity.description%><br/>
-			Category : <%=activity.category%><br/><br/>
 	<% end%>
 <hr style="color:#CCC"/>
 
@@ -24,7 +23,6 @@ Total number of results: <%= @pd_user_activity.size()%></p>
 		  <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
 			<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
 			About : <%=activity.description%><br/>
-			Category : <%=activity.category%><br/><br/>
   	<% end%>
 </p>
 
@@ -34,11 +32,10 @@ Total number of results: <%= @pd_user_activity.size()%></p>
 		  <p><span id="activities_link_<%= activity.id %>" class="popup_link"><%= link_to activity.name, activity %><br/></span></p>
 			<%= render :partial => 'activities_popup', :locals => {:activities => activity} %>
 			About : <%=activity.description%><br/>
-			Category : <%=activity.category%><br/><br/>
       Tags : 
         <% for tag in activity.tags %>
           <%=tag.description << ','%>
-      <% end %> <br/>
+        <% end %> <br/>
       Rating: <%=activity.rating%>
   	<% end%>
 </p>

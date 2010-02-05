@@ -5,73 +5,73 @@
 <h1>User Profile</h1>
 
   
-<!--div id="sidebar_box"-->
-<!--div id="main_content"-->
-<div id="content">
-  <div id="full_name">
-    <%= h @spec.full_name %>
-  </div>
-  
-  <div id="occupation">
-    <%= h @spec.occupation %>
-  </div>
-  
-  <div id="location">
-    <%= h @spec.location %>
-  </div>
-  
-  <span class="edit_link">
-    <%= link_to "[edit]", :controller => "spec", :action => "edit" %>
-  </span>
-  
-  <!-- Add a horizontal line as separator -->
-  <hr noshade />
-  
-  Profile URL: <%= link_to profile_for(@pd_user), profile_for(@pd_user) %>
-  
-  <!-- Add a horizontal line as separator -->
-  <hr noshade />
-  
-  My Bio:
-  <span class="edit_link">
-    <%= link_to "[edit]", :controller => "personal_life", :action => "edit" %>	
-  </span>
-  <div id="bio" class="personal_life_answer">
-    <%= sanitize @personal_life.bio %>	
-  </div>
-  
-  <!-- Add 2 empty lines --> 
- 
+  <!--div id="sidebar_box"-->
+  <!--div id="main_content"-->
+  <div id="content">
+    <div id="full_name">
+        <%= h @spec.full_name %>
+          </div>
+            
+              <div id="occupation">
+                  <%= h @spec.occupation %>
+                    </div>
+                      
+                        <div id="location">
+                            <%= h @spec.location %>
+                              </div>
+                                
+                                  <span class="edit_link">
+                                      <%= link_to "[edit]", :controller => "spec", :action => "edit" %>
+                                        </span>
+                                          
+                                            <!-- Add a horizontal line as separator -->
+                                              <hr noshade />
+                                                
+                                                  Profile URL: <%= link_to profile_for(@pd_user), profile_for(@pd_user) %>
+                                                    
+                                                      <!-- Add a horizontal line as separator -->
+                                                        <hr noshade />
+                                                          
+                                                            My Bio:
+                                                              <span class="edit_link">
+                                                                  <%= link_to "[edit]", :controller => "personal_life", :action => "edit" %>    
+                                                                    </span>
+                                                                      <div id="bio" class="personal_life_answer">
+                                                                          <%= sanitize @personal_life.bio %>    
+                                                                            </div>
+                                                                              
+                                                                                <!-- Add 2 empty lines --> 
+                                                                                 
 
-<!-- Add a horizontal line as separator -->
-<hr noshade />
-<!-- Add 1 empty line -->
-<br />  
+                                                                                 <!-- Add a horizontal line as separator -->
+                                                                                 <hr noshade />
+                                                                                 <!-- Add 1 empty line -->
+                                                                                 <br />  
 
-<!-- div id="left_column"-->
-<div id="content">
-  <!-- BASIC INFORMATION -->
-  <%= render :partial => "pd_user/sidebar_box",
-             :locals => { :title => "Basic Information" } %>																				
-  
-  <!-- ADDITIONAL INFORMATION -->
-  <%= render :partial => "spec/sidebar_box",
-             :locals => { :title => "Additional Information" } %>																				
-			 
-  <!-- Add a horizontal line as separator -->			 
-  <hr/> 
-  
-  <h1>Personal Life</h1>
-  <!-- PERSONAL LIFE -->
-  <%= render :partial => 'personal_life/sidebar_box',
-             :collection => PersonalLife::ALL_FIELDS_EXCLUDING_BIO %>
+                                                                                 <!-- div id="left_column"-->
+                                                                                 <div id="content">
+                                                                                   <!-- BASIC INFORMATION -->
+                                                                                     <%= render :partial => "pd_user/sidebar_box",
+                                                                                                  :locals => { :title => "Basic Information" } %>                                                                                                                                                               
+                                                                                                    
+                                                                                                      <!-- ADDITIONAL INFORMATION -->
+                                                                                                        <%= render :partial => "spec/sidebar_box",
+                                                                                                                     :locals => { :title => "Additional Information" } %>                                                                                                                                                               
+                                                                                                                                         
+                                                                                                                                           <!-- Add a horizontal line as separator -->                   
+                                                                                                                                             <hr/> 
+                                                                                                                                               
+                                                                                                                                                 <h1>Personal Life</h1>
+                                                                                                                                                   <!-- PERSONAL LIFE -->
+                                                                                                                                                     <%= render :partial => 'personal_life/sidebar_box',
+                                                                                                                                                                  :collection => PersonalLife::ALL_FIELDS_EXCLUDING_BIO %>
 
-  <!-- Add a horizontal line as separator -->
-  <hr /> 
-  
-  <h1>Professional Life</h1>
-  <!-- PROFESSIONAL LIFE -->
-  <%= render :partial => 'professional_life/sidebar_box',
-             :collection => ProfessionalLife::ALL_FIELDS %>  
-</div>
+                                                                                                                                                                    <!-- Add a horizontal line as separator -->
+                                                                                                                                                                      <hr /> 
+                                                                                                                                                                        
+                                                                                                                                                                          <h1>Professional Life</h1>
+                                                                                                                                                                            <!-- PROFESSIONAL LIFE -->
+                                                                                                                                                                              <%= render :partial => 'professional_life/sidebar_box',
+                                                                                                                                                                                           :collection => ProfessionalLife::ALL_FIELDS %>  
+                                                                                                                                                                                           </div>
 

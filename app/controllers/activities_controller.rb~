@@ -1,3 +1,4 @@
+require 'googlecalendar'
 require 'rubygems'
 require 'hpricot'
 require 'net/http'
@@ -62,6 +63,10 @@ def addActivityToCalendar
   EOF
 
   response = client.post("http://www.google.com/calendar/feeds/default/private/full", acl_entry)
+end
+
+def showCalendar
+
 end
 
   # GET /activities/1

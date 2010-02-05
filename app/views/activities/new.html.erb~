@@ -29,7 +29,7 @@
 				<%= text_area "activity", "description" ,:rows => 5 %><br/>
 
 				<br/>
-				<label for="activity_description">Description</label><br/>
+				<label for="activity_tags">Tags</label><br/>
 				<%= text_field "activity", "taggedAs", :size => 20 %><br/>
 				
 				<br/>
@@ -44,13 +44,8 @@
 				
 				<label for="activity_cost">Cost</label><br/>
 				<%= render :partial => "add_cost" %>
-
-				<br/>		
-				<label for="activity_comments">PD Comments</label><br/>
-				<%= text_area "activity", "comments",:rows => 5 %><br/>
 				
 				<br/>
-				
 				<label for="activity_duration">Duration</label><br/>
 				<%= render :partial => "add_duration" %>
 				

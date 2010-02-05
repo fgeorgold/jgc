@@ -1,6 +1,4 @@
 require 'rubygems'
-require 'hpricot'
-require 'net/http'
 require 'uri'
 require 'set'
 
@@ -36,20 +34,19 @@ class ActivitiesController < ApplicationController
 def addActivityToCalendar
   client = GData::Client::Calendar.new
   client.clientlogin('jgccalendar@gmail.com', 'jgcadmin')
-  @person = "Jay"
+  @person = "Jeff"
 
   # Return documents the authenticated user owns
   feed = client.get('http://www.google.com/calendar/feeds/default/allcalendars/full').to_xml
   entry = feed.elements['entry']  # first <atom:entry>
 
-  acl_entry_1 =
-  "<entry xmlns='http://www.w3.org/2005/Atom'
+  acl_entry = <<-EOF
+  <entry xmlns='http://www.w3.org/2005/Atom'
       xmlns:gd='http://schemas.google.com/g/2005'>
     <category scheme='http://schemas.google.com/g/2005#kind'
       term='http://schemas.google.com/g/2005#event'></category>
-    <title type='text'>Tennis with Jeff</title>"
-acl_entry_2 = 
-    "<content type='text'>Meet for a quick lesson.</content>
+    <title type='text'>Tennis with Jeff</title>
+    <content type='text'>Meet for a quick lesson.</content>
     <gd:transparency
       value='http://schemas.google.com/g/2005#event.opaque'>
     </gd:transparency>
@@ -59,9 +56,8 @@ acl_entry_2 =
     <gd:where valueString='Rolling Lawn Courts'></gd:where>
     <gd:when startTime='2009-04-17T15:00:00.000Z'
       endTime='2009-04-17T17:00:00.000Z'></gd:when>
-  </entry>"
-
-acl_entry = acl_entry_1 + acl_entry_2
+  </entry>
+  EOF
 
   response = client.post("http://www.google.com/calendar/feeds/default/private/full", acl_entry)
 end

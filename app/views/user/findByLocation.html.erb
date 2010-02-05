@@ -6,11 +6,7 @@
 
   <head>
 
-    <script src="http://maps.google.com/maps?file=api&v=1
-
-            &key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RTh4JSKb6ICin675p_ybbtjhoJD4xRJ2j7Xg5BommbMfWeFXq6R648kvg&sensor=false" type="text/javascript">
-
-    </script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RQcGArBHDyYveQ8MPrGwVbaKJPX0hQElzWSQDw_xHPd-Xf2cJPfqXEg4w" type="text/javascript"></script>
 
   </head>
 
@@ -28,30 +24,42 @@
 		  <% end %>
 		  <br/>
 		  
-      <table border="1">		  
+      <table border="2">		  
         <tr>
           <td>
             <%= form_tag({:controller => "user", :action=> "organizationSearch"}, :method => "get")%>	
-			      <%= text_field "input", "address", :size => 40 %>
+			      <%= text_field "input", "address", :size => 15 %>
 			      <%= submit_tag "Find Near Me!", :name => "submit" %>
           <br/>
           <br/>
           </td>
 
-          <th rowspan="5", colspan ="2">
-				    <div id="map" style="width: 400px; height: 300px"></div>
+          <td rowspan="2", colspan ="1">
+				    <div id="map" style="width: 300px; height: 225px"></div>
 
             <script type="text/javascript">    
 
              var geocoder;
              var map;
-             
-             load();
+             var index = 0;
+             var nearbyOrgs = new Array();
+             <% for org in @nearbyOrganizations%>
 
+             nearbyOrgs[index] = "<%=org.name%>"
+             index++;
+
+             <% end %>
+             
+
+
+             <%if(@nearbyOrganizations.count > 0)%>
+               load();
+             <%end%>
              // On page load, call this function
 
            function load()
            {
+              index = 0;              
               // Create new map object
               map = new GMap2(document.getElementById("map"));
 
@@ -60,11 +68,9 @@
 
               // Retrieve location information, pass it to addToMap()
               geocoder.getLocations("<%=@query%>", init);
-                            
-              <%if (@nearbyOrganizations.count >= 1) %>
-                <%for organization in @nearbyOrganizations %>
-                  geocoder.getLocations("<%=organization.address%>", addToMap);     
-                <%end%>
+              
+              <%for organization in @nearbyOrganizations %>
+                geocoder.getLocations("<%=organization.address%>", addToMap);     
               <%end%>
            }
 
@@ -73,30 +79,36 @@
              // This function adds the point to the map
            function addToMap(response)
            {
-              // Retrieve the object
-              place = response.Placemark[0];
-              var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
-              var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
-              var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
-              //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+              if(response.Status.code == 200)
+{
+                // Retrieve the object
+                place = response.Placemark[0];
+                var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
+                var state = place.AddressDetails.Country.AdministrativeArea.AdministrativeAreaName;
+                var zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+                //var streetAddress = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
 
 
-              // Retrieve the latitude and longitude
-              point = new GLatLng(place.Point.coordinates[1],
-                                  place.Point.coordinates[0]);
+                // Retrieve the latitude and longitude
+                point = new GLatLng(place.Point.coordinates[1],
+                                    place.Point.coordinates[0]);
 
-              // Create a marker
-              //marker = new GMarker(point);
+                // Create a marker              
+                marker = new GMarker(point);
 
-              // Add the marker to map
-              //map.addOverlay(marker);
+                // Add the marker to map
+                map.addOverlay(marker);
 
-              // Add address information to marker
-
+                // Add address information to marker
+                marker.bindInfoWindowHtml('<span style="font-size: 8pt; font-family: serif;">' + nearbyOrgs[index] + '<br>' + response.Placemark[0].address + '</span>');
+}
+              index++;
            }
              
              function init(response)
              {
+              if(response.Status.code == 200)
+              {
                 // Retrieve the object
                 place = response.Placemark[0];
                 var city = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName;
@@ -119,22 +131,31 @@
                 map.addOverlay(marker);
 
                 // Add address information to marker
-                marker.bindInfoWindowHtml("<%=@query%>");
+marker.bindInfoWindowHtml('<span style="font-size: 8pt; font-family: serif;">' + "<%=@query%>" + '</span>');
+              }
              } 
 
             </script> 
-          </th>
+          </td>
         </tr>
         <tr>
           <td>
-            These organizations were found in your area:
-				    <br/>
-            <% for organization in @nearbyOrganizations %>
+            <%if(@nearbyOrganizations.count > 0)%>
+              These organizations were found in your area:
 				      <br/>
-        			<%= link_to organization.name, :controller => "organizations", :action => "show", :id => organization.id %>		
-				      <br>
-				      Description: <%= organization.description %>
-				    <% end %>
+              <% for organization in @nearbyOrganizations %>
+				        <br/>
+          			<%= link_to organization.name, :controller => "organizations", :action => "show", :id => organization.id %>		
+				        <br>
+				        Description: <%= organization.description %>
+                <br>
+				      <% end %>
+            <%end%>
+            <%if(@nearbyOrganizations.count == 0)%>
+              Sorry, nothing was found in that area
+            <%end%>
+          </td>
+          <td>
           </td>
         </tr>
       </table>

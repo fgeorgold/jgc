@@ -74,7 +74,10 @@ class UserController < ApplicationController
     
     zip = Zip.new
     zip = zip.get_zipcode(@query)
-    @nearbyOrganizations = zip.find_nearby_organizations
+    @nearbyOrganizations = []
+    if(zip != nil)
+      @nearbyOrganizations = zip.find_nearby_organizations
+    end
   end
   
   def searchResults
@@ -89,7 +92,41 @@ class UserController < ApplicationController
     @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
   end
 
+  def searchActivities
+    @hDisplay = false
+    @orgUser = false
+    @title_description = "Activities Search"
+  end
+  
+  def searchActivityResults
+    @hDisplay = false
+    @orgUser = false
+    @title_description = "Activities Search Results"
+    @activityQuery = params[:input][:text]
+
+    @results = Activity.find_with_ferret(@activityQuery)
+    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
+
+    tags = @activityQuery.split(',')
+
+    for tag in tags
+
+      x = Tag.find(:first, :conditions => {:description => tag} )
+      if(x != nil)
+        for activity in x.activities
+          if(@results.include? activity == false)
+            @results.push activity
+          end
+        end
+      end
+
+    end
+
+  end
+
   def browseOrganizations
+    @hDisplay = true
+    @orgUser = true    
     @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     allorganizations = Organization.find(:all)
     @organizations = []
@@ -102,6 +139,10 @@ class UserController < ApplicationController
     
   	@AlphabeticalList = Organization.find(:all).to_set.classify {
     |organization| organization.name[0].chr}
+  end
+
+  def showCalendar
+
   end
   
 
@@ -327,35 +368,7 @@ class UserController < ApplicationController
     @activities = Activity.find_by_sql ["SELECT * FROM activities where age_group = ? and cost =?",@age,@cost]
   end
   
-  def searchActivities
-    @hDisplay = false
-    @orgUser = false
-    @title_description = "Activities Search"
-  end
-  
-  def searchActivityResults
-    @hDisplay = false
-    @orgUser = false
-    @title_description = "Activities Search Results"
-    @activityQuery = params[:input][:text]
 
-    @results = Activity.find_with_ferret(@activityQuery)
-    @results.sort! { |x,y| x.ferret_score <=> y.ferret_score }
-
-    tags = @activityQuery.split(',')
-
-    for tag in tags
-
-      x = Tag.find(:first, :conditions => {:description => tag} )
-      if(x != nil)
-        for activity in x.activities
-          @results.push activity
-        end
-      end
-
-    end
-
-  end
   
   def search
     @hDisplay = true

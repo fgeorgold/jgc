@@ -6,11 +6,8 @@
 
   <head>
 
-    <script src="http://maps.google.com/maps?file=api&v=1
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RQcGArBHDyYveQ8MPrGwVbaKJPX0hQElzWSQDw_xHPd-Xf2cJPfqXEg4w" type="text/javascript"></script>
 
-            &key=ABQIAAAAGH0_v1huftqjN0P7bKEE1RTh4JSKb6ICin675p_ybbtjhoJD4xRJ2j7Xg5BommbMfWeFXq6R648kvg&sensor=false" type="text/javascript">
-
-    </script>
 
   </head>
 
@@ -31,7 +28,7 @@
 		</div>
 	</div>
 	<div id ="content">
-		<div class ="copy">
+
 		<table border="1">
 			<tr>
 				<td class="left">
@@ -72,9 +69,9 @@
       <tr>
 				<td class="left">
 				</td>
-				<th>
+				<td>
           <a name="map">
-          <div id="map" style="centered width: 300px; height: 225px"></div>
+          <div id="map" style="width: 300px; height: 225px"></div>
           <script type="text/javascript">    
 
            var geocoder;
@@ -136,7 +133,7 @@
           </script> 
           </a>
 
-				</th>
+				</td>
 			</tr>
 			
 			<tr>
@@ -154,15 +151,6 @@
 				</td>
 				<td class="left">
 					<%=h @activity.cost %>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="left">
-					<b>Program Directors Comment:</b>
-				</td>
-				<td class="left">
-					<%=h @activity.comments %>
 				</td>
 			</tr>
 			
@@ -205,19 +193,7 @@
 				</td>
 			</tr>
 			
-			<tr>
-				<td class="left">
-					<b>Category:</b>
-				</td>
-				<td class="left">
-					<% for currentCategoryName in @categoryNames %>
-					<%=h   currentCategoryName %>
-					<br/>
-					<% end %>				
-				</td>
-			</tr>
 			</table>
-			</div>
 
 
 

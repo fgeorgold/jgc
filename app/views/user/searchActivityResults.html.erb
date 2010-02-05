@@ -42,10 +42,11 @@
     			<%= link_to activity.name, :controller => "activities", :action => "show", :id => activity.id %>		
 				  <br>
 				  Description: <%= activity.description %> <br>
-          Tags: 
-            <%for tag in activity.tags%>
-            <%= tag.description << ', ' %>
-            <% end %>
+          Tags:
+            <%for tag in activity.tags %>
+            <%=tag.description + ', '%>
+            <%end%>
+          <br>
 				<% end %>
 				
 			<table>

@@ -31,7 +31,7 @@
 		</div>
 	</div>
 	<div id ="content">
-		<div class ="copy">
+
 		<table border="1">
 			<tr>
 				<td class="left">
@@ -53,7 +53,7 @@
 
 			<tr>
 				<td class="left">
-					<b>Description:</b>
+					<b>Tagged as:</b>
 				</td>
 				<td class="left">
 					<%=h @activity.taggedAs %>
@@ -72,7 +72,7 @@
       <tr>
 				<td class="left">
 				</td>
-				<th>
+				<td>
           <a name="map">
           <div id="map" style="centered width: 300px; height: 225px"></div>
           <script type="text/javascript">    
@@ -136,7 +136,7 @@
           </script> 
           </a>
 
-				</th>
+				</td>
 			</tr>
 			
 			<tr>
@@ -154,15 +154,6 @@
 				</td>
 				<td class="left">
 					<%=h @activity.cost %>
-				</td>
-			</tr>
-			
-			<tr>
-				<td class="left">
-					<b>Program Directors Comment:</b>
-				</td>
-				<td class="left">
-					<%=h @activity.comments %>
 				</td>
 			</tr>
 			
@@ -205,19 +196,7 @@
 				</td>
 			</tr>
 			
-			<tr>
-				<td class="left">
-					<b>Category:</b>
-				</td>
-				<td class="left">
-					<% for currentCategoryName in @categoryNames %>
-					<%=h   currentCategoryName %>
-					<br/>
-					<% end %>				
-				</td>
-			</tr>
 			</table>
-			</div>
 
 
 

@@ -37,7 +37,7 @@ Total number of results: <%= @pd_user_activity.size()%></p>
 			Category : <%=activity.category%><br/><br/>
       Tags : 
         <% for tag in activity.tags %>
-          <%=tag.description%>
+          <%=tag.description << ','%>
       <% end %> <br/>
       Rating: <%=activity.rating%>
   	<% end%>
