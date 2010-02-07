@@ -448,7 +448,7 @@ class UserController < ApplicationController
           redirect_to :action=> 'welcomeUser'
         end
         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
-        if @u[0].mailpref
+        if !@u[0].nil? and @u[0].mailpref
           subject = "New User has joined the network "
           to = @u[0].email
           from = 'helpjgc@gmail.com'

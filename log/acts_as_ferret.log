@@ -48,3 +48,58 @@ using index in /Users/Matt/Code/jgc/index/development/activity
 [activity] refusing re-registration of class Activity
 Will use local index.
 Will use local index.
+Will use local index.
+using index in /Users/Matt/Code/jgc/index/development/organization
+[organization] register class Organization with index organization
+[organization] default field list for index organization: [:resources, :website, :address, :updated_at, :email, :zipcode, :visible, :description, :name, :contact, :partners, :asp, :created_at]
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+using index in /Users/Matt/Code/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:resources, :address, :updated_at, :lon, :cost, :otherPrograms, :visible, :description, :comments, :name, :lat, :created_by, :age_group, :category, :duration, :instructions, :pd_user_id, :taggedAs, :created_at]
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+Will use local index.
+using index in /Users/Matt/Code/jgc/index/development/organization
+[organization] register class Organization with index organization
+[organization] default field list for index organization: [:description, :address, :name, :visible, :website, :zipcode, :created_at, :contact, :resources, :updated_at, :email, :asp, :partners]
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+using index in /Users/Matt/Code/jgc/index/development/organization
+[organization] register class Organization with index organization
+[organization] default field list for index organization: [:resources, :address, :contact, :updated_at, :email, :asp, :visible, :description, :name, :partners, :created_at, :website, :zipcode]
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization

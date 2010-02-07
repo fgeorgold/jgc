@@ -518,3 +518,928 @@ Migrating to DropZipTable (20100207051853)
   [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
   [4;35;1mSQL (1.7ms)[0m   [0mdescribe `users`[0m
   [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:38:57) [GET]
+  [4;36;1mOrganization Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+Completed in 58ms (View: 38, DB: 4) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 21:39:03) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"", "address"=>"21044"}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=21044&input%5Btext%5D=
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=21044&submit=Find+Near+Me%21&input%5Btext%5D=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:39:03) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"21044"}}
+  [4;35;1mOrganization Load (0.4ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.4ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '21044') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+
+ActionView::TemplateError (undefined method `count' for []:Array) on line #55 of app/views/user/findByLocation.html.erb:
+52:              
+53: 
+54: 
+55:              <%if(@nearbyOrganizations.count > 0)%>
+56:                load();
+57:              <%end%>
+58:              // On page load, call this function
+
+    app/views/user/findByLocation.html.erb:55
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 21:40:57) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"", "address"=>"21044"}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=21044&input%5Btext%5D=
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=21044&submit=Find+Near+Me%21&input%5Btext%5D=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:40:57) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"21044"}}
+  [4;35;1mOrganization Load (0.4ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (206.5ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '21044') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+
+ActionView::TemplateError (undefined method `count' for []:Array) on line #143 of app/views/user/findByLocation.html.erb:
+140:         </tr>
+141:         <tr>
+142:           <td>
+143:             <%if(@nearbyOrganizations.count > 0)%>
+144:               These organizations were found in your area:
+145: 				      <br/>
+146:               <% for organization in @nearbyOrganizations %>
+
+    app/views/user/findByLocation.html.erb:143
+
+Rendered rescues/_trace (37.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:41:10) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"21044"}}
+  [4;35;1mOrganization Load (0.2ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '21044') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+
+ActionView::TemplateError (undefined method `count' for []:Array) on line #154 of app/views/user/findByLocation.html.erb:
+151:                 <br>
+152: 				      <% end %>
+153:             <%end%>
+154:             <%if(@nearbyOrganizations.count == 0)%>
+155:               Sorry, nothing was found in that area
+156:             <%end%>
+157:           </td>
+
+    app/views/user/findByLocation.html.erb:154
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:41:20) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"21044"}}
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (1.6ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '21044') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+Completed in 43ms (View: 25, DB: 4) | 200 OK [http://localhost/user/findByLocation?input%5Baddress%5D=21044&input%5Btext%5D=]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#browseOrganizations (for 127.0.0.1 at 2010-02-06 21:42:15) [GET]
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/user
+Rendering user/browseOrganizations
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/user/browseOrganizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:42:19) [GET]
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-02-06 21:42:22) [GET]
+Rendering template within layouts/user
+Rendering user/login
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-02-06 21:42:24) [POST]
+  Parameters: {"user"=>{"password"=>"Aegis387!", "login"=>"mfichman@stanford.edu"}, "commit"=>"Submit", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'mfichman@stanford.edu') LIMIT 1[0m
+Rendering template within layouts/user
+Rendering user/login
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-06 21:42:25) [GET]
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user
+Rendering user/signup
+Completed in 81ms (View: 71, DB: 3) | 200 OK [http://localhost/user/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-06 21:42:39) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"123456", "password"=>"123456", "login"=>"mfichman@stanford.edu", "email"=>""}, "commit"=>"Signup", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'mfichman@stanford.edu') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY '') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/user
+Rendering user/signup
+Completed in 27ms (View: 12, DB: 3) | 200 OK [http://localhost/user/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-06 21:42:44) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"123456", "password"=>"123456", "login"=>"mfichman@stanford.edu", "email"=>"blah@blah.com"}, "commit"=>"Signup", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'mfichman@stanford.edu') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'blah@blah.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`salt`, `affiliateOrg`, `activitesadmin`, `hashed_password`, `admin`, `edit_perms`, `mailpref`, `login`, `email`, `created_at`) VALUES('dlKUxVzhJa', NULL, 0, 'cb813e5c8d84e7d26f22a3d02cb4b3c3f1ff3042', 0, 0, 1, 'mfichman@stanford.edu', 'blah@blah.com', '2010-02-07 05:42:44')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'mfichman@stanford.edu') LIMIT 1[0m
+Redirected to http://localhost:3000/user/welcomeUser
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM users where admin = '1'[0m
+
+NoMethodError (undefined method `mailpref' for nil:NilClass):
+  app/controllers/user_controller.rb:451:in `signup'
+
+Rendered rescues/_trace (28.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ApplicationController#signup (for 127.0.0.1 at 2010-02-06 21:43:18) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"123456", "password"=>"123456", "login"=>"mfichman@stanford.edu", "email"=>"blah@blah.com"}, "commit"=>"Signup", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+
+SyntaxError (/Users/Matt/Code/jgc/app/controllers/user_controller.rb:451: syntax error, unexpected $undefined
+        if !@[0].nil? and @u[0].mailpref
+             ^
+/Users/Matt/Code/jgc/app/controllers/user_controller.rb:730: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (88.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-06 21:43:31) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"123456", "password"=>"123456", "login"=>"mfichman@stanford.edu", "email"=>"blah@blah.com"}, "commit"=>"Signup", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'mfichman@stanford.edu') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'blah@blah.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/user
+Rendering user/signup
+Completed in 27ms (View: 12, DB: 3) | 200 OK [http://localhost/user/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-06 21:43:33) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"123456", "password"=>"123456", "login"=>"mfichman@stanford.edu", "email"=>"blah@blah.com"}, "commit"=>"Signup", "authenticity_token"=>"W93eNjRW6LgQBUKXO+rrxTvLspqWYSw3oYccX0p1eSo="}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'mfichman@stanford.edu') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'blah@blah.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/user
+Rendering user/signup
+Completed in 26ms (View: 11, DB: 3) | 200 OK [http://localhost/user/signup]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:43:40) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 27ms (View: 8, DB: 3) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#browseOrganizations (for 127.0.0.1 at 2010-02-06 21:43:46) [GET]
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/user
+Rendering user/browseOrganizations
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 82ms (View: 70, DB: 3) | 200 OK [http://localhost/user/browseOrganizations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:43:48) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 27ms (View: 8, DB: 3) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#index (for 127.0.0.1 at 2010-02-06 21:43:50) [GET]
+Redirected to http://localhost:3000/pd_user/login
+Filter chain halted as [:protect] rendered_or_redirected.
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/pd_user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#login (for 127.0.0.1 at 2010-02-06 21:43:50) [GET]
+  [4;35;1mPdUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mPdUser Load (0.2ms)[0m   [0;1mSELECT * FROM `pd_users` WHERE (`pd_users`.`authorization_token` = '3f195d3a4f98f2d5b5cfb33275b2dbb2394ab0d8') LIMIT 1[0m
+Rendering template within layouts/pd_user
+Rendering pd_user/login
+Rendered pd_user/_login_name (1.9ms)
+Rendered pd_user/_password_field_row (1.3ms)
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 220ms (View: 118, DB: 4) | 200 OK [http://localhost/pd_user/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:43:54) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 27ms (View: 8, DB: 3) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:43:59) [GET]
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 26ms (View: 8, DB: 3) | 200 OK [http://localhost/organizations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-02-06 21:44:04) [GET]
+  [4;36;1mActivity Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = 1[0m
+  [4;35;1mProgram Load (0.1ms)[0m   [0mSELECT * FROM programs where activity_id = 2[0m
+  [4;36;1mProgram Load (0.1ms)[0m   [0;1mSELECT * FROM programs where activity_id = 3[0m
+  [4;35;1mProgram Load (0.1ms)[0m   [0mSELECT * FROM programs where activity_id = 4[0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 115ms (View: 28, DB: 4) | 200 OK [http://localhost/activities]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 21:44:05) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 26ms (View: 8, DB: 3) | 200 OK [http://localhost/organizations]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrganization Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (270.1ms)[0m   [0mSELECT * FROM `organizations` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`name` = BINARY 'Test') LIMIT 1[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mOrganization Load (0.1ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`website` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`name` = BINARY 'Test') LIMIT 1[0m
+  [4;35;1mOrganization Load (0.2ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`email` = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`website` IS NULL) LIMIT 1[0m
+  [4;35;1mOrganization Create (0.3ms)[0m   [0mINSERT INTO `organizations` (`name`, `partners`, `visible`, `updated_at`, `zipcode`, `contact`, `website`, `resources`, `description`, `asp`, `address`, `email`, `created_at`) VALUES('Test', NULL, 0, '2010-02-07 05:45:12', 21044, NULL, NULL, NULL, NULL, NULL, NULL, 'test@test.com', '2010-02-07 05:45:12')[0m
+ferret_create/update: Organization-1
+creating doc for class: Organization-1
+Adding field description with value '' to index
+Adding field address with value '' to index
+Adding field name with value 'Test' to index
+Adding field visible with value 'false' to index
+Adding field website with value '' to index
+Adding field zipcode with value '21044' to index
+Adding field created_at with value '2010-02-07 05:45:12 UTC' to index
+Adding field contact with value '' to index
+Adding field resources with value '' to index
+Adding field updated_at with value '2010-02-07 05:45:12 UTC' to index
+Adding field email with value 'test@test.com' to index
+Adding field asp with value '' to index
+  [4;36;1mPartner Load (0.3ms)[0m   [0;1mSELECT * FROM `partners` WHERE (`partners`.organization_id = 1) [0m
+Adding field partners with value '' to index
+  [4;35;1mSQL (2.1ms)[0m   [0mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 21:45:24) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"", "address"=>"21044"}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=21044&input%5Btext%5D=
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=21044&submit=Find+Near+Me%21&input%5Btext%5D=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:45:24) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"21044"}}
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '21044') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 34ms (View: 10, DB: 4) | 200 OK [http://localhost/user/findByLocation?input%5Baddress%5D=21044&input%5Btext%5D=]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 21:54:09) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"test", "address"=>""}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=&input%5Btext%5D=test
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=&submit=Find+Near+Me%21&input%5Btext%5D=test]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:54:09) [GET]
+  Parameters: {"input"=>{"text"=>"test", "address"=>""}}
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Load (0.4ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 33ms (View: 9, DB: 5) | 200 OK [http://localhost/user/findByLocation?input%5Baddress%5D=&input%5Btext%5D=test]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 21:54:16) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"test", "address"=>""}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=&input%5Btext%5D=test
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=&submit=Find+Near+Me%21&input%5Btext%5D=test]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 21:54:16) [GET]
+  Parameters: {"input"=>{"text"=>"test", "address"=>""}}
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 34ms (View: 10, DB: 5) | 200 OK [http://localhost/user/findByLocation?input%5Baddress%5D=&input%5Btext%5D=test]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#browseOrganizations (for 127.0.0.1 at 2010-02-06 21:54:18) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/user
+Rendering user/browseOrganizations
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 30ms (View: 14, DB: 4) | 200 OK [http://localhost/user/browseOrganizations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#show (for 127.0.0.1 at 2010-02-06 21:54:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mOrganization Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.7ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` = 1) [0m
+  [4;36;1mPartner Load (0.3ms)[0m   [0;1mSELECT * FROM partners where organization_id = '1'[0m
+  [4;35;1mAsp Load (0.2ms)[0m   [0mSELECT * FROM asps where organization_id = '1'[0m
+Rendering template within layouts/organizations
+Rendering organizations/show
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 104ms (View: 21, DB: 6) | 200 OK [http://localhost/organizations/1]
+/!\ FAILSAFE /!\  Sat Feb 06 23:01:16 -0800 2010
+  Status: 500 Internal Server Error
+  Unknown database 'jgc_development'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Sat Feb 06 23:05:29 -0800 2010
+  Status: 500 Internal Server Error
+  Unknown database 'jgc_development'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (76.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (200.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+  [4;35;1mSQL (116.0ms)[0m   [0mCREATE TABLE `pd_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login_name` varchar(255), `email` varchar(255), `password` varchar(255), `authorization_token` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('2')[0m
+Migrating to CreateSessions (3)
+  [4;35;1mSQL (94.5ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (101.6ms)[0m   [0;1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;35;1mSQL (99.3ms)[0m   [0mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('3')[0m
+Migrating to CreateSpecs (4)
+  [4;35;1mSQL (101.9ms)[0m   [0mCREATE TABLE `specs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `first_name` varchar(255) DEFAULT '', `last_name` varchar(255) DEFAULT '', `gender` varchar(255), `birthdate` date, `occupation` varchar(255) DEFAULT '', `city` varchar(255) DEFAULT '', `state` varchar(255) DEFAULT '', `zip_code` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('4')[0m
+Migrating to CreatePersonalLives (5)
+  [4;35;1mSQL (105.4ms)[0m   [0mCREATE TABLE `personal_lives` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `bio` text, `academic_background` text, `interests` text, `other_info` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('5')[0m
+Migrating to CreateProfessionalLives (6)
+  [4;35;1mSQL (105.3ms)[0m   [0mCREATE TABLE `professional_lives` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `current_employee` text, `start_date` date, `past_work_experience` text, `years_of_work` float, `social_activities` text, `skills` text, `future_plans` text, `desired_job_description` text, `desired_salary_per_year` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('6')[0m
+Migrating to ChangesToSpecs (41)
+  [4;35;1mSQL (109.1ms)[0m   [0mALTER TABLE `specs` ADD `address` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (276.9ms)[0m   [0;1mALTER TABLE `specs` ADD `work_phone` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (99.0ms)[0m   [0mALTER TABLE `specs` ADD `fax` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (98.8ms)[0m   [0;1mALTER TABLE `specs` ADD `home_phone` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (99.9ms)[0m   [0mALTER TABLE `specs` ADD `cell_phone` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (98.8ms)[0m   [0;1mALTER TABLE `specs` ADD `current_employee` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (99.2ms)[0m   [0mALTER TABLE `specs` ADD `age_group` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('41')[0m
+Migrating to ChangesToProfessionalLives (61)
+  [4;35;1mSQL (131.0ms)[0m   [0mALTER TABLE `professional_lives` DROP `current_employee`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('61')[0m
+Migrating to CreateOrganizations (20090227000327)
+  [4;35;1mSQL (123.2ms)[0m   [0mCREATE TABLE `organizations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `website` varchar(255), `description` text, `resources` text, `contact` varchar(255), `email` varchar(255), `partners` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090227000327')[0m
+Migrating to CreateUsers (20090301221130)
+  [4;35;1mSQL (105.3ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `hashed_password` varchar(255), `email` varchar(255), `salt` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090301221130')[0m
+Migrating to AddInformationToOrganizations (20090308004047)
+  [4;35;1mSQL (118.0ms)[0m   [0mALTER TABLE `organizations` ADD `visible` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (120.7ms)[0m   [0;1mALTER TABLE `organizations` ADD `asp` text[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090308004047')[0m
+Migrating to AddRoleToUsers (20090308004757)
+  [4;36;1mSQL (105.5ms)[0m   [0;1mALTER TABLE `users` ADD `admin` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090308004757')[0m
+Migrating to AddAffiliateOrganization (20090308010800)
+  [4;36;1mSQL (106.0ms)[0m   [0;1mALTER TABLE `users` ADD `affiliateOrg` varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090308010800')[0m
+Migrating to CreateActivities (20090413232041)
+  [4;36;1mSQL (91.0ms)[0m   [0;1mCREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `resources` text, `cost` text, `comments` text, `duration` varchar(255), `instructions` text, `programs` varchar(255), `age_group` varchar(255), `category` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090413232041')[0m
+Migrating to ChangeOrganizationsDataType (20090421234634)
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mSQL (84.8ms)[0m   [0mALTER TABLE `organizations` CHANGE `partners` `partners` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090421234634')[0m
+Migrating to Partners (20090423082204)
+  [4;35;1mSQL (100.5ms)[0m   [0mCREATE TABLE `partners` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` varchar(255), `partner_org_id` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090423082204')[0m
+Migrating to AddPartnerAttribute (20090425232827)
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090425232827')[0m
+Migrating to AddVisibleFieldToActivities (20090427005206)
+  [4;36;1mSQL (84.4ms)[0m   [0;1mALTER TABLE `activities` ADD `visible` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427005206')[0m
+Migrating to CreatePrograms (20090428024927)
+  [4;36;1mSQL (90.9ms)[0m   [0;1mCREATE TABLE `programs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` varchar(255), `program_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090428024927')[0m
+Migrating to CreateCategories (20090428085038)
+  [4;36;1mSQL (139.3ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` varchar(255), `category_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090428085038')[0m
+Migrating to AddActivitesAdmin (20090503224603)
+  [4;36;1mSQL (104.9ms)[0m   [0;1mALTER TABLE `users` ADD `activitesadmin` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090503224603')[0m
+Migrating to Comments (20090504213831)
+  [4;36;1mSQL (90.8ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `comment_text` text, `email` varchar(255), `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090504213831')[0m
+Migrating to AddMailPref (20090512223055)
+  [4;36;1mSQL (98.4ms)[0m   [0;1mALTER TABLE `users` ADD `mailpref` tinyint(1) DEFAULT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090512223055')[0m
+Migrating to AddActivitiesCreatedBy (20090513211955)
+  [4;36;1mSQL (95.5ms)[0m   [0;1mALTER TABLE `activities` ADD `created_by` varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090513211955')[0m
+Migrating to CreateActivitiesComments (20090514215613)
+  [4;36;1mSQL (89.7ms)[0m   [0;1mCREATE TABLE `activities_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` varchar(255), `comment_text` text, `email` varchar(255), `visible` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090514215613')[0m
+Migrating to CreateEmails (20090518221040)
+  [4;36;1mSQL (85.3ms)[0m   [0;1mCREATE TABLE `emails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `from` text, `to` text, `mail` text, `subject` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090518221040')[0m
+Migrating to CreateAsp (20090528013136)
+  [4;36;1mSQL (104.8ms)[0m   [0;1mCREATE TABLE `asps` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `program_id` varchar(255), `program_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090528013136')[0m
+Migrating to CreateRatings (20090601014823)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.5ms)[0m   [0mCREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rating` int(11) DEFAULT 3, `created_at` datetime NOT NULL, `rateable_type` varchar(15) DEFAULT '' NOT NULL, `rateable_id` int(11) DEFAULT 0 NOT NULL, `user_id` int(11) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (91.2ms)[0m   [0;1mCREATE INDEX `fk_ratings_user` ON `ratings` (`user_id`)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601014823')[0m
+Migrating to AddEditPermsToUsers (20090601042121)
+  [4;36;1mSQL (95.2ms)[0m   [0;1mALTER TABLE `users` ADD `edit_perms` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601042121')[0m
+Migrating to RenameAspProgram (20090601054017)
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `asps`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW COLUMNS FROM `asps` LIKE 'program_id'[0m
+  [4;36;1mSQL (88.0ms)[0m   [0;1mALTER TABLE `asps` CHANGE `program_id` `organization_id` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601054017')[0m
+Migrating to AddFavoriteActivities (20090603033231)
+  [4;36;1mSQL (124.3ms)[0m   [0;1mCREATE TABLE `activities_favorites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `Pduser_id` varchar(255), `activitiy_id` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090603033231')[0m
+Migrating to AddAddressToActivities (20090723043618)
+  [4;36;1mSQL (313.6ms)[0m   [0;1mALTER TABLE `activities` ADD `address` text[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090723043618')[0m
+Migrating to AddLatLon (20090731171208)
+  [4;36;1mSQL (112.5ms)[0m   [0;1mALTER TABLE `activities` ADD `lat` text[0m
+  [4;35;1mSQL (99.7ms)[0m   [0mALTER TABLE `activities` ADD `lon` text[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090731171208')[0m
+Migrating to AddAddressToOrg (20090804205956)
+  [4;35;1mSQL (83.6ms)[0m   [0mALTER TABLE `organizations` ADD `address` text[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090804205956')[0m
+Migrating to CreateZips (20090813180013)
+  [4;35;1mSQL (79.2ms)[0m   [0mCREATE TABLE `zips` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `city` varchar(255), `state` varchar(255), `lat` decimal(15,10), `lon` decimal(15,10), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090813180013')[0m
+Migrating to AddZipToOrg (20090813201913)
+  [4;35;1mSQL (88.0ms)[0m   [0mALTER TABLE `organizations` ADD `zipcode` text[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090813201913')[0m
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW COLUMNS FROM `activities_favorites` LIKE 'activitiy_id'[0m
+  [4;35;1mSQL (88.7ms)[0m   [0mALTER TABLE `activities_favorites` CHANGE `activitiy_id` `activity_id` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090819005744')[0m
+Migrating to SetDefaultRating (20090819005757)
+  [4;35;1mSQL (3.6ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (112.6ms)[0m   [0;1mALTER TABLE `ratings` CHANGE `rating` `rating` int(11) DEFAULT 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090819005757')[0m
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+  [4;36;1mSQL (115.4ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (98.1ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (103.5ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (115.9ms)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090819082024')[0m
+Migrating to EditFavoriteActivities (20090819194232)
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW COLUMNS FROM `activities_favorites` LIKE 'Pduser_id'[0m
+  [4;35;1mSQL (99.3ms)[0m   [0mALTER TABLE `activities_favorites` CHANGE `Pduser_id` `pd_user_id` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090819194232')[0m
+Migrating to AddPdUserToActivity (20090821055024)
+  [4;35;1mSQL (108.7ms)[0m   [0mALTER TABLE `activities` ADD `pd_user_id` int(11)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090821055024')[0m
+Migrating to FixRelationships (20090821061257)
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mSQL (81.9ms)[0m   [0;1mALTER TABLE `activities_comments` CHANGE `activity_id` `activity_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (119.2ms)[0m   [0;1mALTER TABLE `activities_favorites` CHANGE `pd_user_id` `pd_user_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `programs`[0m
+  [4;36;1mSQL (119.0ms)[0m   [0;1mALTER TABLE `programs` CHANGE `activity_id` `activity_id` int(11) DEFAULT NULL[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090821061257')[0m
+Migrating to AddTagsToActivities (20090821082919)
+  [4;36;1mSQL (117.3ms)[0m   [0;1mALTER TABLE `activities` ADD `taggedAs` varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090821082919')[0m
+Migrating to AddActivitiestoTag (20090821084957)
+  [4;36;1mSQL (91.4ms)[0m   [0;1mCREATE TABLE `activities_tags` (`activity_id` int(11), `tag_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (101.5ms)[0m   [0mCREATE UNIQUE INDEX `index_activities_tags_on_tag_id_and_activity_id` ON `activities_tags` (`tag_id`, `activity_id`)[0m
+  [4;36;1mSQL (100.3ms)[0m   [0;1mCREATE INDEX `index_activities_tags_on_tag_id` ON `activities_tags` (`tag_id`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090821084957')[0m
+Migrating to FixActivityRelationship (20090821224304)
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW COLUMNS FROM `activities` LIKE 'programs'[0m
+  [4;36;1mSQL (86.1ms)[0m   [0;1mALTER TABLE `activities` CHANGE `programs` `otherPrograms` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090821224304')[0m
+Migrating to FixTagDescription (20100206232013)
+  [4;36;1mSQL (132.3ms)[0m   [0;1mALTER TABLE `tags` ADD `description` varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100206232013')[0m
+Migrating to DropZipTable (20100207051853)
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE `zips`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207051853')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 23:06:22) [GET]
+  [4;36;1mOrganization Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.4ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+Completed in 275ms (View: 106, DB: 4) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#organizationSearch (for 127.0.0.1 at 2010-02-06 23:06:33) [GET]
+  Parameters: {"submit"=>"Find Near Me!", "input"=>{"text"=>"", "address"=>"23544"}}
+Redirected to http://localhost:3000/user/findByLocation?input%5Baddress%5D=23544&input%5Btext%5D=
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/organizationSearch?input%5Baddress%5D=23544&submit=Find+Near+Me%21&input%5Btext%5D=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#findByLocation (for 127.0.0.1 at 2010-02-06 23:06:33) [GET]
+  Parameters: {"input"=>{"text"=>"", "address"=>"23544"}}
+  [4;35;1mOrganization Load (0.4ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`zipcode` = '23544') [0m
+Rendering template within layouts/user
+Rendering user/findByLocation
+Completed in 75ms (View: 61, DB: 3) | 200 OK [http://localhost/user/findByLocation?input%5Baddress%5D=23544&input%5Btext%5D=]

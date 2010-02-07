@@ -52,7 +52,7 @@
              
 
 
-             <%if(@nearbyOrganizations.count > 0)%>
+             <%if(@nearbyOrganizations.size > 0)%>
                load();
              <%end%>
              // On page load, call this function
@@ -140,7 +140,7 @@ marker.bindInfoWindowHtml('<span style="font-size: 8pt; font-family: serif;">' +
         </tr>
         <tr>
           <td>
-            <%if(@nearbyOrganizations.count > 0)%>
+            <%if(@nearbyOrganizations.size > 0)%>
               These organizations were found in your area:
 				      <br/>
               <% for organization in @nearbyOrganizations %>
@@ -151,7 +151,7 @@ marker.bindInfoWindowHtml('<span style="font-size: 8pt; font-family: serif;">' +
                 <br>
 				      <% end %>
             <%end%>
-            <%if(@nearbyOrganizations.count == 0)%>
+            <%if(@nearbyOrganizations.size == 0)%>
               Sorry, nothing was found in that area
             <%end%>
           </td>
