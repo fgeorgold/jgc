@@ -68,10 +68,19 @@
 	<%if flash[:empty_photo] %>
 		<p style = "color:red"><%= flash[:empty_photo] %></p>
 	<%end%>
+	
+	<%= flash[:info] %>
+	<script>
+	function openFileOption()
+	{
+		document.getElementById("photo_info_filename").click();
+	}
+	</script>
+	<a onclick = "openFileOption(); return;"> ADD PHOTO </a>
 	<div class = "photo-form">
 	<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
 		<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
-		<%= f.file_field(:filename) %>
+		<%= f.file_field(:filename, :onChange=>"this.form.submit()") %>
 		<%= submit_tag "Upload" %>
 	<%end%>
 	</div>
