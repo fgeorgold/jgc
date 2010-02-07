@@ -1,0 +1,248 @@
+Will use local index.
+Will use local index.
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] rebuild index with models: []
+[activity] reopening index at C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:lat, :address, :duration, :lon, :name, :created_by, :cost, :created_at, :description, :comments, :age_group, :updated_at, :otherPrograms, :pd_user_id, :taggedAs, :visible, :instructions, :resources, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :duration, :lon, :cost, :name, :created_by, :created_at, :description, :age_group, :comments, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:lon, :address, :cost, :age_group, :name, :created_by, :taggedAs, :created_at, :otherPrograms, :description, :comments, :lat, :updated_at, :pd_user_id, :visible, :duration, :instructions, :resources, :category]
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :duration, :lon, :cost, :name, :created_by, :created_at, :description, :age_group, :comments, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+index_for [Activity(id: integer, name: string, description: text, resources: text, cost: text, comments: text, duration: string, instructions: text, otherPrograms: string, age_group: string, category: string, created_at: datetime, updated_at: datetime, visible: boolean, created_by: string, address: text, lat: text, lon: text, pd_user_id: integer, taggedAs: string)]
+options: {:limit=>nil, :offset=>nil}
+ar_options: {}
+[activity] stored_fields: nil
+[activity] query: 
+-->+() +(class_name:Activity)
+[activity] now retrieving records from AR with options: {}
+[activity] 0 results from AR: []
+Query: 
+total hits: 0, results delivered: 0
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+index_for [Activity(id: integer, name: string, description: text, resources: text, cost: text, comments: text, duration: string, instructions: text, otherPrograms: string, age_group: string, category: string, created_at: datetime, updated_at: datetime, visible: boolean, created_by: string, address: text, lat: text, lon: text, pd_user_id: integer, taggedAs: string)]
+options: {:limit=>nil, :offset=>nil}
+ar_options: {}
+[activity] stored_fields: nil
+[activity] query: 
+-->+() +(class_name:Activity)
+[activity] now retrieving records from AR with options: {}
+[activity] 0 results from AR: []
+Query: 
+total hits: 0, results delivered: 0
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :duration, :lon, :cost, :name, :created_by, :created_at, :description, :age_group, :comments, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :category]
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :duration, :lon, :cost, :name, :created_by, :created_at, :description, :age_group, :comments, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :duration, :lon, :cost, :name, :created_by, :created_at, :description, :age_group, :comments, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :name, :duration, :description, :lon, :cost, :created_by, :created_at, :age_group, :comments, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :name, :duration, :description, :lon, :cost, :created_by, :created_at, :age_group, :comments, :category]
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :otherPrograms, :taggedAs, :updated_at, :pd_user_id, :visible, :instructions, :lat, :resources, :name, :duration, :description, :lon, :cost, :created_by, :created_at, :age_group, :comments, :category]
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :age_group, :updated_at, :pd_user_id, :visible, :instructions, :otherPrograms, :resources, :taggedAs, :name, :lat, :description, :duration, :lon, :created_by, :created_at, :comments, :cost, :category]
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :age_group, :updated_at, :pd_user_id, :visible, :instructions, :otherPrograms, :resources, :taggedAs, :name, :lat, :description, :duration, :lon, :created_by, :created_at, :comments, :cost, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :cost, :updated_at, :pd_user_id, :visible, :instructions, :resources, :age_group, :name, :otherPrograms, :taggedAs, :description, :lat, :duration, :created_by, :created_at, :comments, :category, :lon]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :cost, :updated_at, :pd_user_id, :visible, :instructions, :resources, :age_group, :name, :otherPrograms, :taggedAs, :description, :lat, :duration, :created_by, :created_at, :comments, :category, :lon]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:address, :cost, :updated_at, :pd_user_id, :visible, :instructions, :resources, :age_group, :name, :otherPrograms, :taggedAs, :description, :lat, :duration, :created_by, :created_at, :comments, :category, :lon]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:instructions, :address, :age_group, :updated_at, :otherPrograms, :taggedAs, :visible, :name, :created_at, :lat, :created_by, :description, :duration, :pd_user_id, :comments, :lon, :resources, :cost, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:instructions, :address, :age_group, :updated_at, :otherPrograms, :taggedAs, :visible, :name, :created_at, :lat, :created_by, :description, :duration, :pd_user_id, :comments, :lon, :resources, :cost, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:instructions, :address, :age_group, :updated_at, :otherPrograms, :taggedAs, :visible, :name, :created_at, :lat, :created_by, :description, :duration, :pd_user_id, :comments, :lon, :resources, :cost, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+Will use local index.
+using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/activity
+[activity] register class Activity with index activity
+[activity] default field list for index activity: [:instructions, :address, :age_group, :updated_at, :otherPrograms, :taggedAs, :visible, :name, :created_at, :lat, :created_by, :description, :duration, :pd_user_id, :comments, :lon, :resources, :cost, :category]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity

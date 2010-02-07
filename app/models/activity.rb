@@ -6,6 +6,7 @@ class Activity < ActiveRecord::Base
 
   has_many :programs
   has_many :categories
+  has_many :photos
   has_many :activities_comments
   has_and_belongs_to_many :tags
   belongs_to :pd_user

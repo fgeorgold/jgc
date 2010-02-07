@@ -1,7 +1,6 @@
 
-
-<div id="title">
-	<h1><%= @activity.name %></h1>
+<div class="title">
+    <h1><%= @activity.name %><h1>
 </div>
 
 <div id="content_area">
@@ -29,12 +28,26 @@
                 <p><a href="#">add to my favorites</a></p>
             </div>
         </div>
-    </div>				
-    <div id="right_column">
     
-        
-        <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
-    
+        <div class="links">
+            <ul>
+                <li><a href="#">E-mail this</a></li>
+                <% if !@activity.photos.empty? %>
+                          <li> <%= link_to "See photos", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %></li>
+                <% end %>
+                <% if @activity.photos.length > 1 %>
+                      <% (@activity.photos[2..-1]).each do |photo| %>
+                           <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
+                      <% end %>
+                <% end %>
+                <li><a href="#">Add to favorites</a></li>
+            </ul>
+        </div>        
+    </div>
+
+    <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
+
+    <div id="right-column">
         <div class="section">
             <div class="section_title">
                 <h2>Basic Info</h2>
@@ -143,9 +156,27 @@
         </div>
     </div>
 </div>
+
+<div id = "photo_upload">
+	<h3> Upload Photos </h3>
+	<%if flash[:upload_success] %>
+		<p style ="color:green"><%= flash[:upload_success]%></p>
+	<%end%>
+	<%if flash[:empty_photo] %>
+		<p style = "color:red"><%= flash[:empty_photo] %></p>
+	<%end%>
+	<div class = "photo-form">
+	<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
+		<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
+		<%= f.file_field(:filename) %>
+		<%= submit_tag "Upload" %>
+	<%end%>
+	</div>
+</div>
+
+    
 <div id="comments">
     <h2>user comments (<%= @activity.activities_comments.size %>)</h2>
-    
     <% @activity.activities_comments.each do |comment| %>
     <div class="comment_wrapper">
         <div class="comment_box">
