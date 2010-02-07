@@ -299,15 +299,16 @@ end
 	photo.date_time = DateTime.now();
 	photo.save();
 	
-	photo_dir = "#{GLOBALS::ACTIVITY_PATH}#{photo.activity_id}";
+	photo_dir = "public/#{GLOBALS::ACTIVITY_PATH}#{photo.activity_id}";
 	
-	if(File.directory?(photo_dir))
+	FileUtils.mkdir_p(photo_dir);
+	if(!File.directory?(photo_dir))
 		FileUtils.mkdir_p(photo_dir);
 	end
 	photo_path =  "#{photo_dir}/#{photo.file_name}";
-	flash[:info] = photo_path;
 	File.open(photo_path,"wb") do |f|
 		f.write(params[:photo_info][:filename].read());
+		flash[:info] = photo_path;
 	end
 	
 	flash[:upload_success] = "Photo Uploaded Successfully" 

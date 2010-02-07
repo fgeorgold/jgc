@@ -1,0 +1,296 @@
+/*  activites.css
+	-----------------
+	author: Rob Ryan
+	description: activities profile styling for John Gardner Center website
+	copyright: css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/, graphics copyright 2010 Rob Ryan
+	-----------------
+*/
+
+/* ------ Architectural Elements ------- */
+/* ------------------------------------- */
+
+
+
+
+/* ------ Body Elements (By I.D.) ------ */
+/* ------------------------------------- */
+
+
+#title {
+	background-image: url('/images/activities/title_sprite.gif');
+	background-repeat: repeat-x;
+	width: 700px;
+	height: 75px;
+	margin-top: 60px;
+	padding: 20px;
+	padding-left: 80px;
+}
+
+#content_area {
+	background-color: white;
+	position: relative;
+	min-height: 1600px;
+	width: 100%;
+	height: 100%;
+	top: -40px;
+	padding-top: 20px;
+}
+
+	#columns {
+		width: 650px;
+		height: 100%;
+		position: relative;
+		margin: 0 auto;
+	}
+		
+		#left_column {
+			float: left;
+		}
+		
+			#profile_picture {
+				width: 200px;
+				position: relative;
+				z-index: 2;
+			}
+				
+				#profile_picture img {
+					border-width: 3px;
+					border-color: #c4c4c4;
+				}
+			
+			#toolbox {
+				position: relative;
+				width: 180px;
+			}
+			
+				#toolbox_icons {
+					float: left;
+					padding: 5px;
+					padding-top: 20px;
+					background-image: url('/images/activities/toolbox_bg.gif');
+					background-repeat: repeat-y;
+					list-style: none;
+					position: relative;
+					left: 10px;
+					top: -20px;
+				}
+				
+					#toolbox_icons img {
+						padding-top: 5px;
+					}
+				
+				#toolbox_links {
+					float: right;
+					width: 80%;
+					text-align: left;
+					padding-top: 8px;
+				}
+				
+					#toolbox_links > p {
+						font-size: 14px;
+						padding: 3px;
+						margin: 0px;
+					}
+					
+					#toolbox_links a {
+						color: #141414;
+					}
+					
+					#toolbox_links a:hover {
+						color: #034046;
+					}
+					
+					#toolbox_links img {
+						padding: 0px;
+						margin: 0px;
+					}
+			
+		
+		#right_column {
+			float: right;
+			position: relative;
+			min-height: 800px;
+			margin: 0 auto;
+		}
+		
+			div .section {
+				width: 415px;
+				padding-bottom: 20px;
+			}
+			
+				div .section_title {
+					vertical-align: top;
+					border-bottom-width: 1px;
+					border-bottom-color: #141414;
+					border-bottom-style: dashed;
+					height: 35px;
+				}
+				
+					div .section_title h2 {
+						width: 80%;
+						float: left;
+						vertical-align: bottom;
+					}
+					
+					div .section_title span {
+						float: right;
+						vertical-align: bottom;
+						position: relative;
+						top: 20px;
+					}
+					
+						div .section_title a:hover {
+							border: none;
+						}
+								
+				div .section > table {
+					width: 90%;
+					vertical-align: top;
+					position: relative;
+					left: -20px;
+				}
+				
+				div .section td {
+					margin: 0px;
+					padding-left: 10px;
+					vertical-align: top;
+				}
+				
+				div .section p {
+					margin: 0px;
+					padding: 0px;
+				}
+				
+				.table_grey {
+					font-weight: bold;
+					color: #716a6a;
+					text-align: right;
+					padding: 0px;
+					width: 100px;
+				}
+				
+				div #google_map {
+					padding: 10px;
+					background-color: grey;
+					width: 300px;
+					height: 300px;
+					position: relative;
+					border-color: white;
+					border-width: 30px;
+					border-style: solid;
+				}
+	
+	#comments {
+		background-image: url('/images/activities/comment_hr.gif');
+		background-color: white;
+		background-repeat: no-repeat;
+		padding-top: 30px;
+		text-align: left;
+		width: 650px;
+		margin: 0 auto;
+		position: relative;
+		float: right;
+	}
+	
+		div .comment_wrapper {
+			padding-top:  20px;
+			width: 500px;
+			float: left;
+		}
+		
+			div .comment_box {
+				background-color: #d2e5e5;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				position: relative;
+				width: 80%;
+				float: right;
+			}
+			
+			div .comment_data {
+				background-image: url('/images/activities/comment_tail_light_blue.gif');
+				background-repeat: no-repeat;
+				width: 100%;
+				float: left;
+				position: relative;
+				padding-top: 10px;
+			}
+			
+				div .username {
+					float: left;
+				}
+				
+				div .time_and_date {
+					float: right;
+				}
+			
+					.user_grey {
+						color: #767676;
+					}
+					
+					.user_black {
+						color: black;
+						font-weight: bold;
+					}
+			
+			#personal_comment {
+				position: relative;
+				width: 500px;
+				float: left;
+				border-bottom-width: 1px;
+				border-bottom-color: #141414;
+				border-bottom-style: dashed;
+				padding-top: 30px;
+				margin: 0px;
+			}
+			
+				#personal_comment h2 {
+					padding: 0px;
+					margin: 0px;
+				}
+			
+			div .comment_box_empty {
+				background-color: #1ca6a6;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				position: relative;
+				width: 80%;
+				float: right;
+			}
+			
+			div .comment_data_empty {
+				background-image: url('/images/activities/comment_tail_dark_blue.gif');
+				background-repeat: no-repeat;
+				width: 100%;
+				float: left;
+				position: relative;
+				padding-top: 10px;
+			}
+			
+				#comment_button {
+					color: white;
+					font-weight: bold;
+					font-size: 13px;
+					letter-spacing: -1px;
+					text-align: center;
+					width: 111px;
+					height: 21px;
+					padding-top: 2px;
+					padding-bottom: 2px;
+					background-image: url('/images/activities/comment_button_un.gif');
+					background-repeat: no-repeat;
+				}
+				
+					#comment_button:active {
+						background-image: url('/images/activities/comment_button_on.gif');
+						background-repeat: no-repeat;
+					}
+                    
+                    #comment_button a {
+                        text-decoration: none;
+                        color: white;
+                    }

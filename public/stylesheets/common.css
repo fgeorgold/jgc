@@ -1,0 +1,202 @@
+v/* common.css
+	-----------------
+	author: Rob Ryan
+	description: common template styling for John Gardner Center website
+	copyright: css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/, graphics copyright 2010 Rob Ryan
+	-----------------
+*/
+
+/* ------ Architectural Elements ------- */
+/* ------------------------------------- */
+ 
+body, html {
+	background-color: #141414;
+	border-width: 0px;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	color: #141414;
+	font-size: 12px;
+	text-align: left;
+	font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #034046;
+}
+
+a:visited {
+	color: #1ca6a6;
+}            
+
+p a:hover, span a:hover{
+	border-bottom-width: 1px;
+	border-bottom-color: #034046;
+	border-bottom-style: dashed;
+}
+
+a img {
+	border: none;
+}
+
+a img:hover {
+	border:none;
+}
+
+h1 {
+	color: #141414;
+	font-weight: bold;
+	font-size: 30px;
+	letter-spacing: -2px;
+}
+
+h2 {
+	color: #141414;
+	font-weight: bold;
+	font-size: 16px;
+	letter-spacing: -1px;
+}
+
+h3 {
+	color: #141414;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: -1px;
+}
+
+h4 {
+	color: #141414;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: -1px;
+}
+
+
+/* ------ Body Elements (By I.D.) ------ */
+/* ------------------------------------- */
+
+
+#body {
+	padding: none;
+	border: none;
+	position: relative;
+	top: -10px;
+}
+
+	#bg_gradient {
+		z-index: -1;
+		position: relative;
+		border: none;
+		padding: none;
+	}
+	
+	#wrapper {
+		margin: 0 auto;
+		width: 800px;
+		min-height: 1000px;
+		margin-top: -210px;
+	}
+		
+		#logo {
+			position: relative;
+			margin-bottom: -20px;
+		}
+		
+		#menu_and_login {
+			position: relative;
+			float: left;
+			width: 100%;
+		}
+		
+			#menu {
+				display: inline;
+				float: left;
+				width: 600px;
+				margin: 0;
+				padding: 0;
+				vertical-align: baseline;
+				position: relative;
+				top: 40px;
+			}
+				
+				#menu li {
+					display: inline;
+					list-style: none;
+					font-weight: bold;
+					color: white;
+					border-bottom-width: 5px;
+					border-bottom-color: #6d6d6d;
+					border-bottom-style: solid;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				
+				#menu li:hover {
+					border-bottom-color: #f2a341;
+				}
+				
+				#menu li:active {
+					border-bottom-color: #990000;
+				}
+                
+                #menu li.current {
+                    border: none;
+                }
+                    
+			
+                #menu a:visited {
+                    color: white;
+                }
+                
+                
+                #menu a {
+                    color: white;
+                }
+                
+			#login_box {
+				background-image: url('/images/common/login_open.gif');
+				width: 200px;
+				height: 60px;
+				position: relative;
+				float: right;
+			}
+			
+				#login_left {
+					width: 50%;
+					padding-left: 5px;
+					padding-top: 5px;
+				}
+					
+					#login_left input {
+						width: 100%;
+					}
+			
+				#login_right {
+					width: 30%;
+					padding-right: 10px;
+					position: relative;
+					float: right;
+				}
+					
+					#login_right input {
+						position: relative;
+						top: -25px;
+					}
+				
+				#login_button {
+					color: white;
+					font-weight: bold;
+					font-size: 13px;
+					letter-spacing: -1px;
+					text-align: center;
+					width: 100%;
+					height: 25px;
+					padding-top: 2px;
+					padding-bottom: 2px;
+					background-color: #141414;
+					background-repeat: no-repeat;
+				}
+		
+                
+		

@@ -2,13 +2,13 @@
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
        	
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
+<head>
 	
    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
    <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
-   <%= stylesheet_link_tag "user" %>
-   <%= stylesheet_link_tag "style" %>
-   <%= stylesheet_link_tag "p7tmcoollines" %>
+   <!--<%= stylesheet_link_tag "user" %>-->
+   <!--<%= stylesheet_link_tag "style" %>-->
+   <!--<%= stylesheet_link_tag "p7tmcoollines" %>-->
    <%= stylesheet_link_tag "lightbox" %>
    
    
@@ -20,84 +20,49 @@
 	<%= javascript_include_tag "lightbox" %>
 	<%= javascript_include_tag "scriptaculous" %>
 	
-  </head>
     
-  <body>
-    <img src="../images/JGC.gif" alt="John Gardner Center Logo" />
-	<a target="_blank" id="feedback-tab" href="../user/userComment"></a>
-	<div id ="content">
-	  <div align="right">
-        <% if (session[:pd_user_id] != nil) -%>
-          <%= nav_link "Profile", "pd_user", "index" %> |
-          <%= nav_link "Logout", "pd_user", "logout" %>
-        <% else -%>
-          <%= nav_link "Register", "pd_user", "register" %> |
-          <%= nav_link "Program Director Login", "pd_user", "login" %>
-        <% end -%>		
-      </div>
-    </div>  
-    <hr/>    
-  
-    <div id="content">                
-      <table border="1">
-        <td class="centered">
-          <div>        
-            <a href="../index.html"> About Us </a>
-          </div>
-        </td>
-        
-        <td class="centered">
-          <div id="nav">
-            <%= nav_link_controller "Organizations", "organizations" %>
-          </div>
-        </td>
-        
-        <td class="centered">
-           
-		  <div id="nav">
-            <%= nav_link_controller "After School Activities", "activities" %>
-          </div>       
-            
-        </td>
-        
-        <td class="centered">
-          <div>        
-            <a href="../parents.html">Parents</a>
-          </div>
-        </td>
-        
-        <td class="centered">
-          <div id="nav">
-            <%= nav_link_controller "Program Directors", "pd_user" %>
-          </div>   
-        </td>
+	<style type="text/css" media="all">
+		@import "/stylesheets/common.css";
+		@import "/stylesheets/activities.css";
+	</style>
 
-        <td class="centered">
-          <div id="nav">
-            <%= nav_link_controller "Teachers", "pd_user" %>
-          </div
-        </td>
-		
-        <td class="centered">
-          <div id="nav">
-            <%= nav_link "Search", "user", "search" %>
-          </div>
-        </td>
-		
-      </table>
-      <br/>
-    </div>  
-    
-            
-    <div id="main_content">
-      <% if flash[:user_notification] -%>
-        <div id="notice"><%= flash[:user_notification] %></div>
-      <% end -%>
-    
-      <%= @content_for_layout %>
-    </div> 
-	
-  </body>
-        
+</head>
+<body>
+	<div id="body">
+		<img id="bg_gradient" src="/images/common/bg_gradient.gif" alt="">
+		<div id="wrapper">
+			<img id="logo" src="/images/common/logo_off.png">
+			<div id="menu_and_login">
+				<ul id="menu">
+					<li><a href="index.html">About Us</a></li>
+					<li><a href="/organizations">Organizations</a></li>
+					<li class="current"><a href="/activities">After-School Activites</a></li>
+					<li><a href="/parents.html">Parents</a></li>
+					<li><a href="/pd_user">Program Directors</a></li>
+					<li><a href="/pd_user">Teachers</a></li>
+					<li><a href="/user/search">Search</a></li>
+				</ul>
+				<div id="login_box">
+					<div>
+						<% form_for :pd_user, :url => "/pd_user/login" do |f| %>
+							<div id="login_left">
+                               <%= f.text_field :login_name, :onfocus => "this.value=''" %>
+                               <%= f.password_field :password, :onfocus => "this.value=''" %>
+                               <!--
+								<input type="text" value="username" onfocus="this.value=''">
+								<input type="text" value="password" onfocus="this.value=''">
+                                -->
+							</div>
+							<div id="login_right">
+                                <%= submit_tag "Log in", :class => "submit", :id => "login_button" %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+            <%= @content_for_layout %>
+    	</div>
+	</div>
+</body>
 </html>
 

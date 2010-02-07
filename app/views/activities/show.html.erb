@@ -1,132 +1,224 @@
 
-<div class="title">
+<div id="title">
     <h1><%= @activity.name %><h1>
 </div>
 
-<div id="columns">
+<div id="content_area">
 
-    <div id="left-column">
-        <div id="profile-picture">
+<div id="columns">
+    <div id="left_column">
+        <div id="profile_picture">
+            <img src="/images/activities/child.jpg" width="200px" alt="profile_picture">
         </div>
-        
-        <div class="rating">
-        </div>
-        
-        <div class="links">
-            <ul>
-                <li><a href="#">E-mail this</a></li>
+        <div id="toolbox">
+            <ul id="toolbox_icons">
+                <li><img src="/images/activities/rating_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/email_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/favorites_icon.png" alt="rating_icon"></li>
+            </ul>
+            <div id="toolbox_links">
+                <p>rating:
+                    <img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_empty.png" alt="star"><img src="/images/activities/star_empty.png" alt="star">
+                </p>
+                <p><a href="#">email this activity</a></p>
+                <p>
+                
                 <% if !@activity.photos.empty? %>
-                          <li> <%= link_to "See photos", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %></li>
+                 <%= link_to "view photo albums", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %>
+                <% else %>
+                 no photos
+                          
                 <% end %>
                 <% if @activity.photos.length > 1 %>
-                      <% (@activity.photos[2..-1]).each do |photo| %>
+                      <% (@activity.photos[1..-1]).each do |photo| %>
                            <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
                       <% end %>
                 <% end %>
-                <li><a href="#">Add to favorites</a></li>
-            </ul>
+                
+                </p>
+                
+                <p><a href="#" onclick = "javascript:document.getElementById('photo_info_filename').click();">add photos</a></p>
+				
+                <p><a href="#">add to my favorites</a></p>
+            </div>
+        </div>
+    
+          
+    </div>
+
+    <div id="right_column">
+        <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
+
+        <div class="section">
+            <div class="section_title">
+                <h2>Basic Info</h2>
+                <span>(<a href="javascript:onBasicInfoEdit();">edit</a>)</span>
+            </div>
+            <table class="noneditable" id="basic_info">
+                <tr>
+                    <td class="table_grey">
+                        <p>Name:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.name %> </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Description:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.description %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Tagged as:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.tags.collect { |t| t.name }.join(',') %></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <div class="section_title">
+                <h2>Where & When</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <table>
+                <tr>
+                    <td class="table_grey">
+                        <p>Location:</p>
+                    </td>
+                    <td>
+                        <p>
+                            <%= @activity.address %> (<a href="#">map</a>)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Weekly Times:</p>
+                    </td>
+                    <td>
+                        <p>
+                            Tuesdays and Thursdays, March-June (<a href="#">add to my calendar</a>)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Hours:</p>
+                    </td>
+                    <td>
+                        <p>10AM-2PM</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <% end %>
+        <div class="section">
+            <div class="section_title">
+                <h2>Resources & Costs</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <table>
+                <tr>
+                    <td class="table_grey">
+                        <p>Total Cost:</p>
+                    </td>
+                    <td>
+                        <p>
+                            <%= @activity.cost %>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Required Materials:</p>
+                    </td>
+                    <td>
+                        <p>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <div class="section_title">
+                <h2>Map</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <div id="google_map">
+                <!-- google code goes here -->
+                <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+            </div>
         </div>        
     </div>
-
-    <div id="right-column">
-        <div class="section">
-            <h2>Basic Info</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Name:</td><td class="info-value"><%= @activity.name %></tr>
-                <tr><td class="info-name">Description:</td><td class="info-value"><%= @activity.description %></tr>
-                <tr><td class="info-name">Tagged as:</td><td class="info-value">
-                    <% @activity.tags.each do |tag| %>
-                    <%= tag.name %>
-                    <% end %>
-                </tr></td>
-                <tr><td class="info-name">Age group:</td><td class="info-value"><%= @activity.age_group %></tr>
-            </table>
+</div>
+<div id="comments">
+    <h2>user comments (<%= @activity.activities_comments.size %>)</h2>
+    <% @activity.activities_comments.each do |comment| %>
+    <div class="comment_wrapper">
+        <div class="comment_box">
+            <p>
+                <%= comment.comment_text %>
+            </p>
         </div>
-        
-        <div class="section">
-            <h2>Where & When</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Time:</td><td class="info-value"></td></tr>
-                <tr><td class="info-name">Location:</td><td class="info-value"><%= @activity.address %></td></tr>
-            </table>
-        </div>
-        
-        <div class="section">
-            <h2>Resources & Costs</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Cost:</td><td class="info-value"><%= @activity.cost %></td></tr>
-            </table>
+        <div class="comment_data">
+            <div class="username">
+                <% email_tokens = comment.email.split('@') %>
+                <span class="user_black"><%= email_tokens[0] %></span>
+                <span class="user_grey">@<%= email_tokens[1] %></span>
+            </div>
+            <div class="time_and_date">
+                <% date_tokens = comment.created_at.to_s.split(' ') %>
+                <span class="user_grey"><%= date_tokens[0] %></span>
+                <span class="user_black"><%= date_tokens[1] %></span>
+                <span class="user_grey"><%= date_tokens[2] %></span>
+            </div>
         </div>
     </div>
-</div>
-
-<div id = "photo_upload">
-	<h3> Upload Photos </h3>
-	<%if flash[:upload_success] %>
-		<p style ="color:green"><%= flash[:upload_success]%></p>
-	<%end%>
-	<%if flash[:empty_photo] %>
-		<p style = "color:red"><%= flash[:empty_photo] %></p>
-	<%end%>
-	
-	<%= flash[:info] %>
-	<script>
-	function openFileOption()
-	{
-		document.getElementById("photo_info_filename").click();
-	}
-	</script>
-	<a onclick = "openFileOption(); return;"> ADD PHOTO </a>
-	<div class = "photo-form">
-	<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
-		<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
-		<%= f.file_field(:filename, :onChange=>"this.form.submit()") %>
-		<%= submit_tag "Upload" %>
-	<%end%>
-	</div>
-</div>
-
-<div id="comments">
-<h3> Comments </h3>
-    <div class="comment-list">
-        <% @comments.each do |comment| %>
-            <div class="comment">
-                <div class="comment-head">
-                    <h3><%= comment.email %></h3>
-                </div>
-                <div class="comment-body">
-                    <%= comment.comment_text %>
+    <% end %>
+    
+    <% if session[:user] %>
+    
+    <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
+    <%= f.hidden_field :activity_id, :value => @activity.id %> 
+    <%= f.hidden_field :email, :value => session[:user].email %>
+    
+    <div id="personal_comment">
+        <h2>leave your own comment:</h2>
+    </div>
+    <div class="comment_wrapper">
+        <div class="comment_box_empty">
+            <%= f.text_area :comment_text, :rows => "10", :cols => "70", :onclick=> "return false;" %>
+        </div>
+        <div class="comment_data_empty">
+            <div class="username">
+                <span class="user_black">your_email</span>
+                <span class="user_grey">@email.com</span>
+            </div>
+            <div class="time_and_date">
+                <div id="comment_button">
+                    <a href="javascript:onCommentSubmit();">leave comment</a>
                 </div>
             </div>
-        <% end %>
+        </div>
     </div>
+    <% end %>
     
-    <div class="comment-form">
-        <% form_for :new_comment, @new_comment, :url => { :action => "save_activity_comment" } do |f| %>
-            
-            <%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
-            <p>E-mail address:
-            <%= f.text_field :email %>
-            </p>
-            <p>
-            Comment:
-            <%= f.text_field :comment_text %>
-            </p>
-            <%= submit_tag 'Submit' %>
-            
-        <% end %>
-    </div>
-    
+    <% end %>
 </div>
 
-
-
-<% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => "activity-form" } do |f| %>
-    <%= f.hidden_field :name, :value => "ACTIVITY" %>
-    <%= submit_tag "Update", :id => "activity-submit", :onclick => "return false;"  %>
-<% end %>
-
-
-
-
-
+</div>
+<div style='visibility:hidden;'>
+					 <%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
+						<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
+						<%= f.file_field(:filename, :onChange=>"this.form.submit()" ) %>
+					<%end%>
+</div>
