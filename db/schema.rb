@@ -110,6 +110,14 @@ ActiveRecord::Schema.define(:version => 20100207111240) do
     t.text    "other_info"
   end
 
+  create_table "photos", :force => true do |t|
+    t.string   "file_name"
+    t.datetime "date_time"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "professional_lives", :force => true do |t|
     t.integer "pd_user_id",              :null => false
     t.date    "start_date"

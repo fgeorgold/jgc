@@ -1,5 +1,4 @@
 
-
 <div class="title">
     <h1><%= @activity.name %><h1>
 </div>
@@ -16,7 +15,14 @@
         <div class="links">
             <ul>
                 <li><a href="#">E-mail this</a></li>
-                <li><a href="#">See photos</a></li>
+                <% if !@activity.photos.empty? %>
+                      <li><%= 'a href="#{GLOBALS::ACTIVITY_PATH}/#{@activity.id.to_s()}/#{activity.photos.first}" rel="lightbox[activity_photos]"' %>See photos</a></li>
+                <% end %>
+                <% if @activity.photos.length > 1 %>
+                      <% (@activity.photos[2..-1]).each do |photo| %>
+                           <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}/#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
+                      <% end %>
+                <% end %>
                 <li><a href="#">Add to favorites</a></li>
             </ul>
         </div>        
@@ -56,15 +62,23 @@
 
 <div id = "photo_upload">
 	<h3> Upload Photos </h3>
+	<%if flash[:upload_success] %>
+		<p style ="color:green"><%= flash[:upload_success]%></p>
+	<%end%>
+	<%if flash[:empty_photo] %>
+		<p style = "color:red"><%= flash[:empty_photo] %></p>
+	<%end%>
 	<div class = "photo-form">
-		<% form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
-			<%= f.file_field(:filename) %>
-			<%= submit_tag "Upload" %>
-		<%end%>
+	<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
+		<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
+		<%= f.file_field(:filename) %>
+		<%= submit_tag "Upload" %>
+	<%end%>
 	</div>
 </div>
+
 <div id="comments">
-	<h3> Comments </h3>
+<h3> Comments </h3>
     <div class="comment-list">
         <% @comments.each do |comment| %>
             <div class="comment">
@@ -77,7 +91,6 @@
             </div>
         <% end %>
     </div>
-	
     
     <div class="comment-form">
         <% form_for :new_comment, @new_comment, :url => { :action => "save_activity_comment" } do |f| %>
