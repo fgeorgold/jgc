@@ -72,12 +72,7 @@ class UserController < ApplicationController
     @title_description = "Organizations Search Results by Location"
     @query = params[:input][:address]
     
-    zip = Zip.new
-    zip = zip.get_zipcode(@query)
-    @nearbyOrganizations = []
-    if(zip != nil)
-      @nearbyOrganizations = zip.find_nearby_organizations
-    end
+    @nearbyOrganizations = Organization.find_all_by_zipcode(@query)
   end
   
   def searchResults

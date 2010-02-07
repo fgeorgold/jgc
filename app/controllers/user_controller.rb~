@@ -115,7 +115,8 @@ class UserController < ApplicationController
       if(x != nil)
         for activity in x.activities
           if(@results.include? activity == false)
-          @results.push activity
+            @results.push activity
+          end
         end
       end
 
@@ -124,6 +125,8 @@ class UserController < ApplicationController
   end
 
   def browseOrganizations
+    @hDisplay = true
+    @orgUser = true    
     @alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     allorganizations = Organization.find(:all)
     @organizations = []

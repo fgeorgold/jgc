@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100206232013) do
+ActiveRecord::Schema.define(:version => 20100207051853) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -199,16 +199,6 @@ ActiveRecord::Schema.define(:version => 20100206232013) do
     t.boolean  "activitesadmin",  :default => false
     t.boolean  "mailpref",        :default => true
     t.boolean  "edit_perms",      :default => false
-  end
-
-  create_table "zips", :force => true do |t|
-    t.string   "code"
-    t.string   "city"
-    t.string   "state"
-    t.decimal  "lat",        :precision => 15, :scale => 10
-    t.decimal  "lon",        :precision => 15, :scale => 10
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

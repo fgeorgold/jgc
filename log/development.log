@@ -403,3 +403,118 @@ Processing UserController#userComment (for 127.0.0.1 at 2010-02-06 20:14:13) [GE
 Rendering template within layouts/user
 Rendering user/userComment
 Completed in 20ms (View: 18, DB: 4) | 200 OK [http://localhost/user/userComment]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+  [4;36;1mSQL (26.1ms)[0m   [0;1mDROP TABLE `zips`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207051853')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
