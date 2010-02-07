@@ -39,8 +39,17 @@
     </div>
 </div>
 
+<div id = "photo_upload">
+	<h3> Upload Photos </h3>
+	<div class = "photo-form">
+		<%form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
+			<%= f.file_field(:filename) %>
+			<%= submit_tag "Upload" %>
+		<%end%>
+	</div>
+</div>
 <div id="comments">
-
+	<h3> Comments </h3>
     <div class="comment-list">
         <% @comments.each do |comment| %>
             <div class="comment">
@@ -53,6 +62,7 @@
             </div>
         <% end %>
     </div>
+	
     
     <div class="comment-form">
         <% form_for :new_comment, @new_comment, :url => { :action => "save_activity_comment" } do |f| %>
