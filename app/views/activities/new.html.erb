@@ -35,33 +35,14 @@
 				<br/>
 				<label for="activity_address">Address</label><br/>
 				<%= text_area "activity", "address" ,:rows => 1 %><br/>
-
-				<br/>
-				<label for="activity_resources">Resources</label><br/>
-				<%= text_area "activity", "resources", :rows => 5 %><br/>
 				
 				<br/>
-				
 				<label for="activity_cost">Cost</label><br/>
 				<%= render :partial => "add_cost" %>
 				
 				<br/>
 				<label for="activity_duration">Duration</label><br/>
 				<%= render :partial => "add_duration" %>
-				
-				<br/>
-				<label for="activity_instructions">Instructions</label><br/>
-				<%= text_area "activity", "instructions" ,:rows => 5%><br/>
-				
-				<br/>
-				<div id="programs">
-				<label for="activity_programs">Programs</label><br/>
-				<%= render :partial => 'add_program' %>
-				</div>
-				<%= link_to_function "Add another program" do |page| 
-					page.insert_html :bottom, :programs, :partial =>'add_program', :object => Program.new
-				end %>
-				<br/>
 				<br/>
 				
 				<label for="activity_age_group">Age Group</label><br/>

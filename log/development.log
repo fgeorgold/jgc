@@ -1,0 +1,1431 @@
+# Logfile created on Sat Feb 06 23:42:40 -0800 2010  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (71.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (25.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+  [4;36;1mSQL (2.6ms)[0m   [0;1mDROP TABLE `zips`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207051853')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (37.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (33.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (50.7ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (6.8ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-06 23:47:24) [GET]
+  [4;36;1mOrganization Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+Completed in 216ms (View: 164, DB: 4) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#index (for 127.0.0.1 at 2010-02-06 23:47:28) [GET]
+Redirected to http://localhost:3000/pd_user/login
+Filter chain halted as [:protect] rendered_or_redirected.
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/pd_user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#login (for 127.0.0.1 at 2010-02-06 23:47:28) [GET]
+  [4;35;1mPdUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+Rendering template within layouts/pd_user
+Rendering pd_user/login
+Rendered pd_user/_login_name (1.9ms)
+Rendered pd_user/_password_field_row (1.5ms)
+Completed in 249ms (View: 56, DB: 2) | 200 OK [http://localhost/pd_user/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#index (for 127.0.0.1 at 2010-02-06 23:54:24) [GET]
+Redirected to http://localhost:3000/pd_user/login
+Filter chain halted as [:protect] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://localhost/pd_user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#login (for 127.0.0.1 at 2010-02-06 23:54:24) [GET]
+  [4;36;1mPdUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `pd_users`[0m
+Rendering template within layouts/pd_user
+Rendering pd_user/login
+Rendered pd_user/_login_name (1.4ms)
+Rendered pd_user/_password_field_row (0.5ms)
+Completed in 42ms (View: 31, DB: 2) | 200 OK [http://localhost/pd_user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-07 00:13:53) [GET]
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-02-07 00:13:58) [GET]
+Rendering template within layouts/user
+Rendering user/login
+Completed in 26ms (View: 24, DB: 1) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-07 00:14:01) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/user
+Rendering user/signup
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/user/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2010-02-07 00:14:20) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"password", "password"=>"password", "login"=>"joe", "email"=>"joe@joe.com"}, "commit"=>"Signup", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA="}
+  [4;36;1mUser Columns (338.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'joe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'joe@joe.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`salt`, `affiliateOrg`, `activitesadmin`, `hashed_password`, `admin`, `edit_perms`, `mailpref`, `login`, `email`, `created_at`) VALUES('qH7vlNublV', NULL, 0, 'dcbe938ac9cbe5c73f0ffc84d0a083179133ac5e', 0, 0, 1, 'joe', 'joe@joe.com', '2010-02-07 08:14:20')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'joe') LIMIT 1[0m
+Redirected to http://localhost:3000/user/welcomeUser
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM users where admin = '1'[0m
+Completed in 356ms (DB: 341) | 302 Found [http://localhost/user/signup]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#welcomeUser (for 127.0.0.1 at 2010-02-07 00:14:20) [GET]
+  [4;36;1mOrganization Load (2.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/user
+Rendering user/welcomeUser
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 50ms (View: 24, DB: 7) | 200 OK [http://localhost/user/welcomeUser]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#new (for 127.0.0.1 at 2010-02-07 00:14:25) [GET]
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mPartner Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mAsp Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+Rendering template within layouts/organizations
+Rendering organizations/new
+Rendered organizations/_add_partner (1.7ms)
+Rendered organizations/_add_partner (0.9ms)
+Rendered organizations/_add_asp (1.7ms)
+Rendered organizations/_add_asp (0.9ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 66ms (View: 36, DB: 7) | 200 OK [http://localhost/organizations/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#create (for 127.0.0.1 at 2010-02-07 00:14:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA=", "organization"=>{"name"=>"Org", "zipcode"=>"", "contact"=>"", "resources"=>"", "website"=>"", "asp_attributes"=>[{"program_name"=>""}], "description"=>"", "address"=>"", "email"=>""}}
+  [4;35;1mOrganization Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mAsp Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `asps`[0m
+  [4;35;1mOrganization Load (0.2ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mPartner Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`name` = BINARY 'Org') LIMIT 1[0m
+  [4;35;1mOrganization Load (0.1ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`email` = BINARY '') LIMIT 1[0m
+  [4;36;1mOrganization Load (0.1ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`website` = BINARY '') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/organizations
+Rendering organizations/new
+Rendered organizations/_add_partner (0.9ms)
+Rendered organizations/_add_partner (0.8ms)
+Rendered organizations/_add_asp (0.1ms)
+Rendered organizations/_add_asp (0.1ms)
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 56ms (View: 20, DB: 8) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#create (for 127.0.0.1 at 2010-02-07 00:14:46) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA=", "organization"=>{"name"=>"Organization", "zipcode"=>"", "contact"=>"", "resources"=>"", "website"=>"", "description"=>"", "address"=>"", "email"=>""}}
+  [4;35;1mOrganization Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.3ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mPartner Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `partners`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrganization Load (0.2ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`name` = BINARY 'Organization') LIMIT 1[0m
+  [4;36;1mOrganization Load (0.1ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`email` = BINARY '') LIMIT 1[0m
+  [4;35;1mOrganization Load (0.1ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`website` = BINARY '') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/organizations
+Rendering organizations/new
+Rendered organizations/_add_partner (1.0ms)
+Rendered organizations/_add_partner (1.0ms)
+Rendered organizations/_add_asp (2.6ms)
+  [4;35;1mAsp Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+Rendered organizations/_add_asp (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 115ms (View: 24, DB: 8) | 200 OK [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#create (for 127.0.0.1 at 2010-02-07 00:15:06) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA=", "organization"=>{"name"=>"Organization", "zipcode"=>"", "contact"=>"", "resources"=>"", "website"=>"", "description"=>"", "address"=>"", "email"=>"org@org.org"}}
+  [4;35;1mOrganization Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mPartner Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `partners`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrganization Load (0.5ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`name` = BINARY 'Organization') LIMIT 1[0m
+  [4;36;1mOrganization Load (0.2ms)[0m   [0;1mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`email` = BINARY 'org@org.org') LIMIT 1[0m
+  [4;35;1mOrganization Load (0.1ms)[0m   [0mSELECT `organizations`.id FROM `organizations` WHERE (`organizations`.`website` = BINARY '') LIMIT 1[0m
+  [4;36;1mOrganization Create (0.2ms)[0m   [0;1mINSERT INTO `organizations` (`name`, `partners`, `visible`, `updated_at`, `zipcode`, `contact`, `website`, `resources`, `description`, `asp`, `address`, `email`, `created_at`) VALUES('Organization', NULL, 0, '2010-02-07 08:15:06', '', '', '', '', '', NULL, '', 'org@org.org', '2010-02-07 08:15:06')[0m
+ferret_create/update: Organization-1
+creating doc for class: Organization-1
+Adding field updated_at with value '2010-02-07 08:15:06 UTC' to index
+  [4;35;1mPartner Load (0.2ms)[0m   [0mSELECT * FROM `partners` WHERE (`partners`.organization_id = 1) [0m
+Adding field partners with value '' to index
+Adding field email with value 'org@org.org' to index
+Adding field address with value '' to index
+Adding field website with value '' to index
+Adding field description with value '' to index
+Adding field zipcode with value '' to index
+Adding field name with value 'Organization' to index
+Adding field contact with value '' to index
+Adding field asp with value '' to index
+Adding field visible with value 'false' to index
+Adding field created_at with value '2010-02-07 08:15:06 UTC' to index
+Adding field resources with value '' to index
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `affiliateOrg` = 'Organization' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE `users` SET `edit_perms` = 1 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM users where admin = '1'[0m
+Redirected to http://localhost:3000/organizations/1
+Completed in 51ms (DB: 11) | 302 Found [http://localhost/organizations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#show (for 127.0.0.1 at 2010-02-07 00:15:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mOrganization Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.6ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` = 1) [0m
+  [4;35;1mPartner Load (0.2ms)[0m   [0mSELECT * FROM partners where organization_id = '1'[0m
+  [4;36;1mAsp Load (0.2ms)[0m   [0;1mSELECT * FROM asps where organization_id = '1'[0m
+Rendering template within layouts/organizations
+Rendering organizations/show
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 41ms (View: 20, DB: 5) | 200 OK [http://localhost/organizations/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#index (for 127.0.0.1 at 2010-02-07 00:15:38) [GET]
+Redirected to http://localhost:3000/pd_user/login
+Filter chain halted as [:protect] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/pd_user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing PdUserController#login (for 127.0.0.1 at 2010-02-07 00:15:38) [GET]
+  [4;36;1mPdUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `pd_users`[0m
+Rendering pd_user/login
+Rendered pd_user/_login_name (1.4ms)
+Rendered pd_user/_password_field_row (0.4ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/pd_user/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+Migrating to RemoveCommentsFromActivities (20100207103219)
+  [4;36;1mSQL (460.4ms)[0m   [0;1mALTER TABLE `activities` DROP `comments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207103219')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing OrganizationsController#index (for 127.0.0.1 at 2010-02-07 02:36:14) [GET]
+  [4;36;1mOrganization Columns (66.4ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.3ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+Rendering template within layouts/organizations
+Rendering organizations/index
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 370ms (View: 86, DB: 247) | 200 OK [http://localhost/organizations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-02-07 02:36:18) [GET]
+  [4;36;1mActivity Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = 1[0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 78ms (View: 27, DB: 3) | 200 OK [http://localhost/activities]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#BrowseAllActivities (for 127.0.0.1 at 2010-02-07 02:36:21) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` [0m
+Rendering template within layouts/user
+Rendering user/BrowseAllActivities
+  [4;36;1mActivity Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+Completed in 51ms (View: 36, DB: 3) | 200 OK [http://localhost/user/BrowseAllActivities]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#showAllActivities (for 127.0.0.1 at 2010-02-07 02:36:23) [POST]
+  Parameters: {"commit"=>"Show", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA=", "activity"=>{"id"=>"1"}}
+  [4;35;1mActivity Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+Redirected to http://localhost:3000/activities/1
+Completed in 26ms (DB: 4) | 302 Found [http://localhost/user/showAllActivities]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 02:36:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.7ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.4ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 61ms (View: 29, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 02:36:44) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"no no no", "email"=>"me@stuff.com"}, "commit"=>"Submit", "authenticity_token"=>"HZq8i8PGbQS5PolJnlBkgGVePWQYftnWOMTh4YKBcrA="}
+  [4;36;1mActivitiesComment Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mActivity Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.7ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = '1'[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = '1'[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivitiesComment Create (0.2ms)[0m   [0mINSERT INTO `activities_comments` (`visible`, `activity_id`, `comment_text`, `email`) VALUES(0, 1, 'no no no', 'me@stuff.com')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/1
+Completed in 97ms (DB: 7) | 302 Found [http://localhost/activities/save_activity_comment]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 02:36:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.8ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.4ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 55ms (View: 22, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+Migrating to RemoveCommentsFromActivities (20100207103219)
+Migrating to RemoveStuffFromActivities (20100207103918)
+  [4;36;1mSQL (122.5ms)[0m   [0;1mALTER TABLE `activities` DROP `instructions`[0m
+  [4;35;1mSQL (110.2ms)[0m   [0mALTER TABLE `activities` DROP `otherPrograms`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Can't DROP 'instructions'; check that column/key exists: ALTER TABLE `activities` DROP `instructions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (70.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+Migrating to RemoveCommentsFromActivities (20100207103219)
+Migrating to RemoveStuffFromActivities (20100207103918)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Can't DROP 'instructions'; check that column/key exists: ALTER TABLE `activities` DROP `instructions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.9ms)[0m   [0mCREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `resources` text, `cost` text, `duration` varchar(255), `instructions` text, `otherPrograms` varchar(255), `age_group` varchar(255), `category` varchar(255), `created_at` datetime, `updated_at` datetime, `visible` tinyint(1) DEFAULT 0, `created_by` varchar(255), `address` text, `lat` text, `lon` text, `pd_user_id` int(11), `taggedAs` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (231.5ms)[0m   [0mCREATE TABLE `activities_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` int(11), `comment_text` text, `email` varchar(255), `visible` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.4ms)[0m   [0mCREATE TABLE `activities_favorites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11), `activity_id` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCREATE TABLE `activities_tags` (`activity_id` int(11), `tag_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (114.7ms)[0m   [0;1mCREATE UNIQUE INDEX `index_activities_tags_on_tag_id_and_activity_id` ON `activities_tags` (`tag_id`, `activity_id`)[0m
+  [4;35;1mSQL (86.2ms)[0m   [0mCREATE INDEX `index_activities_tags_on_tag_id` ON `activities_tags` (`tag_id`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.8ms)[0m   [0mCREATE TABLE `asps` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` varchar(255), `program_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.4ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` varchar(255), `category_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.5ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `comment_text` text, `email` varchar(255), `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.6ms)[0m   [0mCREATE TABLE `emails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `from` text, `to` text, `mail` text, `subject` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mCREATE TABLE `organizations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `website` varchar(255), `description` text, `resources` text, `contact` varchar(255), `email` varchar(255), `partners` varchar(255), `created_at` datetime, `updated_at` datetime, `visible` tinyint(1) DEFAULT 0, `asp` text, `address` text, `zipcode` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.2ms)[0m   [0mCREATE TABLE `partners` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` varchar(255), `partner_org_id` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.5ms)[0m   [0mCREATE TABLE `pd_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login_name` varchar(255), `email` varchar(255), `password` varchar(255), `authorization_token` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.6ms)[0m   [0mCREATE TABLE `personal_lives` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `bio` text, `academic_background` text, `interests` text, `other_info` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.5ms)[0m   [0mCREATE TABLE `professional_lives` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `start_date` date, `past_work_experience` text, `years_of_work` float, `social_activities` text, `skills` text, `future_plans` text, `desired_job_description` text, `desired_salary_per_year` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.3ms)[0m   [0mCREATE TABLE `programs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `activity_id` int(11), `program_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (120.6ms)[0m   [0mCREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rating` int(11) DEFAULT 3, `created_at` datetime NOT NULL, `rateable_type` varchar(15) DEFAULT '' NOT NULL, `rateable_id` int(11) DEFAULT 0 NOT NULL, `user_id` int(11) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (112.9ms)[0m   [0;1mCREATE INDEX `fk_ratings_user` ON `ratings` (`user_id`)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (104.7ms)[0m   [0;1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (103.2ms)[0m   [0mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;36;1mSQL (100.1ms)[0m   [0;1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (92.0ms)[0m   [0;1mCREATE TABLE `specs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pd_user_id` int(11) NOT NULL, `first_name` varchar(255) DEFAULT '', `last_name` varchar(255) DEFAULT '', `gender` varchar(255), `birthdate` date, `occupation` varchar(255) DEFAULT '', `city` varchar(255) DEFAULT '', `state` varchar(255) DEFAULT '', `zip_code` varchar(255) DEFAULT '', `address` varchar(255) DEFAULT '', `work_phone` varchar(255) DEFAULT '', `fax` varchar(255) DEFAULT '', `home_phone` varchar(255) DEFAULT '', `cell_phone` varchar(255) DEFAULT '', `current_employee` varchar(255) DEFAULT '', `age_group` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (96.8ms)[0m   [0;1mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (102.6ms)[0m   [0mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (103.8ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.9ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `hashed_password` varchar(255), `email` varchar(255), `salt` varchar(255), `created_at` datetime, `admin` tinyint(1) DEFAULT 0, `affiliateOrg` varchar(255), `activitesadmin` tinyint(1) DEFAULT 0, `mailpref` tinyint(1) DEFAULT 1, `edit_perms` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (103.4ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100207103219')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('3')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('41')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('4')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('5')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('61')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('6')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090227000327')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090301221130')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090308004047')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090308004757')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090308010800')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090413232041')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421234634')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090423082204')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090425232827')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090427005206')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090428024927')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090428085038')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090503224603')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090504213831')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090512223055')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090513211955')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090514215613')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090518221040')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090528013136')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090601014823')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090601042121')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090601054017')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090603033231')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090723043618')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090731171208')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090804205956')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090813180013')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090813201913')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090819005744')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090819005757')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090819082024')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090819194232')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090821055024')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090821061257')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090821082919')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090821084957')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090821224304')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100206232013')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100207051853')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+Migrating to RemoveCommentsFromActivities (20100207103219)
+Migrating to RemoveStuffFromActivities (20100207103918)
+  [4;36;1mSQL (685.4ms)[0m   [0;1mALTER TABLE `activities` DROP `instructions`[0m
+  [4;35;1mSQL (141.9ms)[0m   [0mALTER TABLE `activities` DROP `otherPrograms`[0m
+  [4;36;1mSQL (87.3ms)[0m   [0;1mALTER TABLE `activities` DROP `resources`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207103918')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-02-07 03:03:20) [GET]
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM `activities` [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://localhost/activities/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#BrowseAllActivities (for 127.0.0.1 at 2010-02-07 03:03:23) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` [0m
+Rendering template within layouts/user
+Rendering user/BrowseAllActivities
+Completed in 40ms (View: 26, DB: 1) | 200 OK [http://localhost/user/BrowseAllActivities]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#showAllActivities (for 127.0.0.1 at 2010-02-07 03:03:27) [POST]
+  Parameters: {"commit"=>"Show", "authenticity_token"=>"I9m0DlP5SpkqyKu9GA+Fd9pbhNY6+qP/NOmkpKHJCes=", "activity"=>{"id"=>""}}
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.1ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Activity with ID=):
+  app/controllers/user_controller.rb:203:in `showAllActivities'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-02-07 03:07:48) [GET]
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+Rendering template within layouts/activities
+Rendering activities/new
+
+ActionView::TemplateError (undefined method `resources' for #<Activity:0x22212d8>) on line #41 of app/views/activities/new.html.erb:
+38: 
+39: 				<br/>
+40: 				<label for="activity_resources">Resources</label><br/>
+41: 				<%= text_area "activity", "resources", :rows => 5 %><br/>
+42: 				
+43: 				<br/>
+44: 				<label for="activity_cost">Cost</label><br/>
+
+    app/views/activities/new.html.erb:41
+    app/controllers/activities_controller.rb:214:in `new'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-02-07 03:08:30) [GET]
+  [4;35;1mActivity Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+Rendering template within layouts/activities
+Rendering activities/new
+Rendered activities/_add_cost (0.9ms)
+Rendered activities/_add_duration (0.8ms)
+Rendered activities/_add_age_group (0.8ms)
+Completed in 44ms (View: 29, DB: 2) | 200 OK [http://localhost/activities/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+Migrating to RemoveCommentsFromActivities (20100207103219)
+Migrating to RemoveStuffFromActivities (20100207103918)
+Migrating to DropPrograms (20100207111240)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE `programs`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207111240')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `ratings`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `ratings`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `ratings`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `specs`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mdescribe `specs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `specs`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-02-07 03:15:57) [GET]
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+Rendering template within layouts/activities
+Rendering activities/new
+Rendered activities/_add_cost (0.4ms)
+Rendered activities/_add_duration (0.3ms)
+Rendered activities/_add_age_group (0.3ms)
+Completed in 28ms (View: 12, DB: 3) | 200 OK [http://localhost/activities/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#create (for 127.0.0.1 at 2010-02-07 03:16:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"I9m0DlP5SpkqyKu9GA+Fd9pbhNY6+qP/NOmkpKHJCes=", "activity"=>{"name"=>"Prog Name", "taggedAs"=>"", "age_group"=>"", "cost"=>"", "created_by"=>"No Name", "description"=>"", "duration"=>"", "address"=>""}}
+  [4;35;1mActivity Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.2ms)[0m   [0mINSERT INTO `activities` (`name`, `visible`, `lon`, `category`, `updated_at`, `taggedAs`, `cost`, `age_group`, `created_by`, `pd_user_id`, `description`, `duration`, `address`, `lat`, `created_at`) VALUES('Prog Name', 0, NULL, NULL, '2010-02-07 11:16:08', '', '', '', 'No Name', NULL, '', '', '', NULL, '2010-02-07 11:16:08')[0m
+ferret_create/update: Activity-1
+creating doc for class: Activity-1
+Adding field lat with value '' to index
+Adding field updated_at with value '2010-02-07 11:16:08 UTC' to index
+Adding field duration with value '' to index
+Adding field pd_user_id with value '' to index
+Adding field address with value '' to index
+Adding field lon with value '' to index
+Adding field description with value '' to index
+Adding field name with value 'Prog Name' to index
+Adding field cost with value '' to index
+Adding field category with value '' to index
+Adding field created_by with value 'No Name' to index
+Adding field instructions with value '' to index
+Adding field age_group with value '' to index
+Adding field visible with value 'false' to index
+Adding field otherPrograms with value '' to index
+Adding field created_at with value '2010-02-07 11:16:08 UTC' to index
+Adding field resources with value '' to index
+Adding field taggedAs with value '' to index
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM users where activitesadmin = '1'[0m
+Redirected to http://localhost:3000/activities/1
+Completed in 94ms (DB: 5) | 302 Found [http://localhost/activities]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:16:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.0ms)[0m   [0;1mMysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL):
+  app/controllers/activities_controller.rb:72:in `show'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:19:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.2ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.0ms)[0m   [0mMysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL):
+  app/controllers/activities_controller.rb:72:in `show'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:19:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.2ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.0ms)[0m   [0;1mMysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL):
+  app/controllers/activities_controller.rb:72:in `show'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:19:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.0ms)[0m   [0mMysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = NULL):
+  app/controllers/activities_controller.rb:72:in `show'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:20:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.2ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/activities_controller.rb:83:in `show'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:21:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #71 of app/views/activities/show.html.erb:
+68: <div id="comments">
+69: 	<h3> Comments </h3>
+70:     <div class="comment-list">
+71:         <% @comments.each do |comment| %>
+72:             <div class="comment">
+73:                 <div class="comment-head">
+74:                     <h3><%= comment.email %></h3>
+
+    app/views/activities/show.html.erb:71
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (99.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:22:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.4ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 39ms (View: 16, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 03:22:38) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"sntuyrasntywuftn aruytfn", "email"=>"yo@erset.com"}, "commit"=>"Submit", "authenticity_token"=>"I9m0DlP5SpkqyKu9GA+Fd9pbhNY6+qP/NOmkpKHJCes="}
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.0ms)[0m   [0;1mMysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = '1'[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'jgc_development.programs' doesn't exist: SELECT * FROM programs where activity_id = '1'):
+  app/controllers/activities_controller.rb:104:in `save_activity_comment'
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 03:23:29) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"sntuyrasntywuftn aruytfn", "email"=>"yo@erset.com"}, "commit"=>"Submit", "authenticity_token"=>"I9m0DlP5SpkqyKu9GA+Fd9pbhNY6+qP/NOmkpKHJCes="}
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivitiesComment Create (0.2ms)[0m   [0mINSERT INTO `activities_comments` (`visible`, `activity_id`, `comment_text`, `email`) VALUES(0, 1, 'sntuyrasntywuftn aruytfn', 'yo@erset.com')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/activities/1
+Completed in 27ms (DB: 5) | 302 Found [http://localhost/activities/save_activity_comment]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:23:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.7ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 37ms (View: 15, DB: 6) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-02-07 03:26:37) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://localhost/activities]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#BrowseAllActivities (for 127.0.0.1 at 2010-02-07 03:27:17) [GET]
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM `activities` [0m
+Rendering template within layouts/user
+Rendering user/BrowseAllActivities
+  [4;35;1mActivity Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+Completed in 25ms (View: 10, DB: 3) | 200 OK [http://localhost/user/BrowseAllActivities]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing UserController#showAllActivities (for 127.0.0.1 at 2010-02-07 03:27:19) [POST]
+  Parameters: {"commit"=>"Show", "authenticity_token"=>"I9m0DlP5SpkqyKu9GA+Fd9pbhNY6+qP/NOmkpKHJCes=", "activity"=>{"id"=>"1"}}
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.1ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+Redirected to http://localhost:3000/activities/1
+Completed in 19ms (DB: 4) | 302 Found [http://localhost/user/showAllActivities]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/fgeorg/code/hackathon/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 03:27:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.8ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 37ms (View: 15, DB: 6) | 200 OK [http://localhost/activities/1]
