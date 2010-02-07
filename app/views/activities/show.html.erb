@@ -157,7 +157,7 @@
                 <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
             </div>
         </div>
-        
+        <!--
         <div class="section">
             <div class="section_title">
                 <h2>Upload photos</h2>
@@ -175,6 +175,7 @@
                 <%end%>
             </div>
         </div>
+        -->
         
     </div>
 </div>
@@ -205,11 +206,11 @@
     </div>
     <% end %>
     
-    <% if session[:user] %>
+    <% if !!@pd_user %>
     
     <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
     <%= f.hidden_field :activity_id, :value => @activity.id %> 
-    <%= f.hidden_field :email, :value => session[:user].email %>
+    <%= f.hidden_field :email, :value => @pd_user.email %>
     
     <div id="personal_comment">
         <h2>leave your own comment:</h2>
@@ -220,8 +221,9 @@
         </div>
         <div class="comment_data_empty">
             <div class="username">
-                <span class="user_black">your_email</span>
-                <span class="user_grey">@email.com</span>
+                <% email_tokens = @pd_user.email.split('@') %>
+                <span class="user_black"><%= email_tokens[0] %></span>
+                <span class="user_grey">@<%= email_tokens[1] %></span>
             </div>
             <div class="time_and_date">
                 <div id="comment_button">

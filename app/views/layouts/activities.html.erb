@@ -31,7 +31,7 @@
 	<div id="body">
 		<img id="bg_gradient" src="/images/common/bg_gradient.gif" alt="">
 		<div id="wrapper">
-			<img id="logo" src="/images/common/logo_off.png">
+			<img id="logo" src="/images/common/logo_off.png" onmouseover="$(logo).setAttribute('src', '/images/common/logo_on.png')" onmouseout="$(logo).setAttribute('src', '/images/common/logo_off.png')">
 			<div id="menu_and_login">
 				<ul id="menu">
 					<li><a href="index.html">About Us</a></li>
@@ -42,23 +42,37 @@
 					<li><a href="/pd_user">Teachers</a></li>
 					<li><a href="/user/search">Search</a></li>
 				</ul>
-				<div id="login_box">
-					<div>
-						<% form_for :pd_user, :url => "/pd_user/login" do |f| %>
-							<div id="login_left">
-                               <%= f.text_field :login_name, :onfocus => "this.value=''" %>
-                               <%= f.password_field :password, :onfocus => "this.value=''" %>
+                
+                
+                
+                <% if session[:pd_user_id] %>
+				<div id="login_box" style="height:30px; margin-top:30px;">
+                    <% form_for :pd_user, :url => "/pd_user/logout" do |f| %>
+   
+                        <div id="logout_right">
+                            <%= submit_tag "Log out", :class => "submit", :id => "login_button" %>
+                        </div>
+                    <% end %>
+                </div>
+                <% else %>
+                <div id="login_box">
+				    <% form_for :pd_user, :url => "/pd_user/login" do |f| %>
+						<div id="login_left">
+                           <%= f.text_field :login_name, :onfocus => "this.value=''" %>
+                           <%= f.password_field :password, :onfocus => "this.value=''" %>
                                <!--
 								<input type="text" value="username" onfocus="this.value=''">
 								<input type="text" value="password" onfocus="this.value=''">
                                 -->
-							</div>
-							<div id="login_right">
-                                <%= submit_tag "Log in", :class => "submit", :id => "login_button" %>
-							</div>
-						<% end %>
-					</div>
+                        </div>
+                        <div id="login_right">
+                            <%= submit_tag "Log in", :class => "submit", :id => "login_button" %>
+                        </div>
+                    <% end %>
 				</div>
+                <% end %>
+                
+                
 			</div>
             <%= @content_for_layout %>
     	</div>
