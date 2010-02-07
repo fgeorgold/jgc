@@ -1,4 +1,11 @@
 
+
+<div id="title">
+	<h1><%= @activity.name %></h1>
+</div>
+
+<div id="content_area">
+
 <div id="columns">
     <div id="left_column">
         <div id="profile_picture">
@@ -24,18 +31,22 @@
         </div>
     </div>				
     <div id="right_column">
+    
+        
+        <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
+    
         <div class="section">
             <div class="section_title">
                 <h2>Basic Info</h2>
-                <span>(<a href="#">edit</a>)</span>
+                <span>(<a href="javascript:onBasicInfoEdit();">edit</a>)</span>
             </div>
-            <table>
+            <table class="noneditable" id="basic_info">
                 <tr>
                     <td class="table_grey">
                         <p>Name:</p>
                     </td>
                     <td>
-                        <p><%= @activity.name %></p>
+                        <p><%= f.text_field :name, :value => @activity.name, :readonly => "readonly" %> </p>
                     </td>
                 </tr>
                 <tr>
@@ -92,6 +103,8 @@
                 </tr>
             </table>
         </div>
+        
+        <% end %>
     <div class="section">
             <div class="section_title">
                 <h2>Resources & Costs</h2>
@@ -156,10 +169,11 @@
     </div>
     <% end %>
     
+    <% if session[:user] %>
     
     <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
     <%= f.hidden_field :activity_id, :value => @activity.id %> 
-    <%= f.hidden_field :email, :value => "one@one.com" %>
+    <%= f.hidden_field :email, :value => session[:user].email %>
     
     <div id="personal_comment">
         <h2>leave your own comment:</h2>
@@ -181,4 +195,8 @@
         </div>
     </div>
     <% end %>
+    
+    <% end %>
+</div>
+
 </div>
