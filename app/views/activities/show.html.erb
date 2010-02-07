@@ -58,13 +58,19 @@
 
 <div id = "photo_upload">
 	<h3> Upload Photos </h3>
+	<%if flash[:upload_success] %>
+		<p style ="color:green"><%= flash[:upload_success]%></p>
+	<%end%>
 	<div class = "photo-form">
-		<%form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
+		Activity ID <%=@activity.id %>
+		<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
+			<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
 			<%= f.file_field(:filename) %>
 			<%= submit_tag "Upload" %>
 		<%end%>
 	</div>
 </div>
+
 <div id="comments">
 	<h3> Comments </h3>
     <div class="comment-list">
