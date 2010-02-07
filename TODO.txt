@@ -1,0 +1,12 @@
+* google maps
+* picture gallery
+* edit-in-place (like Facebook)
+* redesign profile page
+
+FIRST PAGE
+
+* time
+* map
+* directions
+* description
+* lightbox
