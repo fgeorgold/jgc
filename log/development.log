@@ -7139,3 +7139,2022 @@ Migrating to DropZipTable (20100207051853)
   [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
   [4;35;1mSQL (1.9ms)[0m   [0mdescribe `users`[0m
   [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdUsers (2)
+Migrating to CreateSessions (3)
+Migrating to CreateSpecs (4)
+Migrating to CreatePersonalLives (5)
+Migrating to CreateProfessionalLives (6)
+Migrating to ChangesToSpecs (41)
+Migrating to ChangesToProfessionalLives (61)
+Migrating to CreateOrganizations (20090227000327)
+Migrating to CreateUsers (20090301221130)
+Migrating to AddInformationToOrganizations (20090308004047)
+Migrating to AddRoleToUsers (20090308004757)
+Migrating to AddAffiliateOrganization (20090308010800)
+Migrating to CreateActivities (20090413232041)
+Migrating to ChangeOrganizationsDataType (20090421234634)
+Migrating to Partners (20090423082204)
+Migrating to AddPartnerAttribute (20090425232827)
+Migrating to AddVisibleFieldToActivities (20090427005206)
+Migrating to CreatePrograms (20090428024927)
+Migrating to CreateCategories (20090428085038)
+Migrating to AddActivitesAdmin (20090503224603)
+Migrating to Comments (20090504213831)
+Migrating to AddMailPref (20090512223055)
+Migrating to AddActivitiesCreatedBy (20090513211955)
+Migrating to CreateActivitiesComments (20090514215613)
+Migrating to CreateEmails (20090518221040)
+Migrating to CreateAsp (20090528013136)
+Migrating to CreateRatings (20090601014823)
+Migrating to AddEditPermsToUsers (20090601042121)
+Migrating to RenameAspProgram (20090601054017)
+Migrating to AddFavoriteActivities (20090603033231)
+Migrating to AddAddressToActivities (20090723043618)
+Migrating to AddLatLon (20090731171208)
+Migrating to AddAddressToOrg (20090804205956)
+Migrating to CreateZips (20090813180013)
+Migrating to AddZipToOrg (20090813201913)
+Migrating to FixTypoInFavoriteActivities (20090819005744)
+Migrating to SetDefaultRating (20090819005757)
+Migrating to ActsAsTaggableOnMigration (20090819082024)
+Migrating to EditFavoriteActivities (20090819194232)
+Migrating to AddPdUserToActivity (20090821055024)
+Migrating to FixRelationships (20090821061257)
+Migrating to AddTagsToActivities (20090821082919)
+Migrating to AddActivitiestoTag (20090821084957)
+Migrating to FixActivityRelationship (20090821224304)
+Migrating to FixTagDescription (20100206232013)
+Migrating to DropZipTable (20100207051853)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `activities_comments`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `activities_comments`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `activities_favorites`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `activities_favorites`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `activities_tags`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `activities_tags`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `asps`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `asps`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `asps`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `emails`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `emails`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `organizations`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `organizations`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `partners`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `partners`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `partners`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `pd_users`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `pd_users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `pd_users`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `personal_lives`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `personal_lives`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `professional_lives`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `professional_lives`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `programs`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `programs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `programs`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `ratings`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `ratings`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `specs`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `specs`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:34:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 98ms (View: 15, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:39:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+ERROR: compiling _run_erb_app47views47activities47show46html46erb RAISED compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:160: syntax error, unexpected ')'
+...e_activity_comment' } do |f| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ).to_s); @out...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting ')'
+...0", :onclick="return false;" } ).to_s); @output_buffer.conca...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:184: syntax error, unexpected kENSURE, expecting ')'
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:186: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47activities47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"columns\">\n"
+@output_buffer.concat "    <div id=\"left_column\">\n"
+@output_buffer.concat "        <div id=\"profile_picture\">\n"
+@output_buffer.concat "            <img src=\"/images/activities/child.jpg\" width=\"200px\" alt=\"profile_picture\">\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div id=\"toolbox\">\n"
+@output_buffer.concat "            <ul id=\"toolbox_icons\">\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/rating_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/email_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/favorites_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "            </ul>\n"
+@output_buffer.concat "            <div id=\"toolbox_links\">\n"
+@output_buffer.concat "                <p>rating:\n"
+@output_buffer.concat "                    <img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\">\n"
+@output_buffer.concat "                </p>\n"
+@output_buffer.concat "                <p><a href=\"#\">email this activity</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">view photo albums</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add photos</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add to my favorites</a></p>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\t\t\t\t\n"
+@output_buffer.concat "    <div id=\"right_column\">\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Basic Info</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Name:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.name ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Description:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.description ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Tagged as:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.tags.collect { |t| t.name }.join(',') ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Where & When</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Location:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.address ).to_s); @output_buffer.concat " (<a href=\"#\">map</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Weekly Times:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            Tuesdays and Thursdays, March-June (<a href=\"#\">add to my calendar</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Hours:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>10AM-2PM</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Resources & Costs</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Total Cost:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.cost ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Required Materials:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.resources ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Map</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div id=\"google_map\">\n"
+@output_buffer.concat "                <!-- google code goes here -->\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "<div id=\"comments\">\n"
+@output_buffer.concat "    <h2>user comments (54)</h2>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  @activity.activities_comments.each do |comment| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box\">\n"
+@output_buffer.concat "            <p>\n"
+@output_buffer.concat "                \"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n"
+@output_buffer.concat "            </p>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                "; @output_buffer.concat(( email_tokens = @activity.email.split('@') ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                <span class=\"user_black\">"; @output_buffer.concat(( email_tokens[0] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@"; @output_buffer.concat(( email_tokens[1] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <span class=\"user_grey\">2/5/10</span>\n"
+@output_buffer.concat "                <span class=\"user_black\">9:34:55</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">PST</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    "; @output_buffer.concat(( form_for :new_comment, @new_comment, :url => { :action => 'save_activity_comment' } do |f| ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"personal_comment\">\n"
+@output_buffer.concat "        <h2>leave your own comment:</h2>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box_empty\">\n"
+@output_buffer.concat "            "; @output_buffer.concat(( f.text_field :comment_text, :html => { :rows => "10", :cols => "70", :onclick="return false;" } ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data_empty\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                <span class=\"user_black\">your_email</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@email.com</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <div id=\"comment_button\">\n"
+@output_buffer.concat "                    "; @output_buffer.concat(( submit_tag 'leave comment' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                    <!--<span>leave comment</span>-->\n"
+@output_buffer.concat "                </div>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Matt/Code/jgc/app/views/activities/show.html.erb:186:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/Matt/Code/jgc/app/controllers/activities_controller.rb:90:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:160: syntax error, unexpected ')'
+...e_activity_comment' } do |f| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ).to_s); @out...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting ')'
+...0", :onclick="return false;" } ).to_s); @output_buffer.conca...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:184: syntax error, unexpected kENSURE, expecting ')'
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:186: syntax error, unexpected kEND, expecting ')') on line #160 of app/views/activities/show.html.erb:
+157:     <% end %>
+158:     
+159:     
+160:     <%= form_for :new_comment, @new_comment, :url => { :action => 'save_activity_comment' } do |f| %>
+161:     <div id="personal_comment">
+162:         <h2>leave your own comment:</h2>
+163:     </div>
+
+    app/views/activities/show.html.erb:186:in `compile!'
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:39:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+ERROR: compiling _run_erb_app47views47activities47show46html46erb RAISED compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ).to_s); @out...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting ')'
+...0", :onclick="return false;" } ).to_s); @output_buffer.conca...
+                              ^
+Function body:           def _run_erb_app47views47activities47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"columns\">\n"
+@output_buffer.concat "    <div id=\"left_column\">\n"
+@output_buffer.concat "        <div id=\"profile_picture\">\n"
+@output_buffer.concat "            <img src=\"/images/activities/child.jpg\" width=\"200px\" alt=\"profile_picture\">\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div id=\"toolbox\">\n"
+@output_buffer.concat "            <ul id=\"toolbox_icons\">\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/rating_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/email_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/favorites_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "            </ul>\n"
+@output_buffer.concat "            <div id=\"toolbox_links\">\n"
+@output_buffer.concat "                <p>rating:\n"
+@output_buffer.concat "                    <img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\">\n"
+@output_buffer.concat "                </p>\n"
+@output_buffer.concat "                <p><a href=\"#\">email this activity</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">view photo albums</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add photos</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add to my favorites</a></p>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\t\t\t\t\n"
+@output_buffer.concat "    <div id=\"right_column\">\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Basic Info</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Name:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.name ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Description:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.description ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Tagged as:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.tags.collect { |t| t.name }.join(',') ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Where & When</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Location:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.address ).to_s); @output_buffer.concat " (<a href=\"#\">map</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Weekly Times:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            Tuesdays and Thursdays, March-June (<a href=\"#\">add to my calendar</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Hours:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>10AM-2PM</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Resources & Costs</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Total Cost:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.cost ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Required Materials:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.resources ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Map</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div id=\"google_map\">\n"
+@output_buffer.concat "                <!-- google code goes here -->\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "<div id=\"comments\">\n"
+@output_buffer.concat "    <h2>user comments (54)</h2>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  @activity.activities_comments.each do |comment| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box\">\n"
+@output_buffer.concat "            <p>\n"
+@output_buffer.concat "                \"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n"
+@output_buffer.concat "            </p>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                "; @output_buffer.concat(( email_tokens = @activity.email.split('@') ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                <span class=\"user_black\">"; @output_buffer.concat(( email_tokens[0] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@"; @output_buffer.concat(( email_tokens[1] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <span class=\"user_grey\">2/5/10</span>\n"
+@output_buffer.concat "                <span class=\"user_black\">9:34:55</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">PST</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  form_for :new_comment, @new_comment, :url => { :action => 'save_activity_comment' } do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"personal_comment\">\n"
+@output_buffer.concat "        <h2>leave your own comment:</h2>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box_empty\">\n"
+@output_buffer.concat "            "; @output_buffer.concat(( f.text_field :comment_text, :html => { :rows => "10", :cols => "70", :onclick="return false;" } ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data_empty\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                <span class=\"user_black\">your_email</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@email.com</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <div id=\"comment_button\">\n"
+@output_buffer.concat "                    "; @output_buffer.concat(( submit_tag 'leave comment' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                    <!--<span>leave comment</span>-->\n"
+@output_buffer.concat "                </div>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Matt/Code/jgc/app/views/activities/show.html.erb:186:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/Matt/Code/jgc/app/controllers/activities_controller.rb:90:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ).to_s); @out...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting ')'
+...0", :onclick="return false;" } ).to_s); @output_buffer.conca...
+                              ^) on line #166 of app/views/activities/show.html.erb:
+163:     </div>
+164:     <div class="comment_wrapper">
+165:         <div class="comment_box_empty">
+166:             <%= f.text_field :comment_text, :html => { :rows => "10", :cols => "70", :onclick="return false;" } %>
+167:         </div>
+168:         <div class="comment_data_empty">
+169:             <div class="username">
+
+    app/views/activities/show.html.erb:186:in `compile!'
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:39:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.9ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+ERROR: compiling _run_erb_app47views47activities47show46html46erb RAISED compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ; @output_buf...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting kEND
+...0", :onclick="return false;" } ; @output_buffer.concat "\n"
+                              ^
+Function body:           def _run_erb_app47views47activities47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"columns\">\n"
+@output_buffer.concat "    <div id=\"left_column\">\n"
+@output_buffer.concat "        <div id=\"profile_picture\">\n"
+@output_buffer.concat "            <img src=\"/images/activities/child.jpg\" width=\"200px\" alt=\"profile_picture\">\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div id=\"toolbox\">\n"
+@output_buffer.concat "            <ul id=\"toolbox_icons\">\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/rating_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/email_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/album_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "                <li><img src=\"/images/activities/favorites_icon.png\" alt=\"rating_icon\"></li>\n"
+@output_buffer.concat "            </ul>\n"
+@output_buffer.concat "            <div id=\"toolbox_links\">\n"
+@output_buffer.concat "                <p>rating:\n"
+@output_buffer.concat "                    <img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_filled.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\"><img src=\"/images/activities/star_empty.png\" alt=\"star\">\n"
+@output_buffer.concat "                </p>\n"
+@output_buffer.concat "                <p><a href=\"#\">email this activity</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">view photo albums</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add photos</a></p>\n"
+@output_buffer.concat "                <p><a href=\"#\">add to my favorites</a></p>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\t\t\t\t\n"
+@output_buffer.concat "    <div id=\"right_column\">\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Basic Info</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Name:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.name ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Description:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.description ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Tagged as:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>"; @output_buffer.concat(( @activity.tags.collect { |t| t.name }.join(',') ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Where & When</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Location:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.address ).to_s); @output_buffer.concat " (<a href=\"#\">map</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Weekly Times:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            Tuesdays and Thursdays, March-June (<a href=\"#\">add to my calendar</a>)\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Hours:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>10AM-2PM</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Resources & Costs</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <table>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Total Cost:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.cost ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "                <tr>\n"
+@output_buffer.concat "                    <td class=\"table_grey\">\n"
+@output_buffer.concat "                        <p>Required Materials:</p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                    <td>\n"
+@output_buffer.concat "                        <p>\n"
+@output_buffer.concat "                            "; @output_buffer.concat(( @activity.resources ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                        </p>\n"
+@output_buffer.concat "                    </td>\n"
+@output_buffer.concat "                </tr>\n"
+@output_buffer.concat "            </table>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"section\">\n"
+@output_buffer.concat "            <div class=\"section_title\">\n"
+@output_buffer.concat "                <h2>Map</h2>\n"
+@output_buffer.concat "                <span>(<a href=\"#\">edit</a>)</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div id=\"google_map\">\n"
+@output_buffer.concat "                <!-- google code goes here -->\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "<div id=\"comments\">\n"
+@output_buffer.concat "    <h2>user comments (54)</h2>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  @activity.activities_comments.each do |comment| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box\">\n"
+@output_buffer.concat "            <p>\n"
+@output_buffer.concat "                \"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n"
+@output_buffer.concat "            </p>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                "; @output_buffer.concat(( email_tokens = @activity.email.split('@') ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                <span class=\"user_black\">"; @output_buffer.concat(( email_tokens[0] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@"; @output_buffer.concat(( email_tokens[1] ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <span class=\"user_grey\">2/5/10</span>\n"
+@output_buffer.concat "                <span class=\"user_black\">9:34:55</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">PST</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  form_for :new_comment, @new_comment, :url => { :action => 'save_activity_comment' } do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"personal_comment\">\n"
+@output_buffer.concat "        <h2>leave your own comment:</h2>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    <div class=\"comment_wrapper\">\n"
+@output_buffer.concat "        <div class=\"comment_box_empty\">\n"
+@output_buffer.concat "            ";  f.text_field :comment_text, :html => { :rows => "10", :cols => "70", :onclick="return false;" } ; @output_buffer.concat "\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "        <div class=\"comment_data_empty\">\n"
+@output_buffer.concat "            <div class=\"username\">\n"
+@output_buffer.concat "                <span class=\"user_black\">your_email</span>\n"
+@output_buffer.concat "                <span class=\"user_grey\">@email.com</span>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "            <div class=\"time_and_date\">\n"
+@output_buffer.concat "                <div id=\"comment_button\">\n"
+@output_buffer.concat "                    "; @output_buffer.concat(( submit_tag 'leave comment' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "                    <!--<span>leave comment</span>-->\n"
+@output_buffer.concat "                </div>\n"
+@output_buffer.concat "            </div>\n"
+@output_buffer.concat "        </div>\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Matt/Code/jgc/app/views/activities/show.html.erb:186:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/Matt/Code/jgc/app/controllers/activities_controller.rb:90:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Matt/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...10", :cols => "70", :onclick="return false;" } ; @output_buf...
+                              ^
+/Users/Matt/Code/jgc/app/views/activities/show.html.erb:166: syntax error, unexpected '}', expecting kEND
+...0", :onclick="return false;" } ; @output_buffer.concat "\n"
+                              ^) on line #166 of app/views/activities/show.html.erb:
+163:     </div>
+164:     <div class="comment_wrapper">
+165:         <div class="comment_box_empty">
+166:             <% f.text_field :comment_text, :html => { :rows => "10", :cols => "70", :onclick="return false;" } %>
+167:         </div>
+168:         <div class="comment_data_empty">
+169:             <div class="username">
+
+    app/views/activities/show.html.erb:186:in `compile!'
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (96.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:40:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.8ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 17, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:40:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.5ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 105ms (View: 18, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:40:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 45ms (View: 16, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:41:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.5ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (1.4ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 13, DB: 11) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:41:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 40ms (View: 9, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:44:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.2ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 16, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:47:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 91ms (View: 9, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:48:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 39ms (View: 9, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:48:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 37ms (View: 9, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:48:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (8.0ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 52ms (View: 9, DB: 15) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:49:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 50ms (View: 16, DB: 10) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:49:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (2.0ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.4ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 45ms (View: 9, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:49:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (9.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.4ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 56ms (View: 11, DB: 23) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:49:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (5.2ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 108ms (View: 9, DB: 13) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:49:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (2.1ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.6ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 11, DB: 10) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:50:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (8.2ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.5ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.4ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 49ms (View: 9, DB: 14) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:50:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (2.8ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 48ms (View: 13, DB: 10) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:50:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.5ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 11, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:50:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 118ms (View: 9, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:50:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 45ms (View: 10, DB: 14) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:51:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (3.5ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (1.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 103ms (View: 62, DB: 12) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:51:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.9ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 47ms (View: 9, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:51:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (2.0ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 48ms (View: 9, DB: 11) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:51:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.7ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 48ms (View: 10, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:52:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (7.1ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 9, DB: 13) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:54:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.3ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 111ms (View: 17, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:56:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 47ms (View: 16, DB: 9) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 05:58:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (2.2ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 103ms (View: 17, DB: 10) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:00:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (7.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (1.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 63ms (View: 18, DB: 14) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:02:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+
+ActionView::TemplateError (No expansion found for :prototype) on line #10 of app/views/layouts/activities.html.erb:
+7: 	<link rel="icon" href="/favicon.png" type="image/x-icon"> 
+8: 	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+9: 	<%= javascript_include_tag :defaults %>
+10:     <%= javascript_include_tag :prototype %>
+11:     <%= javascript_include_tag :activities %>
+12:     
+13: 	<style type="text/css" media="all">
+
+    app/views/layouts/activities.html.erb:10
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (39.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:03:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 42ms (View: 13, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:04:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.8ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 49ms (View: 17, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:04:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.5ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.3ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 17, DB: 8) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:05:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 39ms (View: 10, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:05:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 39ms (View: 9, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:05:31) [POST]
+  Parameters: {"new_comment"=>{"comment_text"=>"Hello, world!"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;35;1mActivitiesComment Columns (6.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:103:in `save_activity_comment'
+
+Rendered rescues/_trace (85.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:06:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = NULL[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.5ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+
+ActionView::TemplateError (undefined method `hidden_field_tag' for #<ActionView::Helpers::FormBuilder:0x2388a2c>) on line #161 of app/views/activities/show.html.erb:
+158:     
+159:     
+160:     <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
+161:     <%= f.hidden_field_tag :activity_id, :value => @activity.id %> 
+162:     
+163:     <div id="personal_comment">
+164:         <h2>leave your own comment:</h2>
+
+    app/views/activities/show.html.erb:161
+    app/views/activities/show.html.erb:160
+    app/controllers/activities_controller.rb:90:in `show'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-02-07 06:06:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = NULL[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = NULL[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = NULL[0m
+  [4;36;1mActivitiesComment Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 46ms (View: 17, DB: 7) | 200 OK [http://localhost/activities/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:06:47) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>""}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;36;1mActivitiesComment Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mActivity Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = '1'[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = '1'[0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.2ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 43ms (View: 9, DB: 8) | 200 OK [http://localhost/activities/save_activity_comment]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:06:55) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"hello, world!"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;35;1mActivitiesComment Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mActivity Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.3ms)[0m   [0;1mSELECT * FROM programs where activity_id = '1'[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = '1'[0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 104ms (View: 9, DB: 9) | 200 OK [http://localhost/activities/save_activity_comment]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:07:17) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"lkjl;kj;lkj;lkj;lkj"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;36;1mActivitiesComment Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mActivity Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (1.9ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.3ms)[0m   [0mSELECT * FROM programs where activity_id = '1'[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = '1'[0m
+  [4;35;1mActivitiesComment Load (0.2ms)[0m   [0mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 44ms (View: 9, DB: 10) | 200 OK [http://localhost/activities/save_activity_comment]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:07:59) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"lkjl;kj;lkj;lkj;lkj"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;35;1mActivitiesComment Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mActivity Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.7ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = '1'[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM categories where activity_id = '1'[0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.6ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+
+ActionView::TemplateError (undefined method `activites_comments' for #<Activity:0x2297e60>) on line #135 of app/views/activities/show.html.erb:
+132:     </div>
+133: </div>
+134: <div id="comments">
+135:     <h2>user comments (<%= @activity.activites_comments.size %>)</h2>
+136:     
+137:     <% @activity.activities_comments.each do |comment| %>
+138:     <div class="comment_wrapper">
+
+    app/views/activities/show.html.erb:135
+    app/controllers/activities_controller.rb:139:in `save_activity_comment'
+    app/controllers/activities_controller.rb:121:in `save_activity_comment'
+
+Rendered rescues/_trace (39.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:08:09) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"lkjl;kj;lkj;lkj;lkj"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;35;1mActivitiesComment Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `activities_comments`[0m
+  [4;36;1mActivity Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;36;1mProgram Load (0.2ms)[0m   [0;1mSELECT * FROM programs where activity_id = '1'[0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM categories where activity_id = '1'[0m
+  [4;36;1mActivitiesComment Load (0.1ms)[0m   [0;1mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;35;1mactivities_tags Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities_tags`[0m
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 49ms (View: 16, DB: 8) | 200 OK [http://localhost/activities/save_activity_comment]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:9)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/Matt/Code/jgc/app/controllers/application_controller.rb:68)
+
+
+Processing ActivitiesController#save_activity_comment (for 127.0.0.1 at 2010-02-07 06:09:36) [POST]
+  Parameters: {"new_comment"=>{"activity_id"=>"1", "comment_text"=>"lkjl;kj;lkj;lkj;lkj"}, "authenticity_token"=>"axdvCRs/HiHL4l1dbNDfxaa5hePFh4Au5h63EFGKHiw="}
+  [4;36;1mActivitiesComment Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `activities_comments`[0m
+  [4;35;1mActivity Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+  [4;35;1mProgram Load (0.2ms)[0m   [0mSELECT * FROM programs where activity_id = '1'[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM categories where activity_id = '1'[0m
+  [4;35;1mActivitiesComment Load (0.1ms)[0m   [0mSELECT * FROM activities_comments where activity_id = '1'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/activities
+Rendering activities/show
+  [4;36;1mactivities_tags Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities_tags`[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` INNER JOIN `activities_tags` ON `tags`.id = `activities_tags`.tag_id WHERE (`activities_tags`.activity_id = 1 ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `activities_comments` WHERE (`activities_comments`.activity_id = 1) [0m
+Completed in 43ms (View: 9, DB: 8) | 200 OK [http://localhost/activities/save_activity_comment]

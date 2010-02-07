@@ -132,7 +132,7 @@
     </div>
 </div>
 <div id="comments">
-    <h2>user comments (54)</h2>
+    <h2>user comments (<%= @activity.activities_comments.size %>)</h2>
     
     <% @activity.activities_comments.each do |comment| %>
     <div class="comment_wrapper">
@@ -143,8 +143,9 @@
         </div>
         <div class="comment_data">
             <div class="username">
-                <span class="user_black">mommabear</span>
-                <span class="user_grey">@stanford.edu</span>
+                <%= email_tokens = @activity.email.split('@') %>
+                <span class="user_black"><%= email_tokens[0] %></span>
+                <span class="user_grey">@<%= email_tokens[1] %></span>
             </div>
             <div class="time_and_date">
                 <span class="user_grey">2/5/10</span>
@@ -156,12 +157,15 @@
     <% end %>
     
     
+    <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
+    <%= f.hidden_field :activity_id, :value => @activity.id %> 
+    
     <div id="personal_comment">
         <h2>leave your own comment:</h2>
     </div>
     <div class="comment_wrapper">
         <div class="comment_box_empty">
-            <textarea rows="10" cols="70" onclick="this.value=''">your text here...</textarea>
+            <%= f.text_area :comment_text, :rows => "10", :cols => "70", :onclick=> "return false;" %>
         </div>
         <div class="comment_data_empty">
             <div class="username">
@@ -170,9 +174,10 @@
             </div>
             <div class="time_and_date">
                 <div id="comment_button">
-                    <span>leave comment</span>
+                    <a href="javascript:onCommentSubmit();">leave comment</a>
                 </div>
             </div>
         </div>
     </div>
+    <% end %>
 </div>

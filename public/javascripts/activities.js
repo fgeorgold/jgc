@@ -23,6 +23,10 @@ function onResourcesAndCostsSave() {
 
 }
 
+function onCommentSubmit() {
+    $('comment_form').submit();
+}
+
 function onActivityUpdateSuccess() {
     alert('success')
 }
@@ -43,7 +47,8 @@ function init() {
         
         Event.observe($('basic-info-edit'), 'click', onBasicInfoEdit);
         Event.observe($('where-and-when-edit'), 'click', onWhereAndWhenEdit);
-        Event.observe($('resources-and-costs-edit'), 'click' onResourcesAndCostsEdit);
+        Event.observe($('resources-and-costs-edit'), 'click', onResourcesAndCostsEdit);
+        Event.observe($('comment_button_link'), 'click', onCommentSubmit);
     });    
 }
 
