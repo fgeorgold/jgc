@@ -114,7 +114,6 @@
                     </td>
                     <td>
                         <p>
-                            <%= @activity.resources %>
                         </p>
                     </td>
                 </tr>
@@ -138,19 +137,20 @@
     <div class="comment_wrapper">
         <div class="comment_box">
             <p>
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                <%= comment.comment_text %>
             </p>
         </div>
         <div class="comment_data">
             <div class="username">
-                <%= email_tokens = @activity.email.split('@') %>
+                <% email_tokens = comment.email.split('@') %>
                 <span class="user_black"><%= email_tokens[0] %></span>
                 <span class="user_grey">@<%= email_tokens[1] %></span>
             </div>
             <div class="time_and_date">
-                <span class="user_grey">2/5/10</span>
-                <span class="user_black">9:34:55</span>
-                <span class="user_grey">PST</span>
+                <% date_tokens = comment.created_at.to_s.split(' ') %>
+                <span class="user_grey"><%= date_tokens[0] %></span>
+                <span class="user_black"><%= date_tokens[1] %></span>
+                <span class="user_grey"><%= date_tokens[2] %></span>
             </div>
         </div>
     </div>
@@ -159,6 +159,7 @@
     
     <% form_for :new_comment, @new_comment, :html => { :id => 'comment_form' }, :url => { :action => 'save_activity_comment' } do |f| %>
     <%= f.hidden_field :activity_id, :value => @activity.id %> 
+    <%= f.hidden_field :email, :value => "one@one.com" %>
     
     <div id="personal_comment">
         <h2>leave your own comment:</h2>
