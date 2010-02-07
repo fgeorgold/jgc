@@ -197,6 +197,12 @@ h4 {
 					background-color: #141414;
 					background-repeat: no-repeat;
 				}
-		
                 
+                #logout_right {
+                    width: 30%;
+                    padding-right: 20px;
+                    position: relative;
+                    margin: 2px 0;
+                    float: right;
+                }
 		
