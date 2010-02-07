@@ -285,6 +285,13 @@ end
   end
   
   def postPhoto
+  
+	if( params[:photo_info][:filename].nil? )
+		flash[:empty_photo] = "Oh no! You forgot to specify a filename!";
+		redirect_to(:action => 'show',:id=>params[:photo_info][:activity_id]);
+		return;
+	end
+  
 	photo = Photo.new;
 	photo.activity_id = params[:photo_info][:activity_id];
 	photo.file_name = params[:photo_info][:filename].original_filename;
