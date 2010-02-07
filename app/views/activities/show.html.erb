@@ -16,11 +16,11 @@
             <ul>
                 <li><a href="#">E-mail this</a></li>
                 <% if !@activity.photos.empty? %>
-                      <li><%= 'a href="#{GLOBALS::ACTIVITY_PATH}/#{@activity.id.to_s()}/#{activity.photos.first}" rel="lightbox[activity_photos]"' %>See photos</a></li>
+                          <li> <%= link_to "See photos", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %></li>
                 <% end %>
                 <% if @activity.photos.length > 1 %>
                       <% (@activity.photos[2..-1]).each do |photo| %>
-                           <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}/#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
+                           <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
                       <% end %>
                 <% end %>
                 <li><a href="#">Add to favorites</a></li>

@@ -96,6 +96,6 @@ end
 
 
 module GLOBALS
-	ACTIVITY_PATH = "public/activity_info/";
+	ACTIVITY_PATH = "/activity_info/";
 end
 
