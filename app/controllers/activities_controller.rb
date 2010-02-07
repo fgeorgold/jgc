@@ -10,21 +10,21 @@ class ActivitiesController < ApplicationController
     @activities = Activity.find(:all)
     @title_description = "Activities"
     # Browse activities by categories
-    @categories = Set.new
-    @programs = Set.new
-    @agegroups = Set.new
-    for my_activity in @activities do
-        @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
-        for currentProgram in @program_id
-          if currentProgram.program_name.empty?
-          else
-            @programs.add(currentProgram.program_name)  
-          end
-          
-      end
-      
-       
-    end
+#   @categories = Set.new
+#   @programs = Set.new
+#   @agegroups = Set.new
+#   for my_activity in @activities do
+#       @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",my_activity.id];
+#       for currentProgram in @program_id
+#         if currentProgram.program_name.empty?
+#         else
+#           @programs.add(currentProgram.program_name)  
+#         end
+#         
+#     end
+#     
+#      
+#   end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @activities }
@@ -69,24 +69,24 @@ end
     @title_description = "Show Activity"
     @activity = Activity.find(params[:id]) 
     
-    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
-    @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
-    @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
-    @programNames = []
-    @categoryNames = []
+#    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
+#   @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+#   @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+#   @programNames = []
+#   @categoryNames = []
     @comments = @activity.activities_comments
     @new_comment = ActivitiesComment.new
-    for comment in @comment_id
-      @comments.push comment
-    end
-    
-    for currentProgram in @program_id
-         @programNames.push currentProgram.program_name
-    end
-
-    for currentCategory in @category_id
-         @categoryNames.push currentCategory.category_name
-    end
+#   for comment in @comment_id
+#     @comments.push comment
+#   end
+#   
+#   for currentProgram in @program_id
+#        @programNames.push currentProgram.program_name
+#   end
+#
+#   for currentCategory in @category_id
+#        @categoryNames.push currentCategory.category_name
+#   end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @activity }
@@ -101,23 +101,23 @@ end
     @activity_comment = ActivitiesComment.new(params[:new_comment])
     @id = params[:new_comment][:activity_id]
     @activity = Activity.find(@id)
-    @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
-    @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
-    @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
-    @programNames = []
-    @categoryNames = []
-    @comments = []
-    for comment in @comment_id
-      @comments.push comment
-    end
-    
-    for currentProgram in @program_id
-         @programNames.push currentProgram.program_name
-    end
-
-    for currentCategory in @category_id
-         @categoryNames.push currentCategory.category_name
-    end
+#   @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
+#   @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
+#   @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
+#   @programNames = []
+#   @categoryNames = []
+#   @comments = []
+#   for comment in @comment_id
+#     @comments.push comment
+#   end
+#   
+#   for currentProgram in @program_id
+#        @programNames.push currentProgram.program_name
+#   end
+#
+#   for currentCategory in @category_id
+#        @categoryNames.push currentCategory.category_name
+#   end
     respond_to do |format|
       if @activity_comment.save
         flash[:notice] = 'Activity was successfully created.'

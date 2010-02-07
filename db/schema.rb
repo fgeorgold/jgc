@@ -9,22 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100207051853) do
+ActiveRecord::Schema.define(:version => 20100207111240) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "resources"
     t.text     "cost"
-    t.text     "comments"
     t.string   "duration"
-    t.text     "instructions"
-    t.string   "otherPrograms"
     t.string   "age_group"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "visible",       :default => false
+    t.boolean  "visible",     :default => false
     t.string   "created_by"
     t.text     "address"
     t.text     "lat"
@@ -124,11 +120,6 @@ ActiveRecord::Schema.define(:version => 20100207051853) do
     t.text    "future_plans"
     t.text    "desired_job_description"
     t.integer "desired_salary_per_year"
-  end
-
-  create_table "programs", :force => true do |t|
-    t.integer "activity_id"
-    t.string  "program_name"
   end
 
   create_table "ratings", :force => true do |t|
