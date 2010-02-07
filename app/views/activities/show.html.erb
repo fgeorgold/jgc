@@ -27,14 +27,31 @@
     <div id="right-column">
         <div class="section">
             <h2>Basic Info</h2>
+            <table class="info-table">
+                <tr><td class="info-name">Name:</td><td class="info-value"><%= @activity.name %></tr>
+                <tr><td class="info-name">Description:</td><td class="info-value"><%= @activity.description %></tr>
+                <tr><td class="info-name">Tagged as:</td><td class="info-value">
+                    <% @activity.tags.each do |tag| %>
+                    <%= tag.name %>
+                    <% end %>
+                </tr></td>
+                <tr><td class="info-name">Age group:</td><td class="info-value"><%= @activity.age_group %></tr>
+            </table>
         </div>
         
         <div class="section">
             <h2>Where & When</h2>
+            <table class="info-table">
+                <tr><td class="info-name">Time:</td><td class="info-value"></td></tr>
+                <tr><td class="info-name">Location:</td><td class="info-value"><%= @activity.address %></td></tr>
+            </table>
         </div>
         
         <div class="section">
             <h2>Resources & Costs</h2>
+            <table class="info-table">
+                <tr><td class="info-name">Cost:</td><td class="info-value"><%= @activity.cost %></td></tr>
+            </table>
         </div>
     </div>
 </div>
@@ -56,10 +73,17 @@
     
     <div class="comment-form">
         <% form_for :new_comment, @new_comment, :url => { :action => "save_activity_comment" } do |f| %>
+            
             <%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
+            <p>E-mail address:
             <%= f.text_field :email %>
+            </p>
+            <p>
+            Comment:
             <%= f.text_field :comment_text %>
+            </p>
             <%= submit_tag 'Submit' %>
+            
         <% end %>
     </div>
     
