@@ -1,110 +1,178 @@
 
-
-<div class="title">
-    <h1><%= @activity.name %><h1>
-</div>
-
 <div id="columns">
-
-    <div id="left-column">
-        <div id="profile-picture">
+    <div id="left_column">
+        <div id="profile_picture">
+            <img src="/images/activities/child.jpg" width="200px" alt="profile_picture">
         </div>
-        
-        <div class="rating">
-        </div>
-        
-        <div class="links">
-            <ul>
-                <li><a href="#">E-mail this</a></li>
-                <li><a href="#">See photos</a></li>
-                <li><a href="#">Add to favorites</a></li>
+        <div id="toolbox">
+            <ul id="toolbox_icons">
+                <li><img src="/images/activities/rating_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/email_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/favorites_icon.png" alt="rating_icon"></li>
             </ul>
-        </div>        
+            <div id="toolbox_links">
+                <p>rating:
+                    <img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_empty.png" alt="star"><img src="/images/activities/star_empty.png" alt="star">
+                </p>
+                <p><a href="#">email this activity</a></p>
+                <p><a href="#">view photo albums</a></p>
+                <p><a href="#">add photos</a></p>
+                <p><a href="#">add to my favorites</a></p>
+            </div>
+        </div>
+    </div>				
+    <div id="right_column">
+        <div class="section">
+            <div class="section_title">
+                <h2>Basic Info</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <table>
+                <tr>
+                    <td class="table_grey">
+                        <p>Name:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.name %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Description:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.description %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Tagged as:</p>
+                    </td>
+                    <td>
+                        <p><%= @activity.tags.collect { |t| t.name }.join(',') %></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <div class="section_title">
+                <h2>Where & When</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <table>
+                <tr>
+                    <td class="table_grey">
+                        <p>Location:</p>
+                    </td>
+                    <td>
+                        <p>
+                            <%= @activity.address %> (<a href="#">map</a>)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Weekly Times:</p>
+                    </td>
+                    <td>
+                        <p>
+                            Tuesdays and Thursdays, March-June (<a href="#">add to my calendar</a>)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Hours:</p>
+                    </td>
+                    <td>
+                        <p>10AM-2PM</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <div class="section">
+            <div class="section_title">
+                <h2>Resources & Costs</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <table>
+                <tr>
+                    <td class="table_grey">
+                        <p>Total Cost:</p>
+                    </td>
+                    <td>
+                        <p>
+                            <%= @activity.cost %>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_grey">
+                        <p>Required Materials:</p>
+                    </td>
+                    <td>
+                        <p>
+                            <%= @activity.resources %>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <div class="section_title">
+                <h2>Map</h2>
+                <span>(<a href="#">edit</a>)</span>
+            </div>
+            <div id="google_map">
+                <!-- google code goes here -->
+            </div>
+        </div>
     </div>
-
-    <div id="right-column">
-        <div class="section">
-            <h2>Basic Info</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Name:</td><td class="info-value"><%= @activity.name %></tr>
-                <tr><td class="info-name">Description:</td><td class="info-value"><%= @activity.description %></tr>
-                <tr><td class="info-name">Tagged as:</td><td class="info-value">
-                    <% @activity.tags.each do |tag| %>
-                    <%= tag.name %>
-                    <% end %>
-                </tr></td>
-                <tr><td class="info-name">Age group:</td><td class="info-value"><%= @activity.age_group %></tr>
-            </table>
-        </div>
-        
-        <div class="section">
-            <h2>Where & When</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Time:</td><td class="info-value"></td></tr>
-                <tr><td class="info-name">Location:</td><td class="info-value"><%= @activity.address %></td></tr>
-            </table>
-        </div>
-        
-        <div class="section">
-            <h2>Resources & Costs</h2>
-            <table class="info-table">
-                <tr><td class="info-name">Cost:</td><td class="info-value"><%= @activity.cost %></td></tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div id = "photo_upload">
-	<h3> Upload Photos </h3>
-	<div class = "photo-form">
-		<% form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
-			<%= f.file_field(:filename) %>
-			<%= submit_tag "Upload" %>
-		<%end%>
-	</div>
 </div>
 <div id="comments">
-	<h3> Comments </h3>
-    <div class="comment-list">
-        <% @comments.each do |comment| %>
-            <div class="comment">
-                <div class="comment-head">
-                    <h3><%= comment.email %></h3>
-                </div>
-                <div class="comment-body">
-                    <%= comment.comment_text %>
+    <h2>user comments (54)</h2>
+    
+    <% @activity.activities_comments.each do |comment| %>
+    <div class="comment_wrapper">
+        <div class="comment_box">
+            <p>
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+        </div>
+        <div class="comment_data">
+            <div class="username">
+                <span class="user_black">mommabear</span>
+                <span class="user_grey">@stanford.edu</span>
+            </div>
+            <div class="time_and_date">
+                <span class="user_grey">2/5/10</span>
+                <span class="user_black">9:34:55</span>
+                <span class="user_grey">PST</span>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    
+    
+    <div id="personal_comment">
+        <h2>leave your own comment:</h2>
+    </div>
+    <div class="comment_wrapper">
+        <div class="comment_box_empty">
+            <textarea rows="10" cols="70" onclick="this.value=''">your text here...</textarea>
+        </div>
+        <div class="comment_data_empty">
+            <div class="username">
+                <span class="user_black">your_email</span>
+                <span class="user_grey">@email.com</span>
+            </div>
+            <div class="time_and_date">
+                <div id="comment_button">
+                    <span>leave comment</span>
                 </div>
             </div>
-        <% end %>
+        </div>
     </div>
-	
-    
-    <div class="comment-form">
-        <% form_for :new_comment, @new_comment, :url => { :action => "save_activity_comment" } do |f| %>
-            
-            <%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
-            <p>E-mail address:
-            <%= f.text_field :email %>
-            </p>
-            <p>
-            Comment:
-            <%= f.text_field :comment_text %>
-            </p>
-            <%= submit_tag 'Submit' %>
-            
-        <% end %>
-    </div>
-    
 </div>
-
-
-
-<% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => "activity-form" } do |f| %>
-    <%= f.hidden_field :name, :value => "ACTIVITY" %>
-    <%= submit_tag "Update", :id => "activity-submit", :onclick => "return false;"  %>
-<% end %>
-
-
-
-
-
