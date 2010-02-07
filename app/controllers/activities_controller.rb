@@ -283,34 +283,4 @@ end
       format.xml  { head :ok }
     end
   end
-  
-  def postPhoto
-  
-	if( params[:photo_info][:filename].nil? )
-		flash[:empty_photo] = "Oh no! You forgot to specify a filename!";
-		redirect_to(:action => 'show',:id=>params[:photo_info][:activity_id]);
-		return;
-	end
-  
-	photo = Photo.new;
-	photo.activity_id = params[:photo_info][:activity_id];
-	photo.file_name = params[:photo_info][:filename].original_filename;
-	photo.date_time = DateTime.now();
-	photo.save();
-	
-	photo_dir = "#{GLOBALS::ACTIVITY_PATH}#{photo.activity_id}";
-	
-	FileUtils.mkdir_p photo_dir;
-	if(File.directory?(photo_dir))
-		FileUtils.mkdir_p(photo_dir);
-	end
-	photo_path =  "#{photo_dir}/#{photo.file_name}";
-	File.open(photo_path,"wb") do |f|
-		f.write(params[:photo_info][:filename].read());
-	end
-	
-	flash[:upload_success] = "Photo Uploaded Successfully" 
-	redirect_to(:action => 'show', :id => photo.activity_id);
-	
-  end
 end

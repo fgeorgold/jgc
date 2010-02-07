@@ -95,7 +95,5 @@ end
 
 
 
-module GLOBALS
-	ACTIVITY_PATH = "public/activity_info/";
-end
+
 
