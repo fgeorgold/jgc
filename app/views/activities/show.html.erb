@@ -59,7 +59,7 @@
 <div id = "photo_upload">
 	<h3> Upload Photos </h3>
 	<div class = "photo-form">
-		<%form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
+		<% form_for :photo_info, :url => {:action => :photoPost}, :html =>{ :multipart => true } do |f| %>
 			<%= f.file_field(:filename) %>
 			<%= submit_tag "Upload" %>
 		<%end%>
@@ -98,3 +98,15 @@
     </div>
     
 </div>
+
+
+
+<% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => "activity-form" } do |f| %>
+    <%= f.hidden_field :name, :value => "ACTIVITY" %>
+    <%= submit_tag "Update", :id => "activity-submit", :onclick => "return false;"  %>
+<% end %>
+
+
+
+
+

@@ -259,6 +259,7 @@ end
   # PUT /activities/1.xml
   def update
     @activity = Activity.find(params[:id])
+   
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
