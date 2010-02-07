@@ -6,9 +6,9 @@
 	
    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
    <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
-   <%= stylesheet_link_tag "user" %>
-   <%= stylesheet_link_tag "style" %>
-   <%= stylesheet_link_tag "p7tmcoollines" %>
+   <!--<%= stylesheet_link_tag "user" %>-->
+   <!--<%= stylesheet_link_tag "style" %>-->
+   <!--<%= stylesheet_link_tag "p7tmcoollines" %>-->
    <%= stylesheet_link_tag "lightbox" %>
    
    
@@ -34,25 +34,29 @@
 			<img id="logo" src="/images/common/logo_off.png">
 			<div id="menu_and_login">
 				<ul id="menu">
-					<li>About Us</li>
-					<li>Organizations</li>
-					<li>After-School Activites</li>
-					<li>Parents</li>
-					<li>Program Directors</li>
-					<li>Teachers</li>
-					<li>Search</li>
+					<li><a href="index.html">About Us</a></li>
+					<li><a href="/organizations">Organizations</a></li>
+					<li class="current"><a href="/activities">After-School Activites</a></li>
+					<li><a href="/parents.html">Parents</a></li>
+					<li><a href="/pd_user">Program Directors</a></li>
+					<li><a href="/pd_user">Teachers</a></li>
+					<li><a href="/user/search">Search</a></li>
 				</ul>
 				<div id="login_box">
 					<div>
-						<form>						
+						<% form_for :pd_user, :url => "/pd_user/login" do |f| %>
 							<div id="login_left">
+                               <%= f.text_field :login_name, :onfocus => "this.value=''" %>
+                               <%= f.password_field :password, :onfocus => "this.value=''" %>
+                               <!--
 								<input type="text" value="username" onfocus="this.value=''">
 								<input type="text" value="password" onfocus="this.value=''">
+                                -->
 							</div>
 							<div id="login_right">
-								<input type="submit" id="login_button" value="Log in"/>
+                                <%= submit_tag "Log in", :class => "submit", :id => "login_button" %>
 							</div>
-						</form>
+						<% end %>
 					</div>
 				</div>
 			</div>

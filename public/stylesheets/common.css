@@ -139,7 +139,21 @@ h4 {
 				#menu li:active {
 					border-bottom-color: #990000;
 				}
+                
+                #menu li.current {
+                    border: none;
+                }
+                    
 			
+                #menu a:visited {
+                    color: white;
+                }
+                
+                
+                #menu a {
+                    color: white;
+                }
+                
 			#login_box {
 				background-image: url('/images/common/login_open.gif');
 				width: 200px;

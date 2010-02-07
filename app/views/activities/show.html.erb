@@ -1,5 +1,5 @@
 
-<div class="title">
+<div id="title">
     <h1><%= @activity.name %><h1>
 </div>
 
@@ -23,31 +23,33 @@
                     <img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_filled.png" alt="star"><img src="/images/activities/star_empty.png" alt="star"><img src="/images/activities/star_empty.png" alt="star">
                 </p>
                 <p><a href="#">email this activity</a></p>
-                <p><a href="#">view photo albums</a></p>
-                <p><a href="#">add photos</a></p>
-                <p><a href="#">add to my favorites</a></p>
-            </div>
-        </div>
-    
-        <div class="links">
-            <ul>
-                <li><a href="#">E-mail this</a></li>
+                <p>
+                
                 <% if !@activity.photos.empty? %>
-                          <li> <%= link_to "See photos", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %></li>
+                 <%= link_to "view photo albums", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{@activity.photos.first.file_name}", :rel => "lightbox[activity_photos]" %>
+                <% else %>
+                 no photos
+                          
                 <% end %>
                 <% if @activity.photos.length > 1 %>
                       <% (@activity.photos[2..-1]).each do |photo| %>
                            <%= link_to "", "#{GLOBALS::ACTIVITY_PATH}#{@activity.id.to_s()}/#{photo.file_name}", :rel => "lightbox[activity_photos]" %>
                       <% end %>
                 <% end %>
-                <li><a href="#">Add to favorites</a></li>
-            </ul>
-        </div>        
+                
+                </p>
+                
+                <p><a href="#">add photos</a></p>
+                <p><a href="#">add to my favorites</a></p>
+            </div>
+        </div>
+    
+          
     </div>
 
-    <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
+    <div id="right_column">
+        <% form_for :activity, @activity, :url => activity_path(@activity), :html => { :id => 'activity_form' } do |f| %>
 
-    <div id="right-column">
         <div class="section">
             <div class="section_title">
                 <h2>Basic Info</h2>
@@ -59,7 +61,7 @@
                         <p>Name:</p>
                     </td>
                     <td>
-                        <p><%= f.text_field :name, :value => @activity.name, :readonly => "readonly" %> </p>
+                        <p><%= @activity.name %> </p>
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +120,7 @@
         </div>
         
         <% end %>
-    <div class="section">
+        <div class="section">
             <div class="section_title">
                 <h2>Resources & Costs</h2>
                 <span>(<a href="#">edit</a>)</span>
@@ -152,26 +154,29 @@
             </div>
             <div id="google_map">
                 <!-- google code goes here -->
+                <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=Stanford,+Santa+Clara,+California&amp;ll=37.424106,-122.166076&amp;spn=0.134554,0.249939&amp;t=h&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
             </div>
         </div>
+        
+        <div class="section">
+            <div class="section_title">
+                <h2>Upload photos</h2>
+                <%if flash[:upload_success] %>
+                    <p style ="color:green"><%= flash[:upload_success]%></p>
+                <%end%>
+                <%if flash[:empty_photo] %>
+                    <p style = "color:red"><%= flash[:empty_photo] %></p>
+                <%end%>
+                <div class = "photo-form">
+                <%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
+                    <%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
+                    <%= f.file_field(:filename) %>
+                    <%= submit_tag "Upload" %>
+                <%end%>
+            </div>
+        </div>
+        
     </div>
-</div>
-
-<div id = "photo_upload">
-	<h3> Upload Photos </h3>
-	<%if flash[:upload_success] %>
-		<p style ="color:green"><%= flash[:upload_success]%></p>
-	<%end%>
-	<%if flash[:empty_photo] %>
-		<p style = "color:red"><%= flash[:empty_photo] %></p>
-	<%end%>
-	<div class = "photo-form">
-	<%form_for :photo_info, :url => {:action => :postPhoto}, :html =>{ :multipart => true } do |f| %>
-		<%= f.hidden_field :activity_id, :value => "#{@activity.id}" %> 
-		<%= f.file_field(:filename) %>
-		<%= submit_tag "Upload" %>
-	<%end%>
-	</div>
 </div>
 
     
