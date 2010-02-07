@@ -333,3 +333,23 @@ using index in C:/INSTAN~1.0-W/rails_apps/jgc/index/development/organization
 [organization] reopening index at C:/INSTAN~1.0-W/rails_apps/jgc/index/development/organization
 [organization] register class Organization with index organization
 [organization] default field list for index organization: [:address, :partners, :zipcode, :updated_at, :website, :visible, :email, :contact, :name, :created_at, :asp, :description, :resources]
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[activity] register class Activity with index activity
+[activity] refusing re-registration of class Activity
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
+[organization] register class Organization with index organization
+[organization] refusing re-registration of class Organization
