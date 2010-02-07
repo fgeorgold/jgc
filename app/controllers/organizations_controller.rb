@@ -192,11 +192,8 @@ class OrganizationsController < ApplicationController
         
         @u = User.find_by_sql ["SELECT * FROM users where admin = ?","1"];
 
-<<<<<<< HEAD
-        if !@u[0].nil? and @u[0].mailpref    
-=======
-        if @u[0] && @u[0].mailpref    
->>>>>>> refactor
+
+        if @u[0] and @u[0].mailpref    
         subject = "New organization has been created"
         to = @u[0].email
         from = 'helpjgc@gmail.com'
