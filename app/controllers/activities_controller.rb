@@ -66,16 +66,16 @@ end
   # GET /activities/1.xml
   def show
 
-    @id = params[:id]
     @title_description = "Show Activity"
-    @activity = Activity.find(@id) 
+    @activity = Activity.find(params[:id]) 
     
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
     @comment_id = ActivitiesComment.find_by_sql ["SELECT * FROM activities_comments where activity_id = ?",@id]
     @programNames = []
     @categoryNames = []
-    @comments = []
+    @comments = @activity.activities_comments
+    @new_comment = ActivitiesComment.new
     for comment in @comment_id
       @comments.push comment
     end
@@ -98,8 +98,8 @@ end
   
   
   def save_activity_comment
-    @activity_comment = ActivitiesComment.new(params[:comment])
-    @id = params[:comment][:activity_id]
+    @activity_comment = ActivitiesComment.new(params[:new_comment])
+    @id = params[:new_comment][:activity_id]
     @activity = Activity.find(@id)
     @program_id = Program.find_by_sql ["SELECT * FROM programs where activity_id = ?",@id];
     @category_id = Category.find_by_sql ["SELECT * FROM categories where activity_id = ?",@id]
@@ -236,7 +236,7 @@ end
         format.xml  { render :xml => @activity, :status => :created, :location => @activity }
         @u = User.find_by_sql ["SELECT * FROM users where activitesadmin = ?","1"];
         #Note:  What if there are multiple activities admins, each should get an email
-        if @u[0].mailpref    
+        if @u[0] and @u[0].mailpref    
           subject = "New Activity has been created"
           to = @u[0].email
           from = 'helpjgc@gmail.com'

@@ -20,7 +20,7 @@ development:
   database: jgc_development
   pool: 5
   username: root
-  password: nipunb
+  password: 
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -32,7 +32,7 @@ test:
   database: jgc_test
   pool: 5
   username: root
-  password: nipunb
+  password: 
   host: localhost
 
 production:
@@ -41,5 +41,5 @@ production:
   database: jgc_production
   pool: 5
   username: root
-  password: nipunb
+  password: 
   host: localhost
