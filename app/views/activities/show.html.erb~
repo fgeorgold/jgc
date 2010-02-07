@@ -18,7 +18,6 @@
                 <li><a href="#">E-mail this</a></li>
                 <li><a href="#">See photos</a></li>
                 <li><a href="#">Add to favorites</a></li>
-                
             </ul>
         </div>
         
@@ -28,31 +27,29 @@
     <div id="right-column">
         <div class="section">
             <h2>Basic Info</h2>
-            <table class="form-table">
-                <tr><td class="form-key">Name:</td><td class="form-value"><%= @activity.name %></tr>
-                <tr><td class="form-key">Description:</td><td class="form-value"><%= @activity.description %></tr>
-                <tr><td class="form-key">Tagged as:</td><td class="form-value">
+            <table class="info-table">
+                <tr><td class="info-name">Name:</td><td class="info-value"><%= @activity.name %></tr>
+                <tr><td class="info-name">Description:</td><td class="info-value"><%= @activity.description %></tr>
+                <tr><td class="info-name">Tagged as:</td><td class="info-value">
                     <% @activity.tags.each do |tag| %>
                     <%= tag.name %>
                     <% end %>
                 </tr></td>
-                <tr><td class="form-name">Age group:</td><td class="form-value"><%= @activity.age_group %></tr>
+                <tr><td class="info-name">Age group:</td><td class="info-value"><%= @activity.age_group %></tr>
             </table>
         </div>
         
         <div class="section">
             <h2>Where & When</h2>
-            <table class="form-table">
-                <tr><td class="form-name">Time:</td><td class="form-value"></td></tr>
-                <tr><td class="form-name">Location:</td><td class="form-value"><%= @activity.address %></td></tr>
+            <table class="info-table">
+                <tr><td class="info-name">Time:</td><td class="info-value"></td></tr>
+                <tr><td class="info-name">Location:</td><td class="info-value"><%= @activity.address %></td></tr>
             </table>
         </div>
         
         <div class="section">
             <h2>Resources & Costs</h2>
-            <table class="form-table">
-                <tr><td class="form-name">Cost:</td><td class="form-value"><%= @activity.cost %></td></tr>
-            </table>
+            <tr><td class="info-name">Cost:</td><td class="info-value"><%= @activity.cost %></td></tr>
         </div>
     </div>
 </div>
