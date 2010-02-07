@@ -88,7 +88,10 @@ end
 #        @categoryNames.push currentCategory.category_name
 #   end
 
-    @pd_user = PdUser.find(session[:pd_user_id])
+    if (session[:pd_user_id])
+        @pd_user = PdUser.find(session[:pd_user_id])
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @activity }

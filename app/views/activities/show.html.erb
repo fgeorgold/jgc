@@ -15,7 +15,7 @@
                 <li><img src="/images/activities/rating_icon.png" alt="rating_icon"></li>
                 <li><img src="/images/activities/email_icon.png" alt="rating_icon"></li>
                 <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
-                <li><img src="/images/activities/album_icon.png" alt="rating_icon"></li>
+                <li><img src="/images/activities/frame_image.png" alt="rating_icon"></li>
                 <li><img src="/images/activities/favorites_icon.png" alt="rating_icon"></li>
             </ul>
             <div id="toolbox_links">
@@ -53,7 +53,7 @@
         <div class="section">
             <div class="section_title">
                 <h2>Basic Info</h2>
-                <span>(<a href="javascript:onBasicInfoEdit();">edit</a>)</span>
+                <span>(<a href="/activities/edit/<%=@activity.id%>">edit</a>)</span>
             </div>
             <table class="noneditable" id="basic_info">
                 <tr>
@@ -85,7 +85,7 @@
         <div class="section">
             <div class="section_title">
                 <h2>Where & When</h2>
-                <span>(<a href="#">edit</a>)</span>
+                <span>(<a href="/activities/edit/<%=@activity.id%>">edit</a>)</span>
             </div>
             <table>
                 <tr>
@@ -123,7 +123,7 @@
         <div class="section">
             <div class="section_title">
                 <h2>Resources & Costs</h2>
-                <span>(<a href="#">edit</a>)</span>
+                <span>(<a href="/activities/edit/<%=@activity.id%>">edit</a>)</span>
             </div>
             <table>
                 <tr>
@@ -150,7 +150,7 @@
         <div class="section">
             <div class="section_title">
                 <h2>Map</h2>
-                <span>(<a href="#">edit</a>)</span>
+                <span>(<a href="/activities/edit/<%=@activity.id%>">edit</a>)</span>
             </div>
             <div id="google_map">
                 <!-- google code goes here -->
